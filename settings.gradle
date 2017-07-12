@@ -1,2 +1,2 @@
 rootProject.name = 'rascal-microservice'
-include 'infra-eureka-server'
+include 'infra-eureka-server', 'infra-config-server'
