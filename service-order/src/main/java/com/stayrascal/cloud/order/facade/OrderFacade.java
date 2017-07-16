@@ -68,13 +68,19 @@ public class OrderFacade {
         return orderRepository.countOrders(id, storeId, status, pickupCode, placeTimeRange, userId);
     }
 
+    public void finishTransaction(String orderId, String transactionId) {
+        final Order order = getOrderById(orderId);
+        order.transactionFinished(transactionId, pickupCodeGeneratorService);
+        orderRepository.update(order);
+    }
+
     public List<OrderDto> listOrders(SortQuery sortQuery, String id, String storeId, OrderStatus status,
                                      String pickupCode, TimeRange placedTimeRange, String userId) {
         List<Order> orders = orderRepository.listOrders(sortQuery, id, storeId, status, pickupCode, placedTimeRange, userId);
         return orders.stream().map(orderDtoMapper::orderToDto).collect(Collectors.toList());
     }
 
-    private Order getOrderById(String orderId) {
+    Order getOrderById(String orderId) {
         Optional<Order> order = orderRepository.ofId(orderId);
         if (!order.isPresent()) {
             throw new NotFoundException(ErrorCode.INTERNAL_ERROR, "Order not found of id {}", orderId);
