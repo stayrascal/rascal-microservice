@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
 
-    compile("com.google.guava:guava:22.0")
+    compile("com.google.guava:guava:20.0")
     compile("javax.ws.rs:javax.ws.rs-api:2.0.1")
     compile("com.fasterxml.jackson.core:jackson-annotations:2.8.9")
 
