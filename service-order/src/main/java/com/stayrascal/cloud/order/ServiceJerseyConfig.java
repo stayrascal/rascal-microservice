@@ -1,4 +1,4 @@
-package com.stayrascal.cloud.order.service;
+package com.stayrascal.cloud.order;
 
 import com.google.common.collect.Sets;
 import com.stayrascal.cloud.common.lib.jersey.JerseyConfig;

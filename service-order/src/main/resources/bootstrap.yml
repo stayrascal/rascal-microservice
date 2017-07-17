@@ -15,9 +15,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
-clould:
+cloud:
   allowReloadTestData: true
-
   transaction:
     weChat:
       appId: wxcf0848f15d297fb3
