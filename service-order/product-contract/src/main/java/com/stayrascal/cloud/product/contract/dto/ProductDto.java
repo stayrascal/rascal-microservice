@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.product.contract.dto;
 
-import com.stayrascal.cloud.common.enumeration.CommonStatus;
+
+import com.stayrascal.cloud.product.contract.enumeration.CommonStatus;
 
 import java.util.Date;
 import java.util.List;

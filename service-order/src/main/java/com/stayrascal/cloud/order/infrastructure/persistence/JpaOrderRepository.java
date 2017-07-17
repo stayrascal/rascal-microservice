@@ -5,14 +5,14 @@ import com.exmertec.yaz.core.OrderType;
 import com.exmertec.yaz.core.Query;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import com.stayrascal.cloud.common.enumeration.SortType;
-import com.stayrascal.cloud.common.lib.util.TimeRange;
-import com.stayrascal.cloud.common.query.SortQuery;
+import com.stayrascal.cloud.common.util.TimeRange;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.order.domain.entity.Order;
 import com.stayrascal.cloud.order.domain.mapper.OrderPoMapper;
 import com.stayrascal.cloud.order.domain.repository.OrderRepository;
 import com.stayrascal.cloud.order.infrastructure.persistence.po.OrderPo;
+import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.clould.common.contract.query.SortQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

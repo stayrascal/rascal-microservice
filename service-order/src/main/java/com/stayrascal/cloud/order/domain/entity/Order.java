@@ -1,9 +1,9 @@
 package com.stayrascal.cloud.order.domain.entity;
 
 import com.google.common.base.Strings;
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
-import com.stayrascal.cloud.common.lib.jersey.exception.BadRequestException;
-import com.stayrascal.cloud.common.lib.jersey.exception.InternalErrorException;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.jersey.exception.BadRequestException;
+import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
 import com.stayrascal.cloud.order.constant.DefaultValues;
 import com.stayrascal.cloud.order.contract.enumeration.DeliveryMethod;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;

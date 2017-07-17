@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.order;
 
 import com.google.common.collect.Sets;
-import com.stayrascal.cloud.common.lib.jersey.JerseyConfig;
+import com.stayrascal.cloud.common.jersey.JerseyConfig;
 import com.stayrascal.cloud.order.api.WeChatApi;
 import com.stayrascal.cloud.order.resource.OrderResource;
 import com.stayrascal.cloud.order.resource.TransactionResource;
@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Configuration
 @ComponentScan("com.stayrascal.cloud.common.jersey")
-public class ServiceJerseyConfig  extends JerseyConfig{
+public class ServiceJerseyConfig extends JerseyConfig {
 
     @Autowired
     public ServiceJerseyConfig(Environment env) {

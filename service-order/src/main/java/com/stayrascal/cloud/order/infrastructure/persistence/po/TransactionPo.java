@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.order.infrastructure.persistence.po;
 
-import com.stayrascal.cloud.common.lib.jpa.BasePo;
+import com.stayrascal.cloud.common.jpa.BasePo;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionClientType;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionProvider;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionStatus;

@@ -1,10 +1,10 @@
 package com.stayrascal.cloud.order.domain.repository;
 
-import com.stayrascal.cloud.common.lib.ddd.Repository;
-import com.stayrascal.cloud.common.lib.util.TimeRange;
-import com.stayrascal.cloud.common.query.SortQuery;
+import com.stayrascal.cloud.common.ddd.Repository;
+import com.stayrascal.cloud.common.util.TimeRange;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.order.domain.entity.Order;
+import com.stayrascal.clould.common.contract.query.SortQuery;
 
 import java.util.List;
 

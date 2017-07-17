@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.loaddata.service;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
-import com.stayrascal.cloud.common.lib.jersey.exception.ServerErrorException;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.AmbiguousTableNameException;
 import org.dbunit.database.DatabaseConnection;

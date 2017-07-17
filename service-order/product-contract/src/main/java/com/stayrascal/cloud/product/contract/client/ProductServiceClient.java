@@ -1,11 +1,11 @@
 package com.stayrascal.cloud.product.contract.client;
 
-import com.stayrascal.cloud.common.enumeration.SortType;
-import com.stayrascal.cloud.common.result.CreatedResult;
-import com.stayrascal.cloud.common.result.PageResult;
 import com.stayrascal.cloud.product.contract.command.CreateProductCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateProductInfoCommand;
 import com.stayrascal.cloud.product.contract.dto.ProductDto;
+import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.clould.common.contract.result.CreatedResult;
+import com.stayrascal.clould.common.contract.result.PageResult;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

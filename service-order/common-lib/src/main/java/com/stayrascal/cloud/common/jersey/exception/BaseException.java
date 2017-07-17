@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.common.jersey.exception;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
+import com.stayrascal.cloud.common.constant.ErrorCode;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
 

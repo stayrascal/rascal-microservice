@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.product.contract.command;
 
-import com.stayrascal.cloud.common.enumeration.CommonStatus;
+
+import com.stayrascal.cloud.product.contract.enumeration.CommonStatus;
 
 public class UpdateProductInfoCommand {
     private String name;

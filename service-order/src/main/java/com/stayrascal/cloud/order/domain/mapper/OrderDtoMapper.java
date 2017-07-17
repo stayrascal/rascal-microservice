@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.order.domain.mapper;
 
-import com.stayrascal.cloud.common.lib.mapper.DefaultMapper;
+import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.order.contract.dto.OrderDto;
 import com.stayrascal.cloud.order.contract.dto.OrderItemDto;
 import com.stayrascal.cloud.order.domain.entity.Order;

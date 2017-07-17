@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.order.api;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
-import com.stayrascal.cloud.common.lib.jersey.exception.ServerErrorException;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
 import com.stayrascal.cloud.order.facade.TransactionFacade;
 import com.stayrascal.cloud.order.service.WeChatService;
 import me.chanjar.weixin.common.exception.WxErrorException;

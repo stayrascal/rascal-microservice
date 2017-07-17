@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.common.util;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
+import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
 
 import java.io.UnsupportedEncodingException;

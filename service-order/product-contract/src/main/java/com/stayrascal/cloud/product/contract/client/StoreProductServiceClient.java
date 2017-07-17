@@ -1,12 +1,12 @@
 package com.stayrascal.cloud.product.contract.client;
 
-import com.stayrascal.cloud.common.result.CreatedResult;
-import com.stayrascal.cloud.common.result.PageResult;
 import com.stayrascal.cloud.product.contract.command.CreateStoreProductCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateStoreItemQuantityCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateStoreProductCommand;
 import com.stayrascal.cloud.product.contract.dto.StoreProductDto;
 import com.stayrascal.cloud.product.contract.enumeration.ProductStatus;
+import com.stayrascal.clould.common.contract.result.CreatedResult;
+import com.stayrascal.clould.common.contract.result.PageResult;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

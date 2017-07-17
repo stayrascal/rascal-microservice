@@ -1,9 +1,9 @@
 package com.stayrascal.cloud.order.domain.factory;
 
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
-import com.stayrascal.cloud.common.lib.jersey.exception.BadRequestException;
-import com.stayrascal.cloud.common.lib.jpa.UniqueKeyGenerator;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.jersey.exception.BadRequestException;
+import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionClientType;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionProvider;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionStatus;

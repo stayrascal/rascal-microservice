@@ -1,0 +1,3 @@
+rootProject.name = 'service-order'
+include 'contract', 'common-contract', 'common-lib', 'fill-data', 'product-contract'
+

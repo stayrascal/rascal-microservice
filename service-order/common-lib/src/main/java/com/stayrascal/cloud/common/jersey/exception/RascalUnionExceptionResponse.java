@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.common.jersey.exception;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
+
+import com.stayrascal.cloud.common.constant.ErrorCode;
 
 public class RascalUnionExceptionResponse {
     private final ErrorCode errorCode;

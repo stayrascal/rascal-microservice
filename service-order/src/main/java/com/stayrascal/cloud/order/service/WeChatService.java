@@ -1,8 +1,8 @@
 package com.stayrascal.cloud.order.service;
 
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
-import com.stayrascal.cloud.common.lib.jersey.exception.ServerErrorException;
-import com.stayrascal.cloud.common.lib.jpa.UniqueKeyGenerator;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
+import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
 import com.stayrascal.cloud.order.contract.enumeration.WeChatTradeType;
 import com.stayrascal.cloud.order.contract.result.WeChatPurchaseResult;
 import me.chanjar.weixin.common.exception.WxErrorException;

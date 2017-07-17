@@ -2,9 +2,9 @@ package com.stayrascal.cloud.common.jpa;
 
 import com.exmertec.yaz.BaseDao;
 import com.exmertec.yaz.core.Query;
-import com.stayrascal.cloud.common.lib.constant.ErrorCode;
+import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.BadRequestException;
-import com.stayrascal.cloud.common.query.SortQuery;
+import com.stayrascal.clould.common.contract.query.SortQuery;
 
 import java.util.Arrays;
 import java.util.Collection;

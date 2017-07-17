@@ -2,12 +2,12 @@ package com.stayrascal.cloud.common.jersey;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
-import com.stayrascal.cloud.common.jersey.exception.handler.FeignExceptionMapper;
-import com.stayrascal.cloud.common.jersey.exception.handler.UnhandledExceptionMapper;
-import com.stayrascal.cloud.common.jersey.exception.handler.WebApplicationExceptionMapper;
 import com.stayrascal.cloud.common.jersey.exception.handler.BaseExceptionMapper;
+import com.stayrascal.cloud.common.jersey.exception.handler.FeignExceptionMapper;
 import com.stayrascal.cloud.common.jersey.exception.handler.HystrixExceptionMapper;
 import com.stayrascal.cloud.common.jersey.exception.handler.RemoteCallExceptionMapper;
+import com.stayrascal.cloud.common.jersey.exception.handler.UnhandledExceptionMapper;
+import com.stayrascal.cloud.common.jersey.exception.handler.WebApplicationExceptionMapper;
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;

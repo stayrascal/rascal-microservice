@@ -2,6 +2,7 @@ package com.stayrascal.cloud.common.mapper;
 
 import ma.glasnost.orika.DefaultFieldMapper;
 import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.MappingContext;
 import ma.glasnost.orika.converter.BidirectionalConverter;
 import ma.glasnost.orika.converter.ConverterFactory;
 import ma.glasnost.orika.converter.builtin.PassThroughConverter;
@@ -20,11 +21,13 @@ public class DefaultMapper {
         ConverterFactory converterFactory = this.mapperFactory.getConverterFactory();
         converterFactory.registerConverter(new PassThroughConverter(new Type[]{DateTime.class}));
         converterFactory.registerConverter(new BidirectionalConverter<Date, DateTime>() {
-            public DateTime convertTo(Date source, ma.glasnost.orika.metadata.Type<DateTime> destinationType) {
+            @Override
+            public DateTime convertTo(Date source, ma.glasnost.orika.metadata.Type<DateTime> destinationType, MappingContext mappingContext) {
                 return new DateTime(source);
             }
 
-            public Date convertFrom(DateTime source, ma.glasnost.orika.metadata.Type<Date> destinationType) {
+            @Override
+            public Date convertFrom(DateTime source, ma.glasnost.orika.metadata.Type<Date> destinationType, MappingContext mappingContext) {
                 return source.toDate();
             }
         });
