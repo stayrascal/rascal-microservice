@@ -1,4 +1,4 @@
-package com.stayrascal.cloud.common.auth;
+package com.stayrascal.clould.common.contract.auth;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.stayrascal.cloud.common.enumeration;
+package com.stayrascal.clould.common.contract.enumeration;
 
 public enum SortType {
     ASC,

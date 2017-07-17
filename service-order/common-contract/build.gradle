@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: "maven-publish"
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile("com.google.guava:guava:22.0")
+    compile("javax.ws.rs:javax.ws.rs-api:2.0.1")
+    compile("com.fasterxml.jackson.core:jackson-annotations:2.8.9")
+
+}

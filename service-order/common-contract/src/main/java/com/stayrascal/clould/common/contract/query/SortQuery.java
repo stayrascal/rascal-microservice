@@ -1,4 +1,4 @@
-package com.stayrascal.cloud.common.query;
+package com.stayrascal.clould.common.contract.query;
 
 import com.stayrascal.cloud.common.enumeration.SortType;
 
