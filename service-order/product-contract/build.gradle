@@ -20,15 +20,14 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    compile project(":common-contract")
-
-    compile("org.springframework.cloud:spring-cloud-starter-feign")
-
-}
 
 ext {
     springCloudVersion = 'Dalston.SR1'
+}
+
+dependencies {
+    compile project(":common-contract")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
 }
 
 dependencyManagement {

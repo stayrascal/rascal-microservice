@@ -1,6 +1,7 @@
 package com.stayrascal.clould.common.contract.query;
 
-import com.stayrascal.cloud.common.enumeration.SortType;
+
+import com.stayrascal.clould.common.contract.enumeration.SortType;
 
 public class SortQuery {
     private SortType sortType;
