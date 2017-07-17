@@ -1,8 +1,8 @@
-package com.stayrascal.cloud.common.loaddata;
+package com.stayrascal.cloud.loaddata;
 
 import com.stayrascal.cloud.common.lib.constant.ErrorCode;
 import com.stayrascal.cloud.common.lib.jersey.exception.ServerErrorException;
-import com.stayrascal.cloud.common.loaddata.service.ReloadTestDataService;
+import com.stayrascal.cloud.loaddata.service.ReloadTestDataService;
 import org.dbunit.DatabaseUnitException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

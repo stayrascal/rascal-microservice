@@ -1,4 +1,4 @@
-package com.stayrascal.cloud.common.loaddata.service;
+package com.stayrascal.cloud.loaddata.service;
 
 import com.stayrascal.cloud.common.lib.constant.ErrorCode;
 import com.stayrascal.cloud.common.lib.jersey.exception.ServerErrorException;
