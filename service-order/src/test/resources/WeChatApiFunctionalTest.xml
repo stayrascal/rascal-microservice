@@ -1,0 +1,12 @@
+<dataset>
+    <ORDER id="openOrderId" user_id="userId" store_id="storeId1" delivery_method="STORE_PICKUP"
+           time_created="2017-01-12 18:24:20.0"
+           status="OPEN"/>
+    <ORDER_ITEM id="1" order_id="openOrderId" store_product_id="storeProductId" store_item_id="storeItemId"
+                store_product_name="storeProductName" store_item_name="storeItemName"
+                quantity="5" price="1"/>
+    <TRANSACTION id="transactionId" time_created="2017-01-12 18:24:20.0" order_id="openOrderId" provider="WECHAT"
+                 client_type="JSAPI" total_amount="5" status="OPEN"/>
+
+    <PICKUP_CODE_SEED id="0" code_differentiator="storeId1" next_code="0"/>
+</dataset>

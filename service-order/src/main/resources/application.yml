@@ -10,6 +10,7 @@ spring:
       ddl-auto: validate
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
   jersey:
     application-path: /rest
   sleuth:

@@ -23,6 +23,6 @@ public class HystrixExceptionMapper implements ExceptionMapper<HystrixRuntimeExc
     public Response toResponse(HystrixRuntimeException exception) {
         LOGGER.warn("Unhandled Hystrix exception, of failure type {}", exception.getFailureType(), exception);
         Throwable cause = exception.getCause();
-        return BaseException.class.isInstance(cause) ? this.baseExceptionMapper.toResponse((BaseException) BaseException.class.cast(cause)) : (RemoteCallException.class.isInstance(cause) ? this.remoteCallExceptionMapper.toResponse((RemoteCallException) RemoteCallException.class.cast(cause)) : Response.status(Response.Status.SERVICE_UNAVAILABLE).entity(exception).type(MediaType.APPLICATION_JSON_TYPE).build());
+        return BaseException.class.isInstance(cause) ? this.baseExceptionMapper.toResponse((BaseException) BaseException.class.cast(cause)) : (RemoteCallException.class.isInstance(cause) ? this.remoteCallExceptionMapper.toResponse(RemoteCallException.class.cast(cause)) : Response.status(Response.Status.SERVICE_UNAVAILABLE).entity(exception).type(MediaType.APPLICATION_JSON_TYPE).build());
     }
 }

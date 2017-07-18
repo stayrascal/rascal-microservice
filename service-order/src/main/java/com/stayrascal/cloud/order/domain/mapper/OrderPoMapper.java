@@ -33,6 +33,8 @@ public class OrderPoMapper extends DefaultMapper {
     }
 
     private OrderItemPo orderItemToPo(String orderId, OrderItem orderItem) {
-        return map(orderItem, OrderItemPo.class);
+        OrderItemPo orderItemPo = map(orderItem, OrderItemPo.class);
+        orderItemPo.setOrderId(orderId);
+        return orderItemPo;
     }
 }

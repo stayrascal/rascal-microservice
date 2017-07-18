@@ -11,6 +11,6 @@ public class NotFoundException extends BaseException {
     }
 
     public NotFoundException(ErrorCode errorCode, String msg, Object... params) {
-        super(Response.Status.FORBIDDEN, errorCode, msg, params);
+        super(Response.Status.NOT_FOUND, errorCode, msg, params);
     }
 }

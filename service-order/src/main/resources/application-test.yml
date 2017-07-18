@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1/clould_order
+    url: jdbc:mysql://127.0.0.1/service_order
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver

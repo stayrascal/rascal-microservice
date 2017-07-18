@@ -53,7 +53,7 @@ public class TransactionFacade {
                 ErrorCode.INTERNAL_ERROR, "Transaction of id {} not found", transactionId));
     }
 
-    public void confirmtransaction(String tranactionId, TransactionProvider provider, String thirdPartyTransactionId, Double totalAmount) {
+    public void confirmTransaction(String tranactionId, TransactionProvider provider, String thirdPartyTransactionId, Double totalAmount) {
         Optional<Transaction> transactionOptional = transactionRepository.ofId(tranactionId);
         if (!transactionOptional.isPresent()) {
             // TODO: should we throw exception in this case? how can we track this payment?

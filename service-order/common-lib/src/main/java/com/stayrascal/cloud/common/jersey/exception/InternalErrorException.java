@@ -11,6 +11,6 @@ public class InternalErrorException extends BaseException {
     }
 
     public InternalErrorException(ErrorCode errorCode, String msg, Object... params) {
-        super(Response.Status.FORBIDDEN, errorCode, msg, params);
+        super(Response.Status.INTERNAL_SERVER_ERROR, errorCode, msg, params);
     }
 }
