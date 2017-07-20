@@ -1,0 +1,56 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    url: jdbc:mysql://127.0.0.1/service_user
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 50
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+cloud:
+  allowReloadTestData: true
+  auth:
+    randomKeyLength: 6
+    email:
+      defaultKeyExpireMinutes: 1440
+      title:
+      contentTemplate:
+
+  redis:
+    host: localhost
+
+  jms:
+    url: tcp://localhost:61616
+    username: cloud
+    password: cloud
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        enabled: true
+        requestvolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+
+---
+spring:
+  profiles: k8s_dev
+  cloud:
+    config:
+      uri: http://cloud-configuration-service:8888
