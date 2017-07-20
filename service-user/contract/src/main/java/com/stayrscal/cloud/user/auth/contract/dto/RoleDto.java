@@ -44,7 +44,7 @@ public class RoleDto {
         this.timeCreated = timeCreated;
     }
 
-    private class RolePermissionDto {
+    public class RolePermissionDto {
         private Long id;
 
         private String permissionType;
