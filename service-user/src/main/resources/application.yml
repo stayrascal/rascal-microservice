@@ -20,7 +20,7 @@ spring:
 
 flyway:
   enabled: true
-  out-of-order: false
+  out-of-order: true
   encoding: UTF-8
 
 cloud:
@@ -36,7 +36,7 @@ server:
   servlet-path: /
 
 management:
-  context-path: system
+  context-path: /system
 
 eureka:
   instance:

@@ -4,6 +4,7 @@ import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.user.auth.domain.entity.Role;
 import com.stayrascal.cloud.user.auth.domain.entity.RolePermission;
 import com.stayrscal.cloud.user.auth.contract.dto.RoleDto;
+import com.stayrscal.cloud.user.auth.contract.dto.RoleDto.RolePermissionDto;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 public class RoleDtoMapper extends DefaultMapper {
     public RoleDtoMapper() {
         register(RoleDto.class, Role.class);
-        register(RoleDto.RolePermissionDto.class, RolePermission.class);
+        register(RolePermissionDto.class, RolePermission.class);
     }
 
     public Role roleFromDto(RoleDto roleDto) {
@@ -22,7 +23,7 @@ public class RoleDtoMapper extends DefaultMapper {
         return role;
     }
 
-    private RolePermission rolePermissionFromDto(RoleDto.RolePermissionDto rolePermissionDto) {
+    private RolePermission rolePermissionFromDto(RolePermissionDto rolePermissionDto) {
         return map(rolePermissionDto, RolePermission.class);
     }
 
@@ -33,7 +34,7 @@ public class RoleDtoMapper extends DefaultMapper {
         return roleDto;
     }
 
-    private RoleDto.RolePermissionDto rolePermissionToDto(RolePermission rolePermission) {
-        return map(rolePermission, RoleDto.RolePermissionDto.class);
+    private RolePermissionDto rolePermissionToDto(RolePermission rolePermission) {
+        return map(rolePermission, RolePermissionDto.class);
     }
 }

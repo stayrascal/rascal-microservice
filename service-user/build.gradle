@@ -57,3 +57,16 @@ dependencyManagement {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
+
+task unitTest(type: Test) {
+    exclude '**/functional/**'
+}
+
+task functionalTest(type: Test) {
+    include '**/functional/**'
+
+    def dataSourceUrl = System.getProperty('cloud.test.datasource.url')
+    if (dataSourceUrl != null) {
+        systemProperties['spring.datasource.url'] = dataSourceUrl
+    }
+}

@@ -1,5 +1,6 @@
 package com.stayrascal.clould.common.contract.auth;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Identity {
@@ -13,6 +14,7 @@ public class Identity {
     public Identity(IdentityType identityType, String identityId) {
         this.identityType = identityType;
         this.identityId = identityId;
+        this.authorizations = new ArrayList<>(0);
     }
 
     public Identity(IdentityType identityType, String identityId, List<Authorization> authorizations) {

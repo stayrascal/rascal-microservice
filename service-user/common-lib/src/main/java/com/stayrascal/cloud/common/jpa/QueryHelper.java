@@ -15,11 +15,10 @@ public class QueryHelper {
     }
 
     public static <T> List<T> list(BaseDao<T> dao, SortQuery sortQuery, Collection<Query> filters) {
-//        switch (null.$SwitchMap$com$stayrascal$cloud$common$enumeration$SortType[sortQuery.getSortType().ordinal()]) {
-        switch (sortQuery.getSortType().ordinal()) {
-            case 1:
+        switch (sortQuery.getSortType()) {
+            case DESC:
                 return dao.where(filters).descendingBy(new String[]{sortQuery.getSortBy()}).queryPage(sortQuery.getPageSize().intValue(), sortQuery.getPageIndex().intValue());
-            case 2:
+            case ASC:
                 return dao.where(filters).ascendingBy(new String[]{sortQuery.getSortBy()}).queryPage(sortQuery.getPageSize().intValue(), sortQuery.getPageIndex().intValue());
             default:
                 throw new BadRequestException(ErrorCode.INTERNAL_ERROR, "Sorting type not supported {}", new Object[]{sortQuery.getSortType()});

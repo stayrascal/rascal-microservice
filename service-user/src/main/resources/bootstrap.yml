@@ -53,4 +53,4 @@ spring:
   profiles: k8s_dev
   cloud:
     config:
-      uri: http://cloud-configuration-service:8888
+      uri: http://korprulu-configuration-service:8888
