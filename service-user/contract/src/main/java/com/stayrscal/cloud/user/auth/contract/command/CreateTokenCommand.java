@@ -6,6 +6,10 @@ public class CreateTokenCommand {
     public CreateTokenCommand() {
     }
 
+    public CreateTokenCommand(String key) {
+        this.key = key;
+    }
+
     public String getKey() {
         return key;
     }

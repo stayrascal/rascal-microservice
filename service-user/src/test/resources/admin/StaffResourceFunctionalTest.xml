@@ -1,0 +1,6 @@
+<dataset>
+    <STAFF id="test_admin_user_id" mobile="12345678910" email="test@gmai.com" status="ENABLED"
+           time_created="2017-01-01 11:00:00" />
+    <STAFF_AUTHORIZATION id="1" staff_id="test_admin_user_id" organization_id="test_organization_id"
+                         role_id="test_role_id" />
+</dataset>

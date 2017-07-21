@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <AUTHENTICATION id="1" identity_type="STAFF" identity_id="test-admin-id" authentication_type="PASSWORD"
+                    authentication_name="account_id" time_created="2017-01-12 18:24:20.0"/>
+    <AUTHENTICATION_KEY id="1" authentication_id="1"
+                        KEY_VALUE="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                        expired_time="2099-10-10 00:00:00"/>
+
+    <AUTHENTICATION id="2" identity_type="STAFF" identity_id="test-manager-id" authentication_type="PASSWORD"
+                    authentication_name="manager_id" time_created="2017-01-12 18:24:20.0"/>
+    <AUTHENTICATION_KEY id="2" authentication_id="2"
+                        KEY_VALUE="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                        expired_time="2099-10-10 00:00:00"/>
+
+    <AUTHENTICATION id="3" identity_type="STAFF" identity_id="test-clerk-id" authentication_type="PASSWORD"
+                    authentication_name="clerk_id" time_created="2017-01-12 18:24:20.0"/>
+    <AUTHENTICATION_KEY id="3" authentication_id="3"
+                        KEY_VALUE="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                        expired_time="2099-10-10 00:00:00"/>
+
+    <AUTHENTICATION id="4" identity_type="STAFF" identity_id="test-member-id" authentication_type="PASSWORD"
+                    authentication_name="member_id" time_created="2017-01-12 18:24:20.0"/>
+    <AUTHENTICATION_KEY id="4" authentication_id="4"
+                        KEY_VALUE="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                        expired_time="2099-10-10 00:00:00"/>
+
+    <MEMBER id="test-user-id" nickname="name" gender="MALE" birthday="2017-01-12 18:00:59.0"
+            time_created="2017-01-12 18:24:20.0" email="xxx@gg" mobile="134567" status="ENABLED"/>
+
+    <ROLE id="role-id-manager" name="manager" time_created="2017-01-12 18:24:20.0"/>
+    <ROLE id="role-id-clerk" name="clerk" time_created="2017-01-12 18:24:20.0"/>
+    <ROLE_PERMISSION id="1" role_id="role-id-manager" permission_type="CREATE_STORE"/>
+    <ROLE_PERMISSION id="2" role_id="role-id-clerk" permission_type="CREATE_STORE"/>
+
+    <STAFF id="test-admin-id" mobile="12345678910" email="a@gmail.com" name="admin"
+           status="ENABLED" time_created="2017-01-12 18:24:20.0"/>
+
+    <STAFF id="test-manager-id" mobile="12345678910" email="a@gmail.com" name="manager"
+           status="ENABLED" time_created="2017-01-12 18:24:20.0"/>
+    <STAFF_AUTHORIZATION id="1" staff_id="test-manager-id" organization_id="test-store-id" role_id="role-id-manager"/>
+
+    <STAFF id="test-clerk-id" mobile="12345678910" email="a@gmail.com" name="clerk"
+           status="ENABLED" time_created="2017-01-12 18:24:20.0"/>
+    <STAFF_AUTHORIZATION id="2" staff_id="test-clerk-id" organization_id="test-store-id" role_id="role-id-clerk"/>
+</dataset>

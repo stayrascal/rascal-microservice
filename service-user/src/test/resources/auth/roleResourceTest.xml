@@ -1,0 +1,4 @@
+<dataset>
+    <ROLE id="role_id" name="role_name" time_created="2017-01-12 18:24:20.0" />
+    <ROLE_PERMISSION id="1" role_id="role_id" permission_type="CREATE_STORE" />
+</dataset>

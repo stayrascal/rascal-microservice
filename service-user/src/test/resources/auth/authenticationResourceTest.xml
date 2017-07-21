@@ -1,0 +1,4 @@
+<dataset>
+    <AUTHENTICATION id="id" identity_type="MEMBER" identity_id="userId" authentication_type="PASSWORD"
+                    authentication_name="authenticationName" time_created="2017-01-12 18:24:20.0" />
+</dataset>
