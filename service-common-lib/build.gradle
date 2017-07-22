@@ -1,0 +1,75 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
+    repositories {
+        maven { url "${nexusUrl}/repository/maven-releases/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url "${nexusUrl}/repository/maven-releases/" }
+    mavenCentral()
+}
+
+
+ext {
+    springCloudVersion = 'Dalston.SR1'
+}
+
+dependencies {
+    compile('com.stayrascal.cloud:common-contract:1.0.0')
+
+    compile("com.auth0:java-jwt:3.2.0")
+    compile("ma.glasnost.orika:orika-core:1.5.1")
+    compile("com.exmertec.yaz:yaz:0.22")
+    compile("org.apache.commons:commons-lang3:3.6")
+    compile("io.swagger:swagger-jersey2-jaxrs:1.5.3")
+    compile("joda-time:joda-time:2.9.9")
+    compile("org.springframework.boot:spring-boot-starter-jersey")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.stayrascal.cloud'
+            artifactId 'common-lib'
+            version '1.0.0'
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+    repositories {
+        maven {
+            url "${nexusUrl}/repository/maven-releases/"
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+        }
+    }
+}
