@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: service-order
+  aop:
+    auto: true
+    proxy-target-class: true
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jersey:
+    application-path: /rest
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://zipkin-service:9411
+
+flyway:
+  enabled: true
+  out-of-order: true
+  encoding: UTF-8
+
+cloud:
+  jersey:
+    access_control_allow_origin: '*'
+
+  auth:
+    admin_token_expire_minutes: 30
+    allow_public_access: true
+
+server:
+  port: 8080
+  context-path: /
+  servlet-path: /
+
+management:
+  context-path: /system
+
+eureka:
+  instance:
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+    me.chanjat.weixin.mp: DEBUG
+
+---
+  spring:
+    profiles: local
+    zipkin:
+      enabled: false
+      base-url: http://localhost:9411

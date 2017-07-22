@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dataset>
+    <ORDER id="test-order-id" user_id="test-user-id" store_id="test-store-id" status="OPEN" time_created="2017-01-12 18:24:20.0"/>
+    <ORDER_ITEM id="1" order_id="test-order-id" store_product_id="test-store-product-id" store_item_id="test-store-item-id"
+                store_product_name="storeProductName" store_item_name="storeItemName" price="1.00" quantity="5"/>
+    <TRANSACTION/>
+</dataset>
