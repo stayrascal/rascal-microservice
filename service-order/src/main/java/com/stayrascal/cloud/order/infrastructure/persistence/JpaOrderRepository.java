@@ -1,10 +1,7 @@
 package com.stayrascal.cloud.order.infrastructure.persistence;
 
-import com.exmertec.yaz.BaseDao;
-import com.exmertec.yaz.core.OrderType;
-import com.exmertec.yaz.core.Query;
-import com.google.common.base.Strings;
-import com.google.common.collect.Lists;
+import static com.exmertec.yaz.BaseDao.field;
+
 import com.stayrascal.cloud.common.util.TimeRange;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.order.domain.entity.Order;
@@ -13,15 +10,19 @@ import com.stayrascal.cloud.order.domain.repository.OrderRepository;
 import com.stayrascal.cloud.order.infrastructure.persistence.po.OrderPo;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.query.SortQuery;
+
+import com.exmertec.yaz.BaseDao;
+import com.exmertec.yaz.core.OrderType;
+import com.exmertec.yaz.core.Query;
+import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static com.exmertec.yaz.BaseDao.field;
+import javax.persistence.EntityManager;
 
 @Component
 public class JpaOrderRepository implements OrderRepository {
@@ -63,7 +64,8 @@ public class JpaOrderRepository implements OrderRepository {
     }
 
     @Override
-    public List<Order> listOrders(SortQuery sortQuery, String id, String storeId, OrderStatus status, String pickupCode, TimeRange placedTimeRange, String userId) {
+    public List<Order> listOrders(SortQuery sortQuery, String id, String storeId, OrderStatus status,
+                                  String pickupCode, TimeRange placedTimeRange, String userId) {
         Query[] queries = generateListQueries(id, storeId, status, pickupCode, placedTimeRange, userId);
         OrderType orderType = (sortQuery.getSortType() == SortType.ASC ? OrderType.ASCENDING : OrderType.DESCENDING);
         return orderDao.where(queries).orderBy(orderType, sortQuery.getSortBy())

@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.order.facade;
 
-import com.google.common.base.Strings;
 import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.NotFoundException;
 import com.stayrascal.cloud.common.util.TimeRange;
@@ -14,6 +13,8 @@ import com.stayrascal.cloud.order.domain.mapper.OrderDtoMapper;
 import com.stayrascal.cloud.order.domain.repository.OrderRepository;
 import com.stayrascal.cloud.order.service.PickupCodeGeneratorService;
 import com.stayrascal.clould.common.contract.query.SortQuery;
+
+import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,8 @@ public class OrderFacade {
     private final PickupCodeGeneratorService pickupCodeGeneratorService;
 
     @Autowired
-    public OrderFacade(OrderFactory orderFactory, OrderRepository orderRepository, OrderDtoMapper orderDtoMapper, PickupCodeGeneratorService pickupCodeGeneratorService) {
+    public OrderFacade(OrderFactory orderFactory, OrderRepository orderRepository, OrderDtoMapper orderDtoMapper,
+                       PickupCodeGeneratorService pickupCodeGeneratorService) {
         this.orderFactory = orderFactory;
         this.orderRepository = orderRepository;
         this.orderDtoMapper = orderDtoMapper;

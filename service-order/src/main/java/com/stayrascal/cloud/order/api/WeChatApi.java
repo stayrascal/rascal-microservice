@@ -6,6 +6,7 @@ import com.stayrascal.cloud.order.contract.enumeration.TransactionProvider;
 import com.stayrascal.cloud.order.contract.result.WeChatPurchaseResult;
 import com.stayrascal.cloud.order.facade.TransactionFacade;
 import com.stayrascal.cloud.order.service.WeChatService;
+
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.mp.bean.pay.WxPayOrderNotifyResponse;
 import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
@@ -64,7 +65,8 @@ public class WeChatApi {
         String response;
         try {
             final WeChatPurchaseResult result = weChatService.purchaseResultNotify(request);
-            transactionFacade.confirmTransaction(result.getTransactionId(), TransactionProvider.WECHAT, result.getWeChatTradeId(), result.getTotalAmount());
+            transactionFacade.confirmTransaction(result.getTransactionId(), TransactionProvider.WECHAT,
+                    result.getWeChatTradeId(), result.getTotalAmount());
             response = WxPayOrderNotifyResponse.success("success");
         } catch (Exception e) {
             LOGGER.error("receive wechat notify failed, {}", e.getMessage());

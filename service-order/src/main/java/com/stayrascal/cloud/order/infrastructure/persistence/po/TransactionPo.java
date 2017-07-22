@@ -5,12 +5,12 @@ import com.stayrascal.cloud.order.contract.enumeration.TransactionClientType;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionProvider;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionStatus;
 
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "TRANSACTION")

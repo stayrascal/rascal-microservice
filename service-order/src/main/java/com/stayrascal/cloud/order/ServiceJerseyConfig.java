@@ -1,10 +1,11 @@
 package com.stayrascal.cloud.order;
 
-import com.google.common.collect.Sets;
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
 import com.stayrascal.cloud.order.api.WeChatApi;
 import com.stayrascal.cloud.order.resource.OrderResource;
 import com.stayrascal.cloud.order.resource.TransactionResource;
+
+import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

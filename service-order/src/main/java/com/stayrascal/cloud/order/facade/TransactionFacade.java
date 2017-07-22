@@ -11,6 +11,7 @@ import com.stayrascal.cloud.order.domain.entity.Transaction;
 import com.stayrascal.cloud.order.domain.factory.TransactionFactory;
 import com.stayrascal.cloud.order.domain.mapper.TransactionDtoMapper;
 import com.stayrascal.cloud.order.domain.repository.TransactionRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,8 @@ public class TransactionFacade {
     private final TransactionDtoMapper transactionDtoMapper;
 
     @Autowired
-    public TransactionFacade(TransactionFactory transactionFactory, TransactionRepository transactionRepository, OrderFacade orderFacade, TransactionDtoMapper transactionDtoMapper) {
+    public TransactionFacade(TransactionFactory transactionFactory, TransactionRepository transactionRepository,
+                             OrderFacade orderFacade, TransactionDtoMapper transactionDtoMapper) {
         this.transactionFactory = transactionFactory;
         this.transactionRepository = transactionRepository;
         this.orderFacade = orderFacade;
