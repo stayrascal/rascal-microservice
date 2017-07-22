@@ -12,7 +12,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: 'org.springframework.boot'
 
@@ -23,53 +22,22 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    compile('com.stayrascal.cloud:common-lib:1.0.0')
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("mysql:mysql-connector-java:5.1.40")
+    compile("org.dbunit:dbunit:2.5.3")
+}
 
 ext {
     springCloudVersion = 'Dalston.SR1'
 }
 
-dependencies {
-    compile project("contract")
-
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-logging")
-    compile("org.springframework.boot:spring-boot-starter-aop")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-
-    compile("org.flywaydb:flyway-core:4.2.0")
-    compile('com.stayrascal.cloud:common-lib:1.0.0')
-    compile('com.stayrascal.cloud:fill-data:1.0.0')
-
-
-    compile("org.springframework.cloud:spring-cloud-starter-config")
-    compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile("org.springframework.cloud:spring-cloud-starter-zipkin")
-
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile("io.rest-assured:rest-assured:3.0.1")
-    testCompile("io.rest-assured:json-path:3.0.1")
-    testCompile("com.exmertec.dummie:dummie:0.1.0")
-    testCompile('com.github.springtestdbunit:spring-test-dbunit:1.3.0')
-    testCompile('org.dbunit:dbunit:2.5.3')
-}
-
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
-}
-
-task unitTest(type: Test) {
-    exclude '**/functional/**'
-}
-
-task functionalTest(type: Test) {
-    include '**/functional/**'
-
-    def dataSourceUrl = System.getProperty('cloud.test.datasource.url')
-    if (dataSourceUrl != null) {
-        systemProperties['spring.datasource.url'] = dataSourceUrl
     }
 }
 
@@ -81,7 +49,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId 'com.stayrascal.cloud'
-            artifactId 'service-user'
+            artifactId 'fill-data'
             version '1.0.0'
             from components.java
 

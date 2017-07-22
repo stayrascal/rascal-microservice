@@ -1,2 +1,2 @@
 rootProject.name = 'service-user'
-include 'contract', 'common-contract', 'common-lib', 'fill-data'
+include 'contract'
