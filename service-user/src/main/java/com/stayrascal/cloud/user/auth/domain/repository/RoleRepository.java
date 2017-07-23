@@ -3,7 +3,7 @@ package com.stayrascal.cloud.user.auth.domain.repository;
 import com.stayrascal.cloud.common.ddd.Repository;
 import com.stayrascal.cloud.user.auth.domain.entity.Role;
 import com.stayrascal.cloud.user.auth.domain.entity.RolePermission;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import java.util.List;
 

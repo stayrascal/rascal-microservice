@@ -7,7 +7,7 @@ import com.stayrascal.cloud.user.admin.domain.entity.Staff;
 import com.stayrascal.cloud.user.admin.domain.factory.StaffFactory;
 import com.stayrascal.cloud.user.admin.infrastructure.persistence.JpaStaffRepository;
 import com.stayrascal.cloud.user.admin.mapper.StaffDtoMapper;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import com.stayrscal.cloud.user.admin.contract.command.CreateStaffCommand;
 import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;

@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.common.event;
 
 import com.stayrascal.cloud.common.ddd.EventSender;
-import com.stayrascal.clould.common.contract.DomainEvent;
+import com.stayrascal.cloud.common.contract.DomainEvent;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,9 +1,9 @@
 package com.stayrscal.cloud.user.auth.contract.client;
 
-import com.stayrascal.clould.common.contract.QueryMap;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
-import com.stayrascal.clould.common.contract.result.CreatedResult;
-import com.stayrascal.clould.common.contract.result.PageResult;
+import com.stayrascal.cloud.common.contract.QueryMap;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 
 import com.stayrscal.cloud.user.auth.contract.command.CreateRoleCommand;
 import com.stayrscal.cloud.user.auth.contract.command.CreateRolePermissionCommand;

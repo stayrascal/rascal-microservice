@@ -1,6 +1,6 @@
 package com.stayrscal.cloud.user.admin.contract.event;
 
-import com.stayrascal.clould.common.contract.DomainEvent;
+import com.stayrascal.cloud.common.contract.DomainEvent;
 
 public class StaffCreatedEvent implements DomainEvent {
     private String id;

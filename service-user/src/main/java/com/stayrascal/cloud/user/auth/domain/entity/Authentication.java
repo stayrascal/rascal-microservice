@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.user.auth.domain.entity;
 
-import com.stayrascal.clould.common.contract.auth.IdentityType;
+import com.stayrascal.cloud.common.contract.auth.IdentityType;
 
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 

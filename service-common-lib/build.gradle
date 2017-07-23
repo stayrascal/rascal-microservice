@@ -28,7 +28,7 @@ ext {
 }
 
 dependencies {
-    compile('com.stayrascal.cloud:common-contract:1.0.0')
+    compile('com.stayrascal.cloud:common-contract:1.0.1')
 
     compile("com.auth0:java-jwt:3.2.0")
     compile("ma.glasnost.orika:orika-core:1.5.1")
@@ -55,7 +55,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId 'com.stayrascal.cloud'
             artifactId 'common-lib'
-            version '1.0.0'
+            version '1.0.1'
             from components.java
 
             artifact sourceJar {

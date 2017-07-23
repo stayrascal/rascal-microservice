@@ -6,7 +6,7 @@ import com.stayrascal.cloud.user.auth.domain.repository.RoleRepository;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePermissionPo;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePo;
 import com.stayrascal.cloud.user.auth.mapper.RolePoMapper;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import com.exmertec.yaz.BaseDao;
 import com.exmertec.yaz.core.OrderType;

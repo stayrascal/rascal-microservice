@@ -2,12 +2,12 @@ package com.stayrscal.cloud.user.auth.contract.client;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-import com.stayrascal.clould.common.contract.QueryMap;
-import com.stayrascal.clould.common.contract.auth.Identity;
-import com.stayrascal.clould.common.contract.auth.IdentityType;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
-import com.stayrascal.clould.common.contract.result.CreatedResult;
-import com.stayrascal.clould.common.contract.result.PageResult;
+import com.stayrascal.cloud.common.contract.QueryMap;
+import com.stayrascal.cloud.common.contract.auth.Identity;
+import com.stayrascal.cloud.common.contract.auth.IdentityType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;

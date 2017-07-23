@@ -6,7 +6,7 @@ import com.stayrascal.cloud.user.admin.domain.entity.Staff;
 import com.stayrascal.cloud.user.admin.domain.repository.StaffRepository;
 import com.stayrascal.cloud.user.admin.infrastructure.persistence.po.StaffPo;
 import com.stayrascal.cloud.user.admin.mapper.StaffPoMapper;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import com.exmertec.yaz.BaseDao;
 import com.exmertec.yaz.core.OrderType;

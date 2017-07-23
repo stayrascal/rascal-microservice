@@ -8,7 +8,7 @@ import com.stayrascal.cloud.user.member.domain.entity.Member;
 import com.stayrascal.cloud.user.member.domain.factory.MemberFactory;
 import com.stayrascal.cloud.user.member.domain.repository.MemberRepository;
 import com.stayrascal.cloud.user.member.mapper.MemberDtoMapper;
-import com.stayrascal.clould.common.contract.query.SortQuery;
+import com.stayrascal.cloud.common.contract.query.SortQuery;
 
 import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
 import com.stayrscal.cloud.user.member.contract.command.UpdateMemberCommand;

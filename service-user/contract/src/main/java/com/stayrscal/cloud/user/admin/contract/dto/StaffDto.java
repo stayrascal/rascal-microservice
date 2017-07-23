@@ -1,6 +1,6 @@
 package com.stayrscal.cloud.user.admin.contract.dto;
 
-import com.stayrascal.clould.common.contract.auth.Authorization;
+import com.stayrascal.cloud.common.contract.auth.Authorization;
 
 import java.util.Date;
 import java.util.List;

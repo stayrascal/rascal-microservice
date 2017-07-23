@@ -1,18 +1,19 @@
 package com.stayrascal.cloud.common.util;
 
+import com.stayrascal.cloud.common.constant.DefaultValues;
+import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.contract.auth.Authorization;
+import com.stayrascal.cloud.common.contract.auth.Identity;
+import com.stayrascal.cloud.common.contract.auth.IdentityType;
+import com.stayrascal.cloud.common.jersey.exception.ForbiddenException;
+import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
+
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator.Builder;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.stayrascal.cloud.common.constant.DefaultValues;
-import com.stayrascal.cloud.common.constant.ErrorCode;
-import com.stayrascal.cloud.common.jersey.exception.ForbiddenException;
-import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
-import com.stayrascal.clould.common.contract.auth.Authorization;
-import com.stayrascal.clould.common.contract.auth.Identity;
-import com.stayrascal.clould.common.contract.auth.IdentityType;
 import org.joda.time.DateTime;
 
 import java.io.UnsupportedEncodingException;

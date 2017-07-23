@@ -1,6 +1,6 @@
 package com.stayrscal.cloud.user.member.contract.event;
 
-import com.stayrascal.clould.common.contract.DomainEvent;
+import com.stayrascal.cloud.common.contract.DomainEvent;
 
 public class MemberCreatedEvent implements DomainEvent {
     private String id;

@@ -3,7 +3,7 @@ package com.stayrascal.cloud.user.admin.mapper;
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.user.admin.domain.entity.Staff;
 import com.stayrascal.cloud.user.admin.domain.vo.StaffAuthorization;
-import com.stayrascal.clould.common.contract.auth.Authorization;
+import com.stayrascal.cloud.common.contract.auth.Authorization;
 
 import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
 import org.springframework.stereotype.Component;

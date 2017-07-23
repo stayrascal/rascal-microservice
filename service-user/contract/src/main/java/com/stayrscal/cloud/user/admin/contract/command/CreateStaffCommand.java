@@ -1,6 +1,6 @@
 package com.stayrscal.cloud.user.admin.contract.command;
 
-import com.stayrascal.clould.common.contract.auth.Authorization;
+import com.stayrascal.cloud.common.contract.auth.Authorization;
 
 import java.util.List;
 
