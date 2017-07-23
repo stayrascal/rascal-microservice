@@ -1,6 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
+[compileJava]*.options*.compilerArgs = ['-parameters']
+
 dependencies {
     compile('com.stayrascal.cloud:common-contract:1.0.0')
     compile("org.springframework.cloud:spring-cloud-starter-feign")
@@ -14,8 +16,8 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId 'com.stayrascal.cloud'
-            artifactId 'product-contract'
-            version '1.0.0'
+            artifactId rootProject.name + '-contract'
+            /*artifact file("build/libs/contract-${project.version}.jar")*/
             from components.java
 
             artifact sourceJar {
