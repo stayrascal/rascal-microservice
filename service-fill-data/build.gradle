@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    compile('com.stayrascal.cloud:common-lib:1.0.0')
+    compile('com.stayrascal.cloud:common-lib:1.0.2')
 
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-actuator")
