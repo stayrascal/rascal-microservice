@@ -11,6 +11,7 @@ import com.stayrascal.cloud.user.auth.domain.service.RandomKeyService;
 import com.stayrascal.cloud.user.auth.external.adapter.EmailServiceAdapter;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.AuthenticationKeyPo;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.AuthenticationPo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

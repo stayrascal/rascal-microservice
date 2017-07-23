@@ -1,8 +1,10 @@
 package com.stayrascal.cloud.user.admin.infrastructure.persistence.po;
 
 import com.stayrascal.cloud.common.jpa.BasePo;
+
 import com.stayrscal.cloud.user.admin.contract.StaffStatus;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +14,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Entity
 @Table(name = "STAFF")

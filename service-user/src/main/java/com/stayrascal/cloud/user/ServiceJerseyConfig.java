@@ -1,11 +1,12 @@
 package com.stayrascal.cloud.user;
 
-import com.google.common.collect.Sets;
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
 import com.stayrascal.cloud.user.admin.resource.StaffResource;
 import com.stayrascal.cloud.user.auth.resource.AuthenticationResource;
 import com.stayrascal.cloud.user.auth.resource.RoleResource;
 import com.stayrascal.cloud.user.member.resource.MemberResource;
+
+import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +16,7 @@ import java.util.Set;
 
 @Configuration
 @ComponentScan("com.stayrascal.cloud.common.jersey")
-public class ServiceJerseyConfig  extends JerseyConfig{
+public class ServiceJerseyConfig extends JerseyConfig {
 
     @Autowired
     public ServiceJerseyConfig(Environment env) {

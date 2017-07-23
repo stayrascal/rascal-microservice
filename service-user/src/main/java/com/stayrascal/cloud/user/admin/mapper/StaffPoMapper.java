@@ -5,6 +5,7 @@ import com.stayrascal.cloud.user.admin.domain.entity.Staff;
 import com.stayrascal.cloud.user.admin.domain.vo.StaffAuthorization;
 import com.stayrascal.cloud.user.admin.infrastructure.persistence.po.StaffAuthorizationPo;
 import com.stayrascal.cloud.user.admin.infrastructure.persistence.po.StaffPo;
+
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;

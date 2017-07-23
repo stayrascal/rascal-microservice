@@ -4,6 +4,7 @@ import com.stayrascal.cloud.user.admin.facade.StaffFacade;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.result.CreatedResult;
 import com.stayrascal.clould.common.contract.result.PageResult;
+
 import com.stayrscal.cloud.user.admin.contract.command.CreateStaffCommand;
 import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
 import io.swagger.annotations.Api;
@@ -14,6 +15,8 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.net.URI;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -24,8 +27,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.net.URI;
-import java.util.List;
 
 @Component
 @Path("staffs")

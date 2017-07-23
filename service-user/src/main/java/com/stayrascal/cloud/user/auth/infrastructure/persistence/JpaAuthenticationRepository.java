@@ -1,23 +1,24 @@
 package com.stayrascal.cloud.user.auth.infrastructure.persistence;
 
-import com.exmertec.yaz.BaseDao;
-import com.exmertec.yaz.core.OrderType;
-import com.exmertec.yaz.core.Query;
 import com.stayrascal.cloud.user.auth.domain.entity.Authentication;
 import com.stayrascal.cloud.user.auth.domain.repository.AuthenticationRepository;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.AuthenticationPo;
 import com.stayrascal.cloud.user.auth.mapper.AuthenticationPoMapper;
 import com.stayrascal.clould.common.contract.auth.IdentityType;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
+
+import com.exmertec.yaz.BaseDao;
+import com.exmertec.yaz.core.OrderType;
+import com.exmertec.yaz.core.Query;
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import javax.persistence.EntityManager;
 
 @Component
 public class JpaAuthenticationRepository implements AuthenticationRepository {

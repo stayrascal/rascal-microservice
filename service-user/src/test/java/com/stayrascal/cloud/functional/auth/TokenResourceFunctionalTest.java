@@ -1,20 +1,20 @@
 package com.stayrascal.cloud.functional.auth;
 
-
-import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.stayrascal.cloud.common.constant.DefaultValues;
-import com.stayrascal.cloud.common.util.JwtTokenCodec;
-import com.stayrascal.cloud.functional.BaseFunctionalTest;
-import com.stayrascal.clould.common.contract.auth.Identity;
-import com.stayrascal.clould.common.contract.auth.IdentityType;
-import com.stayrscal.cloud.user.auth.contract.command.CreateTokenCommand;
-import org.junit.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.hamcrest.Matchers.not;
+
+import com.stayrascal.cloud.common.constant.DefaultValues;
+import com.stayrascal.cloud.common.util.JwtTokenCodec;
+import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.clould.common.contract.auth.Identity;
+import com.stayrascal.clould.common.contract.auth.IdentityType;
+
+import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.stayrscal.cloud.user.auth.contract.command.CreateTokenCommand;
+import org.junit.Test;
 
 @DatabaseSetup(value = "classpath:auth/tokenResourceTest.xml")
 public class TokenResourceFunctionalTest extends BaseFunctionalTest {

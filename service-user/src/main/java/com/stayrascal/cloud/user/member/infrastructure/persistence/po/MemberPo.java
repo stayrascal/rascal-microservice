@@ -1,15 +1,16 @@
 package com.stayrascal.cloud.user.member.infrastructure.persistence.po;
 
 import com.stayrascal.cloud.common.jpa.BasePo;
+
 import com.stayrscal.cloud.user.member.contract.Gender;
 import com.stayrscal.cloud.user.member.contract.MemberStatus;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
-import java.util.Date;
 
 
 @Entity

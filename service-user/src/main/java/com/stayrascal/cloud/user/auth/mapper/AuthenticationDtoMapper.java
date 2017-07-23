@@ -3,6 +3,7 @@ package com.stayrascal.cloud.user.auth.mapper;
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.user.auth.domain.entity.Authentication;
 import com.stayrascal.cloud.user.auth.domain.entity.AuthenticationKey;
+
 import com.stayrscal.cloud.user.auth.contract.dto.AuthenticationDto;
 import com.stayrscal.cloud.user.auth.contract.dto.AuthenticationKeyDto;
 import org.springframework.stereotype.Component;

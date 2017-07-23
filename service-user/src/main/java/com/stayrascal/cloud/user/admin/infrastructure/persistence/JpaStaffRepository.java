@@ -1,8 +1,5 @@
 package com.stayrascal.cloud.user.admin.infrastructure.persistence;
 
-import com.exmertec.yaz.BaseDao;
-import com.exmertec.yaz.core.OrderType;
-import com.exmertec.yaz.core.Query;
 import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
 import com.stayrascal.cloud.user.admin.domain.entity.Staff;
@@ -10,12 +7,16 @@ import com.stayrascal.cloud.user.admin.domain.repository.StaffRepository;
 import com.stayrascal.cloud.user.admin.infrastructure.persistence.po.StaffPo;
 import com.stayrascal.cloud.user.admin.mapper.StaffPoMapper;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
+
+import com.exmertec.yaz.BaseDao;
+import com.exmertec.yaz.core.OrderType;
+import com.exmertec.yaz.core.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
+import javax.persistence.EntityManager;
 
 @Component
 public class JpaStaffRepository implements StaffRepository {

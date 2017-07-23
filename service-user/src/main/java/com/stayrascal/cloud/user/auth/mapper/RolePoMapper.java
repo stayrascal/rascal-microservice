@@ -5,6 +5,7 @@ import com.stayrascal.cloud.user.auth.domain.entity.Role;
 import com.stayrascal.cloud.user.auth.domain.entity.RolePermission;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePermissionPo;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePo;
+
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;

@@ -1,9 +1,10 @@
 package com.stayrascal.cloud.functional;
 
-import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
-import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import com.stayrascal.cloud.common.constant.EnvProfile;
 import com.stayrascal.cloud.user.Application;
+
+import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -23,9 +24,9 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 @ContextConfiguration
 @Import(DbUnitConfig.class)
 @Rollback
-@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,
+@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         DirtiesContextTestExecutionListener.class,
-        TransactionDbUnitTestExecutionListener.class })
+        TransactionDbUnitTestExecutionListener.class})
 @ActiveProfiles({EnvProfile.TEST})
 @DbUnitConfiguration(databaseConnection = "dbUnitDatabaseConnection")
 public abstract class BaseFunctionalTest {

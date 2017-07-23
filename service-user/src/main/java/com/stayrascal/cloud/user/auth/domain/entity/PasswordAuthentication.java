@@ -1,10 +1,11 @@
 package com.stayrascal.cloud.user.auth.domain.entity;
 
-import com.google.common.collect.Lists;
 import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.BadRequestException;
 import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
 import com.stayrascal.cloud.common.util.HashUtil;
+
+import com.google.common.collect.Lists;
 import org.joda.time.DateTime;
 
 import java.util.Date;

@@ -1,11 +1,14 @@
 package com.stayrscal.cloud.user.auth.contract.client;
 
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
 import com.stayrascal.clould.common.contract.QueryMap;
 import com.stayrascal.clould.common.contract.auth.Identity;
 import com.stayrascal.clould.common.contract.auth.IdentityType;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.result.CreatedResult;
 import com.stayrascal.clould.common.contract.result.PageResult;
+
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
 import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationKeyCommand;
@@ -18,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
-
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @FeignClient(name = "service-user")
 public interface AuthServiceClient {

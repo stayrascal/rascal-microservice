@@ -5,6 +5,7 @@ import com.stayrascal.cloud.user.auth.facade.RoleFacade;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.result.CreatedResult;
 import com.stayrascal.clould.common.contract.result.PageResult;
+
 import com.stayrscal.cloud.user.auth.contract.command.CreateRoleCommand;
 import com.stayrscal.cloud.user.auth.contract.command.CreateRolePermissionCommand;
 import com.stayrscal.cloud.user.auth.contract.dto.RoleDto;
@@ -16,6 +17,7 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -29,7 +31,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import java.util.List;
 
 @Component
 @Path("roles")

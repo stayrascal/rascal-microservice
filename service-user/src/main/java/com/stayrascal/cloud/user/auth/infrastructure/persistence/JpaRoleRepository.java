@@ -1,7 +1,5 @@
 package com.stayrascal.cloud.user.auth.infrastructure.persistence;
 
-import com.exmertec.yaz.BaseDao;
-import com.exmertec.yaz.core.OrderType;
 import com.stayrascal.cloud.user.auth.domain.entity.Role;
 import com.stayrascal.cloud.user.auth.domain.entity.RolePermission;
 import com.stayrascal.cloud.user.auth.domain.repository.RoleRepository;
@@ -9,13 +7,16 @@ import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePermissi
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePo;
 import com.stayrascal.cloud.user.auth.mapper.RolePoMapper;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
+
+import com.exmertec.yaz.BaseDao;
+import com.exmertec.yaz.core.OrderType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import javax.persistence.EntityManager;
 
 @Component
 public class JpaRoleRepository implements RoleRepository {

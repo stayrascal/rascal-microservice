@@ -1,18 +1,19 @@
 package com.stayrascal.cloud.functional.admin;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
+import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.clould.common.contract.enumeration.SortType;
+
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseSetups;
-import com.stayrascal.cloud.functional.BaseFunctionalTest;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrscal.cloud.user.admin.contract.command.CreateStaffCommand;
 import org.junit.Test;
 
 import java.util.ArrayList;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 
 @DatabaseSetups({
         @DatabaseSetup(value = "classpath:admin/StaffResourceFunctionalTest.xml", type = DatabaseOperation.TRUNCATE_TABLE),

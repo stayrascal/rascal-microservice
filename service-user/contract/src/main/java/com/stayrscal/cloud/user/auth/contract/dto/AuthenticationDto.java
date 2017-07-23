@@ -1,6 +1,7 @@
 package com.stayrscal.cloud.user.auth.contract.dto;
 
 import com.stayrascal.clould.common.contract.auth.Identity;
+
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 
 import java.util.List;

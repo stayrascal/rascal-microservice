@@ -4,6 +4,7 @@ import com.stayrascal.clould.common.contract.QueryMap;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.result.CreatedResult;
 import com.stayrascal.clould.common.contract.result.PageResult;
+
 import com.stayrscal.cloud.user.admin.contract.command.CreateStaffCommand;
 import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.ws.rs.core.MediaType;
 import java.util.Map;
+import javax.ws.rs.core.MediaType;
 
 @FeignClient(value = "service-user")
 public interface StaffServiceClient {

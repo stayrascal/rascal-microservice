@@ -1,19 +1,20 @@
 package com.stayrascal.cloud.functional.member;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
+import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.clould.common.contract.enumeration.SortType;
+
 import com.exmertec.dummie.Dummie;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseSetups;
-import com.stayrascal.cloud.functional.BaseFunctionalTest;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrscal.cloud.user.member.contract.Gender;
 import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
 import com.stayrscal.cloud.user.member.contract.command.UpdateMemberCommand;
 import org.junit.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 
 @DatabaseSetups({
         @DatabaseSetup(value = "classpath:member/MemberResourceFunctionalTest.xml",
