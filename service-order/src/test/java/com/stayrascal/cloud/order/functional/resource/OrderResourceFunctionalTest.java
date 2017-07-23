@@ -1,20 +1,21 @@
 package com.stayrascal.cloud.order.functional.resource;
 
-import com.exmertec.dummie.Dummie;
-import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.github.springtestdbunit.annotation.DatabaseTearDown;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
 import com.stayrascal.cloud.order.contract.command.CreateOrderCommand;
 import com.stayrascal.cloud.order.contract.command.UpdateOrderCommand;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.product.contract.dto.StoreProductDto;
+
+import com.exmertec.dummie.Dummie;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.github.springtestdbunit.annotation.DatabaseTearDown;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 
 @DatabaseSetup("classpath:OrderResourceFunctionalTest.xml")
 @DatabaseTearDown("classpath:OrderResourceFunctionalTest.xml")

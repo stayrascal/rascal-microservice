@@ -55,17 +55,17 @@ public class TransactionFacade {
                 ErrorCode.INTERNAL_ERROR, "Transaction of id {} not found", transactionId));
     }
 
-    public void confirmTransaction(String tranactionId, TransactionProvider provider, String thirdPartyTransactionId, Double totalAmount) {
-        Optional<Transaction> transactionOptional = transactionRepository.ofId(tranactionId);
+    public void confirmTransaction(String transactionId, TransactionProvider provider, String thirdPartyTransactionId, Double totalAmount) {
+        Optional<Transaction> transactionOptional = transactionRepository.ofId(transactionId);
         if (!transactionOptional.isPresent()) {
             // TODO: should we throw exception in this case? how can we track this payment?
-            throw new BadRequestException(ErrorCode.INTERNAL_ERROR, "Failed to confirm transaction, due to id {} not found", tranactionId);
+            throw new BadRequestException(ErrorCode.INTERNAL_ERROR, "Failed to confirm transaction, due to id {} not found", transactionId);
         }
         Transaction transaction = transactionOptional.get();
         transaction.confirm(provider, thirdPartyTransactionId, totalAmount);
 
         transactionRepository.update(transaction);
 
-        orderFacade.finishTransaction(transaction.getOrderId(), tranactionId);
+        orderFacade.finishTransaction(transaction.getOrderId(), transactionId);
     }
 }

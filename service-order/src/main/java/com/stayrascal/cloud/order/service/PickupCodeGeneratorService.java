@@ -1,14 +1,15 @@
 package com.stayrascal.cloud.order.service;
 
-import com.exmertec.yaz.BaseDao;
+import static com.exmertec.yaz.BaseDao.field;
+
 import com.stayrascal.cloud.order.infrastructure.persistence.po.PickupCodeSeedPo;
+
+import com.exmertec.yaz.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
-
-import static com.exmertec.yaz.BaseDao.field;
 
 @Component
 public class PickupCodeGeneratorService {

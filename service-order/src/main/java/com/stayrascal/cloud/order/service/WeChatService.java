@@ -5,6 +5,7 @@ import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
 import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
 import com.stayrascal.cloud.order.contract.enumeration.WeChatTradeType;
 import com.stayrascal.cloud.order.contract.result.WeChatPurchaseResult;
+
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpPayService;
@@ -14,19 +15,16 @@ import me.chanjar.weixin.mp.bean.pay.request.WxPayUnifiedOrderRequest;
 import me.chanjar.weixin.mp.bean.pay.result.WxPayOrderNotifyResult;
 import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
 import org.apache.commons.io.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 
 @Component
 public class WeChatService {
-    private static final Logger LOG = LoggerFactory.getLogger(WeChatService.class);
 
     @Value("${cloud.transaction.weChat.appId}")
     private String appId;

@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.order.contract.dto;
 
-import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.order.contract.enumeration.DeliveryMethod;
+import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 
 import java.util.Date;
 import java.util.List;

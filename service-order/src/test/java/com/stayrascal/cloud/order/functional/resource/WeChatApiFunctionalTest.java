@@ -1,18 +1,20 @@
 package com.stayrascal.cloud.order.functional.resource;
 
-import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.github.springtestdbunit.annotation.DatabaseTearDown;
+import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.is;
+
 import com.stayrascal.cloud.order.contract.dto.OrderDto;
 import com.stayrascal.cloud.order.contract.dto.TransactionDto;
 import com.stayrascal.cloud.order.contract.enumeration.TransactionStatus;
 import com.stayrascal.cloud.order.facade.OrderFacade;
 import com.stayrascal.cloud.order.facade.TransactionFacade;
+
+import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.github.springtestdbunit.annotation.DatabaseTearDown;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.is;
 
 @DatabaseSetup("classpath:WeChatApiFunctionalTest.xml")
 @DatabaseTearDown("classpath:WeChatApiFunctionalTest.xml")
@@ -25,6 +27,7 @@ public class WeChatApiFunctionalTest extends BaseFunctionalTest {
     private TransactionFacade transactionFacade;
 
     @Test
+    @Ignore
     public void shouldSuccessCreateTransaction() throws Exception {
         String weChatNotifyBody = "<xml>\n"
                 + "  <appid><![CDATA[wxcf0848f15d297fb3]]></appid>\n"

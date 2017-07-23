@@ -1,9 +1,10 @@
 package com.stayrascal.cloud.order.functional.resource;
 
-import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
-import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import com.stayrascal.cloud.common.constant.EnvProfile;
 import com.stayrascal.cloud.order.Application;
+
+import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
         TransactionDbUnitTestExecutionListener.class})
 @ActiveProfiles({EnvProfile.TEST})
 @DbUnitConfiguration(databaseConnection = "dbUnitDatabaseConnection")
-public class BaseFunctionalTest {
+public abstract class BaseFunctionalTest {
     @LocalServerPort
     private int port;
 

@@ -4,6 +4,8 @@ import com.stayrascal.cloud.common.jpa.BasePo;
 import com.stayrascal.cloud.order.contract.enumeration.DeliveryMethod;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 
+import java.util.Date;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +15,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "[ORDER]")

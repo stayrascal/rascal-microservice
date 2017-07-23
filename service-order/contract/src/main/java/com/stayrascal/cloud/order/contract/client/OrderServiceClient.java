@@ -8,6 +8,7 @@ import com.stayrascal.clould.common.contract.QueryMap;
 import com.stayrascal.clould.common.contract.enumeration.SortType;
 import com.stayrascal.clould.common.contract.result.CreatedResult;
 import com.stayrascal.clould.common.contract.result.PageResult;
+
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.ws.rs.core.MediaType;
 import java.util.Map;
+import javax.ws.rs.core.MediaType;
 
 @FeignClient(value = "service-order")
 public interface OrderServiceClient {
