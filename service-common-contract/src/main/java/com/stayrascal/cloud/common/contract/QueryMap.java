@@ -1,4 +1,4 @@
-package com.stayrascal.clould.common.contract;
+package com.stayrascal.cloud.common.contract;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;

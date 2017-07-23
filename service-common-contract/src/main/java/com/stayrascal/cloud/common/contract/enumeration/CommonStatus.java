@@ -1,4 +1,4 @@
-package com.stayrascal.clould.common.contract.enumeration;
+package com.stayrascal.cloud.common.contract.enumeration;
 
 public enum CommonStatus {
     ENABLED,

@@ -1,4 +1,4 @@
-package com.stayrascal.clould.common.contract.result;
+package com.stayrascal.cloud.common.contract.result;
 
 public class CreatedResult {
     private String id;

@@ -1,4 +1,4 @@
-package com.stayrascal.clould.common.contract;
+package com.stayrascal.cloud.common.contract;
 
 import java.io.Serializable;
 

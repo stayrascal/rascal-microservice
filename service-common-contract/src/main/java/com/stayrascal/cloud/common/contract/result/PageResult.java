@@ -1,4 +1,4 @@
-package com.stayrascal.clould.common.contract.result;
+package com.stayrascal.cloud.common.contract.result;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
