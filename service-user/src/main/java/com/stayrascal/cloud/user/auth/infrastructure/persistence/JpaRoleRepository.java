@@ -1,12 +1,12 @@
 package com.stayrascal.cloud.user.auth.infrastructure.persistence;
 
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.user.auth.domain.entity.Role;
 import com.stayrascal.cloud.user.auth.domain.entity.RolePermission;
 import com.stayrascal.cloud.user.auth.domain.repository.RoleRepository;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePermissionPo;
 import com.stayrascal.cloud.user.auth.infrastructure.persistence.po.RolePo;
 import com.stayrascal.cloud.user.auth.mapper.RolePoMapper;
-import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import com.exmertec.yaz.BaseDao;
 import com.exmertec.yaz.core.OrderType;

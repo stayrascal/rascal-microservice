@@ -2,6 +2,9 @@ package com.stayrascal.cloud.user.auth.facade;
 
 import com.stayrascal.cloud.common.constant.DefaultValues;
 import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.contract.auth.Identity;
+import com.stayrascal.cloud.common.contract.auth.IdentityType;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.jersey.exception.NotFoundException;
 import com.stayrascal.cloud.common.jersey.exception.ServerErrorException;
 import com.stayrascal.cloud.common.util.JwtTokenCodec;
@@ -11,9 +14,6 @@ import com.stayrascal.cloud.user.auth.domain.entity.AuthenticationKey;
 import com.stayrascal.cloud.user.auth.domain.factory.AuthenticationFactory;
 import com.stayrascal.cloud.user.auth.domain.repository.AuthenticationRepository;
 import com.stayrascal.cloud.user.auth.mapper.AuthenticationDtoMapper;
-import com.stayrascal.cloud.common.contract.auth.Identity;
-import com.stayrascal.cloud.common.contract.auth.IdentityType;
-import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;

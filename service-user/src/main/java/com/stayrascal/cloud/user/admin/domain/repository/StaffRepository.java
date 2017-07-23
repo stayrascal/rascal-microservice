@@ -1,8 +1,8 @@
 package com.stayrascal.cloud.user.admin.domain.repository;
 
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.ddd.Repository;
 import com.stayrascal.cloud.user.admin.domain.entity.Staff;
-import com.stayrascal.cloud.common.contract.enumeration.SortType;
 
 import java.util.List;
 

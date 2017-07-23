@@ -2,12 +2,12 @@ package com.stayrascal.cloud.user.member.infrastructure.persistence;
 
 import static com.stayrascal.cloud.common.jpa.QueryHelper.list;
 
+import com.stayrascal.cloud.common.contract.query.SortQuery;
 import com.stayrascal.cloud.common.jpa.BaseJpaRepository;
 import com.stayrascal.cloud.user.member.domain.entity.Member;
 import com.stayrascal.cloud.user.member.domain.repository.MemberRepository;
 import com.stayrascal.cloud.user.member.infrastructure.persistence.po.MemberPo;
 import com.stayrascal.cloud.user.member.mapper.MemberPoMapper;
-import com.stayrascal.cloud.common.contract.query.SortQuery;
 
 import com.exmertec.yaz.BaseDao;
 import com.google.common.base.Strings;

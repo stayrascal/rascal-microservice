@@ -4,8 +4,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
 
 import com.exmertec.dummie.Dummie;
 import com.github.springtestdbunit.annotation.DatabaseOperation;

@@ -1,8 +1,8 @@
 package com.stayrascal.cloud.user.member.domain.repository;
 
+import com.stayrascal.cloud.common.contract.query.SortQuery;
 import com.stayrascal.cloud.common.ddd.Repository;
 import com.stayrascal.cloud.user.member.domain.entity.Member;
-import com.stayrascal.cloud.common.contract.query.SortQuery;
 
 import java.util.List;
 

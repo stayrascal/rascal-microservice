@@ -7,10 +7,10 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.hamcrest.Matchers.not;
 
 import com.stayrascal.cloud.common.constant.DefaultValues;
+import com.stayrascal.cloud.common.contract.auth.Identity;
+import com.stayrascal.cloud.common.contract.auth.IdentityType;
 import com.stayrascal.cloud.common.util.JwtTokenCodec;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
-import com.stayrascal.clould.common.contract.auth.Identity;
-import com.stayrascal.clould.common.contract.auth.IdentityType;
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.stayrscal.cloud.user.auth.contract.command.CreateTokenCommand;

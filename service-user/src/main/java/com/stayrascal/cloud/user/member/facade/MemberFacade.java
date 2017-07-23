@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.user.member.facade;
 
 import com.stayrascal.cloud.common.constant.ErrorCode;
+import com.stayrascal.cloud.common.contract.query.SortQuery;
 import com.stayrascal.cloud.common.ddd.EventSender;
 import com.stayrascal.cloud.common.jersey.exception.NotFoundException;
 import com.stayrascal.cloud.user.auth.facade.AuthFacade;
@@ -8,7 +9,6 @@ import com.stayrascal.cloud.user.member.domain.entity.Member;
 import com.stayrascal.cloud.user.member.domain.factory.MemberFactory;
 import com.stayrascal.cloud.user.member.domain.repository.MemberRepository;
 import com.stayrascal.cloud.user.member.mapper.MemberDtoMapper;
-import com.stayrascal.cloud.common.contract.query.SortQuery;
 
 import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
 import com.stayrscal.cloud.user.member.contract.command.UpdateMemberCommand;

@@ -1,12 +1,12 @@
 package com.stayrascal.cloud.user.auth.resource;
 
-import com.stayrascal.cloud.common.jersey.JerseyHelpers;
-import com.stayrascal.cloud.user.auth.facade.AuthFacade;
 import com.stayrascal.cloud.common.contract.auth.Identity;
 import com.stayrascal.cloud.common.contract.auth.IdentityType;
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
+import com.stayrascal.cloud.common.jersey.JerseyHelpers;
+import com.stayrascal.cloud.user.auth.facade.AuthFacade;
 
 import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
 import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
