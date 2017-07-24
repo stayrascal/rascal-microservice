@@ -2,10 +2,10 @@ package com.stayrascal.cloud.order.resource;
 
 import static com.stayrascal.cloud.common.jersey.JerseyHelpers.uriOfCreated;
 
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.order.contract.command.CreateTransactionCommand;
 import com.stayrascal.cloud.order.contract.dto.TransactionDto;
 import com.stayrascal.cloud.order.facade.TransactionFacade;
-import com.stayrascal.clould.common.contract.result.CreatedResult;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

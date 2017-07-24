@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  datasource:
+    url: jdbc:mysql://127.0.0.1/service_product
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+
+---
+spring:
+  profiles: k8s_dev
+  cloud:
+    config:
+      uri: http://service-configuration-service:8888

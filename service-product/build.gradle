@@ -2,6 +2,7 @@ if (project.is(rootProject)) {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'jacoco'
+    
 
     configurations.all {
         resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
@@ -11,7 +12,7 @@ if (project.is(rootProject)) {
     targetCompatibility = 1.8
 
     jar {
-        baseName = 'service-order'
+        baseName = 'service-product'
         version = ''
     }
 
@@ -107,7 +108,12 @@ if (project.is(rootProject)) {
         }
     }
 
-    idea {
+    task wrapper(type: Wrapper) {
+        gradleVersion = '3.5'
+    }
+}
+
+idea {
         project {
             languageLevel = '1.8'
             jdkName = '1.8'
@@ -122,10 +128,6 @@ if (project.is(rootProject)) {
         }
     }
 
-    task wrapper(type: Wrapper) {
-        gradleVersion = '3.5'
-    }
-}
 
 buildscript {
     ext {
@@ -140,8 +142,6 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-
 allprojects {
     version = '1.0.0'
 }
@@ -152,15 +152,16 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-logging")
+    compile("org.springframework.boot:spring-boot-starter-aop")
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("com.github.binarywang:weixin-java-mp:2.5.0")
+
+    compile("org.flywaydb:flyway-core:4.2.0")
+    compile('com.stayrascal.cloud:common-lib:1.0.0')
+    compile('com.stayrascal.cloud:fill-data:1.0.0')
 
 
     compile("org.springframework.cloud:spring-cloud-starter-config")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile("org.springframework.cloud:spring-cloud-starter-zipkin")
-    compile("org.flywaydb:flyway-core:4.2.0")
-    compile('com.stayrascal.cloud:common-lib:1.0.2')
-    compile('com.stayrascal.cloud:fill-data:1.0.1')
-    compile('com.stayrascal.cloud:product-contract:1.0.0')
+
 }

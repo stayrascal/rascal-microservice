@@ -1,13 +1,13 @@
 package com.stayrascal.cloud.order.functional.resource;
 
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.product.contract.client.StoreProductServiceClient;
 import com.stayrascal.cloud.product.contract.command.CreateStoreProductCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateStoreItemQuantityCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateStoreProductCommand;
 import com.stayrascal.cloud.product.contract.dto.StoreProductDto;
 import com.stayrascal.cloud.product.contract.enumeration.ProductStatus;
-import com.stayrascal.clould.common.contract.result.CreatedResult;
-import com.stayrascal.clould.common.contract.result.PageResult;
 
 import com.exmertec.dummie.Dummie;
 import org.springframework.stereotype.Component;

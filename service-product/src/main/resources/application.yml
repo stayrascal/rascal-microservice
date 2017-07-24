@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: service-product
+  aop:
+    auto: true
+    proxy-target-class: true
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jersey:
+    application-path: /rest
+
+flyway:
+  enabled: true
+  out-of-order: true
+  encoding: UTF-8
+
+cloud:
+  jersey:
+    access_control_allow_origin: '*'
+
+  auth:
+    admin_token_expire_minutes: 30
+    allow_public_access: true
+
+server:
+  port: 8080
+  context-path: /
+  servlet-path: /
+
+management:
+  context-path: /system
+
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:h2:mem:service_product;DB_CLOSE_DELAY=-1;MODE=MySQL;INIT=RUNSCRIPT FROM 'classpath:init_test_db.sql';
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+---
+spring:
+  profiles: production

@@ -1,12 +1,12 @@
 package com.stayrascal.cloud.order.functional.resource;
 
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.product.contract.client.ProductServiceClient;
 import com.stayrascal.cloud.product.contract.command.CreateProductCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateProductInfoCommand;
 import com.stayrascal.cloud.product.contract.dto.ProductDto;
-import com.stayrascal.clould.common.contract.enumeration.SortType;
-import com.stayrascal.clould.common.contract.result.CreatedResult;
-import com.stayrascal.clould.common.contract.result.PageResult;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
