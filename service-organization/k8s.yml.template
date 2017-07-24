@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: service-organization-deployment
+  namespace: {ENV}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-organization
+    spec:
+      containers:
+        - name: service-organization
+          image: registry.exmertec.com/service/organization:{IMAGE_VERSION}
+          livenessProbe:
+            httpGet:
+              path: /system/health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            timeoutSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /system/health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            timeoutSeconds: 20
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: k8s_dev
+      imagePullSecrets:
+        - name: regsecret
+      nodeSelector:
+        service/node-type: env-{ENV}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-organization-service
+  namespace: {ENV}
+spec:
+  selector:
+    app: service-organization
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
