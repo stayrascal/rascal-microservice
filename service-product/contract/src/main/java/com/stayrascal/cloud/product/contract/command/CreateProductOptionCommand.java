@@ -9,6 +9,11 @@ public class CreateProductOptionCommand {
     public CreateProductOptionCommand() {
     }
 
+    public CreateProductOptionCommand(String name, Set<String> values) {
+        this.name = name;
+        this.values = values;
+    }
+
     public String getName() {
         return this.name;
     }

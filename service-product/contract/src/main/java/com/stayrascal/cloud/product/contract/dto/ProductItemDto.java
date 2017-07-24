@@ -3,13 +3,13 @@ package com.stayrascal.cloud.product.contract.dto;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class ItemDto {
+public class ProductItemDto {
     private String id;
     private String productId;
     private BigDecimal price;
     private List<OptionPair> optionPairs;
 
-    public ItemDto() {
+    public ProductItemDto() {
     }
 
     public String getId() {

@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.product.resource;
 
 import com.stayrascal.cloud.product.contract.command.CreateProductCommand;
-import com.stayrascal.cloud.product.contract.command.UpdateProductInfoCommand;
+import com.stayrascal.cloud.product.contract.command.UpdateProductCommand;
 import com.stayrascal.cloud.product.contract.dto.ProductDto;
 import com.stayrascal.cloud.product.facade.ProductFacade;
 
@@ -70,7 +70,7 @@ public class ProductResource {
         @ApiResponse(code = 404, message = "Could not find product by id")
     })
     public Response updateProductInfo(@NotNull @PathParam("id") String productId,
-                                      @NotNull UpdateProductInfoCommand command) {
+                                      @NotNull UpdateProductCommand command) {
         productFacade.updateProductInfo(productId, command);
 
         return Response.ok().build();

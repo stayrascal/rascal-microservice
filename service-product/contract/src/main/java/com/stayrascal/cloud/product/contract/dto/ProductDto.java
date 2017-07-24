@@ -1,7 +1,7 @@
 package com.stayrascal.cloud.product.contract.dto;
 
 
-import com.stayrascal.cloud.product.contract.enumeration.CommonStatus;
+import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
 
 import java.util.Date;
 import java.util.List;
@@ -13,7 +13,7 @@ public class ProductDto {
     private String description;
     private String thumbnail;
     private CommonStatus status;
-    private List<ItemDto> items;
+    private List<ProductItemDto> items;
     private Date timeCreated;
 
     public ProductDto() {
@@ -35,11 +35,11 @@ public class ProductDto {
         this.category = category;
     }
 
-    public List<ItemDto> getItems() {
+    public List<ProductItemDto> getItems() {
         return this.items;
     }
 
-    public void setItems(List<ItemDto> items) {
+    public void setItems(List<ProductItemDto> items) {
         this.items = items;
     }
 

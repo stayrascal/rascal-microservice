@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-public class StoreItemDto {
+public class StoreProductItemDto {
     private String id;
     private String storeProductId;
     private String itemId;
@@ -14,7 +14,7 @@ public class StoreItemDto {
     private Date timeCreated;
     private List<OptionPair> optionPairs;
 
-    public StoreItemDto() {
+    public StoreProductItemDto() {
     }
 
     public String getId() {

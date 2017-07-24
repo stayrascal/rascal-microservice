@@ -10,6 +10,7 @@ public class CreateProductCommand {
     private String thumbnail;
     private String categoryId;
     private List<OptionDto> options;
+    private List<CreateProductItemCommand> createProductItemCommands;
 
     public CreateProductCommand() {
     }
@@ -52,5 +53,13 @@ public class CreateProductCommand {
 
     public void setOptions(List<OptionDto> options) {
         this.options = options;
+    }
+
+    public List<CreateProductItemCommand> getCreateProductItemCommands() {
+        return createProductItemCommands;
+    }
+
+    public void setCreateProductItemCommands(List<CreateProductItemCommand> createProductItemCommands) {
+        this.createProductItemCommands = createProductItemCommands;
     }
 }

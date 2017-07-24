@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.product.contract.dto;
 
-import com.stayrascal.cloud.product.contract.enumeration.ProductStatus;
+import com.stayrascal.cloud.product.contract.enumeration.StoreProductStatus;
 
 import java.util.Date;
 import java.util.List;
@@ -13,8 +13,8 @@ public class StoreProductDto {
     private String name;
     private String description;
     private String thumbnail;
-    private List<StoreItemDto> items;
-    private ProductStatus status;
+    private List<StoreProductItemDto> items;
+    private StoreProductStatus status;
     private Date timeCreated;
 
     public StoreProductDto() {
@@ -52,11 +52,11 @@ public class StoreProductDto {
         this.categoryId = categoryId;
     }
 
-    public ProductStatus getStatus() {
+    public StoreProductStatus getStatus() {
         return this.status;
     }
 
-    public void setStatus(ProductStatus status) {
+    public void setStatus(StoreProductStatus status) {
         this.status = status;
     }
 
@@ -92,11 +92,11 @@ public class StoreProductDto {
         this.thumbnail = thumbnail;
     }
 
-    public List<StoreItemDto> getItems() {
+    public List<StoreProductItemDto> getItems() {
         return this.items;
     }
 
-    public void setItems(List<StoreItemDto> items) {
+    public void setItems(List<StoreProductItemDto> items) {
         this.items = items;
     }
 }

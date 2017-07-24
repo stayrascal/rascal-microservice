@@ -1,9 +1,9 @@
 package com.stayrascal.cloud.product.contract.enumeration;
 
-public enum ProductStatus {
+public enum StoreProductStatus {
     ACTIVE,
     INACTIVE;
 
-    private ProductStatus() {
+    private StoreProductStatus() {
     }
 }

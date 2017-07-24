@@ -2,7 +2,7 @@ package com.stayrascal.cloud.product.facade;
 
 import com.stayrascal.cloud.common.ddd.EventSender;
 import com.stayrascal.cloud.product.contract.command.CreateProductCommand;
-import com.stayrascal.cloud.product.contract.command.UpdateProductInfoCommand;
+import com.stayrascal.cloud.product.contract.command.UpdateProductCommand;
 import com.stayrascal.cloud.product.contract.dto.ProductDto;
 import com.stayrascal.cloud.product.infrastructure.factory.ProductFactory;
 
@@ -31,6 +31,6 @@ public class ProductFacade {
         return null;
     }
 
-    public void updateProductInfo(String productId, UpdateProductInfoCommand command) {
+    public void updateProductInfo(String productId, UpdateProductCommand command) {
     }
 }

@@ -1,9 +1,9 @@
 package com.stayrascal.cloud.product.contract.command;
 
-public class UpdateStoreItemQuantityCommand {
+public class UpdateStoreItemCommand {
     private Integer quantity;
 
-    public UpdateStoreItemQuantityCommand() {
+    public UpdateStoreItemCommand() {
     }
 
     public Integer getQuantity() {

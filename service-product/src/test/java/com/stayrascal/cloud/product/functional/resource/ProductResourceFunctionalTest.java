@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-import com.stayrascal.cloud.product.contract.command.UpdateProductInfoCommand;
+import com.stayrascal.cloud.product.contract.command.UpdateProductCommand;
 
 import com.exmertec.dummie.Dummie;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
@@ -43,7 +43,7 @@ public class ProductResourceFunctionalTest extends BaseFunctionalTest {
 
     @Test
     public void should_success_update_product_info() throws Exception {
-        UpdateProductInfoCommand command = Dummie.create(UpdateProductInfoCommand.class);
+        UpdateProductCommand command = Dummie.create(UpdateProductCommand.class);
         given()
                 .header("Content-Type", "application/json")
                 .body(command)
