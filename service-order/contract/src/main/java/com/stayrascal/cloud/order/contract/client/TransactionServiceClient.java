@@ -1,8 +1,8 @@
 package com.stayrascal.cloud.order.contract.client;
 
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.order.contract.command.CreateTransactionCommand;
 import com.stayrascal.cloud.order.contract.dto.TransactionDto;
-import com.stayrascal.cloud.common.contract.result.CreatedResult;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
