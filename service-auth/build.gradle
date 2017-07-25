@@ -1,0 +1,167 @@
+if (project.is(rootProject)) {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'jacoco'
+    
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    jar {
+        baseName = 'service-auth'
+        version = ''
+    }
+
+    dependencies {
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+        testCompile("io.rest-assured:rest-assured:3.0.1")
+        testCompile("io.rest-assured:json-path:3.0.1")
+        testCompile("com.exmertec.dummie:dummie:0.1.0")
+        testCompile('com.github.springtestdbunit:spring-test-dbunit:1.3.0')
+        testCompile('org.dbunit:dbunit:2.5.3')
+    }
+
+    allprojects {
+        apply plugin: 'idea'
+        apply plugin: 'findbugs'
+        apply plugin: 'checkstyle'
+        apply plugin: "io.spring.dependency-management"
+
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+
+        tasks.withType(JavaCompile) {
+            options.encoding = 'utf-8'
+        }
+
+        group = 'com.stayrascal.cloud'
+
+        repositories {
+            maven { url "${nexusUrl}/repository/maven-releases/" }
+            mavenCentral()
+        }
+
+        configurations {
+            compile.exclude group: 'log4j', module: 'log4j'
+            compile.exclude group: 'javax.ws.rs', module: 'jsr311-api'
+        }
+
+        findbugs {
+            excludeFilter = new File(rootDir, "config/findbugs/excludeBugsFilter.xml")
+        }
+
+        tasks.withType(FindBugs) {
+            reports {
+                xml.enabled = false
+                html.enabled = true
+            }
+        }
+
+        checkstyle {
+            toolVersion = '7.5.1'
+            configFile = new File(rootDir, "config/checkstyle/checkstyle.xml")
+        }
+
+        task unitTest(type: Test) {
+            exclude '**/functional/**'
+        }
+
+        task functionalTest(type: Test) {
+            include '**/functional/**'
+
+            def dataSourceUrl = System.getProperty('clould.test.datasource.url')
+            if (dataSourceUrl != null) {
+                systemProperties['spring.datasource.url'] = dataSourceUrl
+            }
+        }
+
+        ext {
+            springCloudVersion = 'Dalston.SR1'
+        }
+
+        dependencyManagement {
+            imports {
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            }
+        }
+    }
+
+    jacoco {
+        toolVersion = "0.7.6.201602180812"
+        reportsDir = file("$buildDir/reports/jacoco")
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            html.enabled true
+        }
+        afterEvaluate {
+            classDirectories = files(classDirectories.files.collect {
+                fileTree(dir: it,
+                        include: ['com.stayrascal.services.domain.model.github/*'])
+            })
+        }
+    }
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '3.5'
+    }
+}
+
+idea {
+        project {
+            languageLevel = '1.8'
+            jdkName = '1.8'
+
+            ipr {
+                withXml { provider ->
+                    provider.node.component
+                            .find { it.@name == 'VcsDirectoryMappings' }
+                            .mapping.@vcs = 'Git'
+                }
+            }
+        }
+    }
+
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
+    repositories {
+        maven { url "${nexusUrl}/repository/maven-releases/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    version = '1.0.0'
+}
+
+dependencies {
+    compile project("contract")
+
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-logging")
+    compile("org.springframework.boot:spring-boot-starter-aop")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    compile("org.flywaydb:flyway-core:4.2.0")
+    compile('com.stayrascal.cloud:common-lib:1.0.3')
+    compile('com.stayrascal.cloud:fill-data:1.0.1')
+
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("org.springframework.cloud:spring-cloud-starter-zipkin")
+
+}

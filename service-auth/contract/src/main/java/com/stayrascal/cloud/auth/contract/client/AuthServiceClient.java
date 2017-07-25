@@ -7,6 +7,7 @@ import com.stayrascal.cloud.auth.contract.dto.IdentityDto;
 import com.stayrascal.cloud.auth.contract.enumeration.AccountGroup;
 import com.stayrascal.cloud.auth.contract.enumeration.AccountRole;
 import com.stayrascal.cloud.auth.contract.enumeration.AuthenticationType;
+import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.common.feign.FeignConfiguration;
 
@@ -27,7 +28,7 @@ public interface AuthServiceClient {
             consumes = {"application/json"},
             produces = {"application/json"}
     )
-    IdResult createAuthentication(CreateAuthenticationCommand var1);
+    CreatedResult createAuthentication(CreateAuthenticationCommand var1);
 
     @RequestMapping(
             method = {RequestMethod.DELETE},
@@ -50,7 +51,7 @@ public interface AuthServiceClient {
             consumes = {"application/json"},
             produces = {"application/json"}
     )
-    IdResult createAuthenticationKey(@PathVariable("id") String var1, CreateAuthenticationKeyCommand var2);
+    CreatedResult createAuthenticationKey(@PathVariable("id") String var1, CreateAuthenticationKeyCommand var2);
 
     @RequestMapping(
             path = {"/rest/authentications/{id}/tokens"},
@@ -58,7 +59,7 @@ public interface AuthServiceClient {
             consumes = {"application/json"},
             produces = {"application/json"}
     )
-    IdResult createToken(@PathVariable("id") String var1, CreateTokenCommand var2);
+    CreatedResult createToken(@PathVariable("id") String var1, CreateTokenCommand var2);
 
     @RequestMapping(
             method = {RequestMethod.GET},
