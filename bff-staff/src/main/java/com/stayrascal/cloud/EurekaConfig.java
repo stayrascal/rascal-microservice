@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {
         "com.stayrascal.cloud.address.contract.client",
-        "com.stayrascal.cloud.member.contract.client",
-        "com.stayrascal.cloud.auth.contract.client",
-        "com.stayrascal.cloud.admin.contract.client",
+        "com.stayrascal.cloud.user.member.contract.client",
+        "com.stayrascal.cloud.user.auth.contract.client",
+        "com.stayrascal.cloud.user.admin.contract.client",
         "com.stayrascal.cloud.order.contract.client",
         "com.stayrascal.cloud.product.contract.client",
         "com.stayrascal.cloud.organization.contract.client",

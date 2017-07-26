@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.bff.store;
 
-
 import static com.stayrascal.cloud.common.jersey.JerseyHelpers.uriOfCreated;
 
 import com.stayrascal.cloud.common.contract.enumeration.SortType;

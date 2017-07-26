@@ -1,0 +1,23 @@
+{
+  "id": "orderId",
+  "userId": "userId",
+  "storeId": "storeId",
+  "note": "note",
+  "transactionId": "transactionId",
+  "deliveryMethod": "STORE_PICKUP",
+  "status": "PROCESSING",
+  "pickupCode": "pickupCode",
+  "placedTime": 1490941365490,
+  "items": [
+    {
+      "id": 1,
+      "storeProductId": "storeProductId",
+      "storeItemId": "storeItemId",
+      "storeProductName": "storeProductName",
+      "storeItemName": "storeItemName",
+      "quantity": 5,
+      "price": 32.50
+    }
+  ],
+  "timeCreated": 1490941365490
+}

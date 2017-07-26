@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.bff.product;
 
-
 import static com.stayrascal.cloud.common.jersey.JerseyHelpers.uriOfCreated;
 
 import com.stayrascal.cloud.common.contract.QueryMap;

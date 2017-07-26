@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8081
+
+eureka:
+  client:
+    service-url: http://localhost:8761/eureka
+
+clould:
+  jersey:
+    swagger:
+      version: '0.0.1'
+      host: 'localhost:8080'
+      scheme: 'http'
+      base-path: '/desktop/staff'
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 5000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+
+---
+spring:
+  profiles: k8s_dev
+  cloud:
+    config:
+      uri: http://service-configuration-service:8888

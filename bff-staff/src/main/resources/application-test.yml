@@ -1,0 +1,3 @@
+cloud:
+  eureka:
+    enabled: false

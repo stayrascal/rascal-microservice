@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.bff.order;
 
-
 import com.stayrascal.cloud.bff.common.BatchResponseElement;
 import com.stayrascal.cloud.bff.common.ListResponse;
 import com.stayrascal.cloud.bff.common.PageResponse;

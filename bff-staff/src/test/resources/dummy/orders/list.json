@@ -1,0 +1,31 @@
+{
+  "totalCount": 1,
+  "pageSize": 20,
+  "pageIndex": 0,
+  "items": [
+    {
+      "@class":"com.stayrascal.cloud.order.contract.dto.OrderDto",
+      "id": "orderId",
+      "userId": "userId",
+      "storeId": "storeId",
+      "note": "note",
+      "transactionId": null,
+      "deliveryMethod": "STORE_PICKUP",
+      "status": "OPEN",
+      "pickupCode": "pickupCode",
+      "placedTime": 1490941365490,
+      "items": [
+        {
+          "id": 1,
+          "storeProductId": "storeProductId",
+          "storeItemId": "storeItemId",
+          "storeProductName": "storeProductName",
+          "storeItemName": "storeItemName",
+          "quantity": 5,
+          "price": 32.50
+        }
+      ],
+      "timeCreated": 1490941365490
+    }
+  ]
+}

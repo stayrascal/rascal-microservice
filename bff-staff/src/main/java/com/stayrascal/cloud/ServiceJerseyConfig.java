@@ -1,5 +1,12 @@
 package com.stayrascal.cloud;
 
+import com.stayrascal.cloud.bff.auth.AuthenticationApi;
+import com.stayrascal.cloud.bff.order.OrderApi;
+import com.stayrascal.cloud.bff.product.CategoryApi;
+import com.stayrascal.cloud.bff.product.ProductApi;
+import com.stayrascal.cloud.bff.product.StoreProductApi;
+import com.stayrascal.cloud.bff.staff.StaffApi;
+import com.stayrascal.cloud.bff.store.StoreApi;
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
 
 import com.google.common.collect.Sets;
@@ -21,7 +28,8 @@ public class ServiceJerseyConfig extends JerseyConfig {
 
     @Override
     protected Set<Class<?>> getModuleJerseyClasses() {
-        return Sets.newHashSet();
+        return Sets.newHashSet(StoreApi.class, AuthenticationApi.class, ProductApi.class,
+                CategoryApi.class, OrderApi.class, StoreProductApi.class, StaffApi.class);
     }
 
     @Override

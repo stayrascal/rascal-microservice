@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.bff.store;
 
-
 import com.stayrascal.cloud.address.contract.client.AddressServiceClient;
 import com.stayrascal.cloud.bff.common.PageResponse;
 import com.stayrascal.cloud.bff.store.response.StoreResponse;
