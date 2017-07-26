@@ -9,27 +9,35 @@ spring:
   zipkin:
     base-url: http://zipkin-service:9411
 
+cloud:
+  jersey:
+    access_control_allow_origin: '*'
+
+  auth:
+    admin_token_expire_minutes: 30
+    allow_public_access: true
+
 server:
-  port: 8080
-  context-path: /
   servlet-path: /
+  context-path: /
+  port: 8080
 
 management:
   context-path: /system
 
 eureka:
   instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
     prefer-ip-address: true
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
   server:
-    enableSelfPreservation: false
+    enable-self-preservation: false
 
 logging:
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: debug
 
 ---
 spring:

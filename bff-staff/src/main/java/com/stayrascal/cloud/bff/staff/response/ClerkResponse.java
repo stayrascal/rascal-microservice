@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.bff.staff.response;
 
-import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
+import com.stayrascal.cloud.user.admin.contract.dto.StaffDto;
 
 public class ClerkResponse extends StaffDto {
 

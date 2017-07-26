@@ -18,10 +18,10 @@ import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
 import com.stayrascal.cloud.product.contract.client.ProductServiceClient;
 import com.stayrascal.cloud.product.contract.client.StoreProductServiceClient;
 import com.stayrascal.cloud.product.contract.dto.StoreProductDto;
+import com.stayrascal.cloud.user.member.contract.client.MemberServiceClient;
+import com.stayrascal.cloud.user.member.contract.dto.MemberDto;
 
 import com.google.common.base.Strings;
-import com.stayrscal.cloud.user.member.contract.client.MemberServiceClient;
-import com.stayrscal.cloud.user.member.contract.dto.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

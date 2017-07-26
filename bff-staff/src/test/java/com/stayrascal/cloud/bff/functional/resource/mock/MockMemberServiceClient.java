@@ -3,10 +3,10 @@ package com.stayrascal.cloud.bff.functional.resource.mock;
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
+import com.stayrascal.cloud.user.member.contract.client.MemberServiceClient;
+import com.stayrascal.cloud.user.member.contract.command.CreateMemberCommand;
+import com.stayrascal.cloud.user.member.contract.dto.MemberDto;
 
-import com.stayrscal.cloud.user.member.contract.client.MemberServiceClient;
-import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
-import com.stayrscal.cloud.user.member.contract.dto.MemberDto;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

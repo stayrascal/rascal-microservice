@@ -7,14 +7,14 @@ import static org.mockito.Matchers.anyInt;
 
 import com.stayrascal.cloud.bff.staff.response.ClerkResponse;
 import com.stayrascal.cloud.common.contract.result.PageResult;
+import com.stayrascal.cloud.user.admin.contract.client.StaffServiceClient;
+import com.stayrascal.cloud.user.admin.contract.dto.StaffDto;
+import com.stayrascal.cloud.user.auth.contract.AuthenticationType;
+import com.stayrascal.cloud.user.auth.contract.client.AuthServiceClient;
+import com.stayrascal.cloud.user.auth.contract.dto.AuthenticationDto;
 
 import com.exmertec.dummie.Dummie;
 import com.google.common.collect.Lists;
-import com.stayrscal.cloud.user.admin.contract.client.StaffServiceClient;
-import com.stayrscal.cloud.user.admin.contract.dto.StaffDto;
-import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
-import com.stayrscal.cloud.user.auth.contract.client.AuthServiceClient;
-import com.stayrscal.cloud.user.auth.contract.dto.AuthenticationDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
