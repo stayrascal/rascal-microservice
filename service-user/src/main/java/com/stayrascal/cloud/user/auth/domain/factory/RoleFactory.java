@@ -1,9 +1,9 @@
 package com.stayrascal.cloud.user.auth.domain.factory;
 
 import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
+import com.stayrascal.cloud.user.auth.contract.command.CreateRoleCommand;
 import com.stayrascal.cloud.user.auth.domain.entity.Role;
 
-import com.stayrscal.cloud.user.auth.contract.command.CreateRoleCommand;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

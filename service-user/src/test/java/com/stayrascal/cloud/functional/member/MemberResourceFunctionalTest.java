@@ -6,14 +6,14 @@ import static org.hamcrest.Matchers.is;
 
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.cloud.user.member.contract.Gender;
+import com.stayrascal.cloud.user.member.contract.command.CreateMemberCommand;
+import com.stayrascal.cloud.user.member.contract.command.UpdateMemberCommand;
 
 import com.exmertec.dummie.Dummie;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseSetups;
-import com.stayrscal.cloud.user.member.contract.Gender;
-import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
-import com.stayrscal.cloud.user.member.contract.command.UpdateMemberCommand;
 import org.junit.Test;
 
 @DatabaseSetups({

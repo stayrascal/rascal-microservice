@@ -2,8 +2,8 @@ package com.stayrascal.cloud.user.member.infrastructure.persistence.po;
 
 import com.stayrascal.cloud.common.jpa.BasePo;
 
-import com.stayrscal.cloud.user.member.contract.Gender;
-import com.stayrscal.cloud.user.member.contract.MemberStatus;
+import com.stayrascal.cloud.user.member.contract.Gender;
+import com.stayrascal.cloud.user.member.contract.MemberStatus;
 
 import java.util.Date;
 import javax.persistence.Column;

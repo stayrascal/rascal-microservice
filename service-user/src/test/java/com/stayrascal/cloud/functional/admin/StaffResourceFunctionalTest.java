@@ -6,11 +6,11 @@ import static org.hamcrest.Matchers.is;
 
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.cloud.user.admin.contract.command.CreateStaffCommand;
 
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseSetups;
-import com.stayrscal.cloud.user.admin.contract.command.CreateStaffCommand;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package com.stayrascal.cloud.user.auth.infrastructure.persistence.po;
 import com.stayrascal.cloud.common.contract.auth.IdentityType;
 import com.stayrascal.cloud.common.jpa.BasePo;
 
-import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
+import com.stayrascal.cloud.user.auth.contract.AuthenticationType;
 
 import java.util.List;
 import javax.persistence.CascadeType;

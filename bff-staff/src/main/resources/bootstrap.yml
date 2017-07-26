@@ -5,9 +5,10 @@ spring:
 
 eureka:
   client:
-    service-url: http://localhost:8761/eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
 
-clould:
+cloud:
   jersey:
     swagger:
       version: '0.0.1'
@@ -34,4 +35,4 @@ spring:
   profiles: k8s_dev
   cloud:
     config:
-      uri: http://service-configuration-service:8888
+      uri: http://cloud-configuration-service:8888

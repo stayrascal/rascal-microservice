@@ -6,13 +6,13 @@ import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.common.jersey.JerseyHelpers;
+import com.stayrascal.cloud.user.auth.contract.AuthenticationType;
+import com.stayrascal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
+import com.stayrascal.cloud.user.auth.contract.command.CreateAuthenticationKeyCommand;
+import com.stayrascal.cloud.user.auth.contract.command.CreateTokenCommand;
+import com.stayrascal.cloud.user.auth.contract.dto.AuthenticationDto;
 import com.stayrascal.cloud.user.auth.facade.AuthFacade;
 
-import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
-import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
-import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationKeyCommand;
-import com.stayrscal.cloud.user.auth.contract.command.CreateTokenCommand;
-import com.stayrscal.cloud.user.auth.contract.dto.AuthenticationDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

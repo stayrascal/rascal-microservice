@@ -6,12 +6,12 @@ import static org.hamcrest.Matchers.is;
 
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
 
 import com.exmertec.dummie.Dummie;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseSetups;
-import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
 import org.junit.Test;
 
 @DatabaseSetups({

@@ -2,7 +2,7 @@ package com.stayrascal.cloud.user.auth.domain.entity;
 
 import com.stayrascal.cloud.common.contract.auth.IdentityType;
 
-import com.stayrscal.cloud.user.auth.contract.AuthenticationType;
+import com.stayrascal.cloud.user.auth.contract.AuthenticationType;
 
 import java.util.Date;
 import java.util.List;

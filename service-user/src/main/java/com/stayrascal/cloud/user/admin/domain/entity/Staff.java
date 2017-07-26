@@ -1,8 +1,7 @@
 package com.stayrascal.cloud.user.admin.domain.entity;
 
+import com.stayrascal.cloud.user.admin.contract.StaffStatus;
 import com.stayrascal.cloud.user.admin.domain.vo.StaffAuthorization;
-
-import com.stayrscal.cloud.user.admin.contract.StaffStatus;
 
 import java.util.Date;
 import java.util.List;

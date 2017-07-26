@@ -11,9 +11,9 @@ import com.stayrascal.cloud.common.contract.auth.Identity;
 import com.stayrascal.cloud.common.contract.auth.IdentityType;
 import com.stayrascal.cloud.common.util.JwtTokenCodec;
 import com.stayrascal.cloud.functional.BaseFunctionalTest;
+import com.stayrascal.cloud.user.auth.contract.command.CreateTokenCommand;
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.stayrscal.cloud.user.auth.contract.command.CreateTokenCommand;
 import org.junit.Test;
 
 @DatabaseSetup(value = "classpath:auth/tokenResourceTest.xml")

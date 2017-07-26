@@ -4,6 +4,7 @@ import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.jersey.exception.InternalErrorException;
 import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
+import com.stayrascal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
 import com.stayrascal.cloud.user.auth.domain.entity.Authentication;
 import com.stayrascal.cloud.user.auth.domain.entity.EmailVerificationCodeAuthentication;
 import com.stayrascal.cloud.user.auth.domain.entity.PasswordAuthentication;
@@ -11,7 +12,6 @@ import com.stayrascal.cloud.user.auth.domain.service.RandomKeyService;
 import com.stayrascal.cloud.user.auth.external.adapter.EmailServiceAdapter;
 
 import com.google.common.base.Strings;
-import com.stayrscal.cloud.user.auth.contract.command.CreateAuthenticationCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

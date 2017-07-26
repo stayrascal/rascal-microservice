@@ -2,7 +2,7 @@ package com.stayrascal.cloud.user.admin.infrastructure.persistence.po;
 
 import com.stayrascal.cloud.common.jpa.BasePo;
 
-import com.stayrscal.cloud.user.admin.contract.StaffStatus;
+import com.stayrascal.cloud.user.admin.contract.StaffStatus;
 
 import java.util.List;
 import javax.persistence.CascadeType;

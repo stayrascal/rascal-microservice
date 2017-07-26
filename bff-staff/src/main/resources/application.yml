@@ -10,26 +10,26 @@ spring:
     base-url: http://zipkin-service:9411
 
 server:
-  servlet-path: /
-  context-path: /
   port: 8080
+  context-path: /
+  servlet-path: /
 
 management:
   context-path: /system
 
 eureka:
   instance:
-    status-page-url-path: ${management.context-path}/info
-    health-check-url-path: ${management.context-path}/health
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
     prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 1
-    lease-expiration-duration-in-seconds: 2
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   server:
-    enable-self-preservation: false
+    enableSelfPreservation: false
 
 logging:
   level:
-    org.springframework.web: debug
+    org.springframework.web: DEBUG
 
 ---
 spring:

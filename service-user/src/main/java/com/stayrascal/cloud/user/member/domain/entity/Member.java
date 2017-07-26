@@ -1,7 +1,8 @@
 package com.stayrascal.cloud.user.member.domain.entity;
 
-import com.stayrscal.cloud.user.member.contract.Gender;
-import com.stayrscal.cloud.user.member.contract.MemberStatus;
+import com.stayrascal.cloud.user.member.contract.Gender;
+import com.stayrascal.cloud.user.member.contract.MemberStatus;
+
 import org.joda.time.DateTime;
 
 import java.util.Date;

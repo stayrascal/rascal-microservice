@@ -2,10 +2,10 @@ package com.stayrascal.cloud.user.member.domain.factory;
 
 import com.stayrascal.cloud.common.jpa.UniqueKeyGenerator;
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
+import com.stayrascal.cloud.user.member.contract.MemberStatus;
+import com.stayrascal.cloud.user.member.contract.command.CreateMemberCommand;
 import com.stayrascal.cloud.user.member.domain.entity.Member;
 
-import com.stayrscal.cloud.user.member.contract.MemberStatus;
-import com.stayrscal.cloud.user.member.contract.command.CreateMemberCommand;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
