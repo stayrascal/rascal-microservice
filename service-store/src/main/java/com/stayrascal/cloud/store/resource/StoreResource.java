@@ -1,5 +1,9 @@
 package com.stayrascal.cloud.store.resource;
 
+import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.query.SortQuery;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.store.contract.command.CreateStoreCommand;
 import com.stayrascal.cloud.store.contract.command.UpdateStoreCommand;
 import com.stayrascal.cloud.store.contract.dto.StoreDto;
@@ -13,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.net.URI;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -21,6 +26,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -46,8 +52,28 @@ public class StoreResource {
     @GET
     public Response getStore(@NotNull @PathParam("id") String storeId) {
 
-        StoreDto storeDto = storeFacade.getStoreById(storeId);
+        StoreDto storeDto = storeFacade.getStore(storeId);
         return Response.ok().entity(storeDto).build();
+    }
+
+    @ApiOperation(value = "List stores")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "List stores successfully", response = PageResult.class)
+    })
+    @GET
+    public PageResult listOrders(@NotNull @QueryParam("page_size") Integer pageSize,
+                                 @NotNull @QueryParam("page_index") Integer pageIndex,
+                                 @NotNull @QueryParam("sort_type") SortType sortType,
+                                 @NotNull @QueryParam("sort_by") String sortBy,
+                                 @QueryParam("provinceId") String provinceId,
+                                 @QueryParam("cityId") String cityId,
+                                 @QueryParam("distinctId") String distinctId,
+                                 @QueryParam("status") CommonStatus status) {
+        SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
+        long totalCount = storeFacade.countStores(provinceId, cityId, distinctId, status);
+
+        List<StoreDto> orders = storeFacade.listStores(sortQuery, provinceId, cityId, distinctId, status);
+        return new PageResult(totalCount, pageSize, pageIndex, orders);
     }
 
     @POST
@@ -68,10 +94,8 @@ public class StoreResource {
             @ApiResponse(code = 200, message = "Update store info successfully"),
             @ApiResponse(code = 404, message = "Could not find store by id")
     })
-    public Response updateStoreInfo(@NotNull @PathParam("id") String storeId,
-                                    @NotNull UpdateStoreCommand command) {
-        storeFacade.updateStore(storeId, command);
-
-        return Response.ok().build();
+    public StoreDto updateStore(@NotNull @PathParam("id") String storeId,
+                                @NotNull UpdateStoreCommand command) {
+        return storeFacade.updateStore(storeId, command);
     }
 }

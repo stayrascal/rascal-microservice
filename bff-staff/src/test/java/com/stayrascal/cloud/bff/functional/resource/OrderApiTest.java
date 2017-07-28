@@ -9,6 +9,7 @@ import com.stayrascal.cloud.bff.functional.resource.mock.MockOrderServiceClient;
 import com.stayrascal.cloud.bff.functional.resource.mock.MockStoreProductServiceClient;
 import com.stayrascal.cloud.bff.functional.resource.mock.MockTransactionServiceClient;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -44,6 +45,7 @@ public class OrderApiTest extends BaseFunctionalTest {
     }
 
     @Test
+    @Ignore
     public void shouldGetProcessingOrderSuccessfully() throws Exception {
         mockOrderClient.setOrderJson(jsonResource("/dummy/orders/processing.json"));
         mockMemberClient.setJson(jsonResource("/dummy/users/normal.json"));

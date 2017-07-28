@@ -1,7 +1,9 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true
   datasource:
     url: jdbc:mysql://127.0.0.1/service_store
     username: root
@@ -32,4 +34,6 @@ spring:
   profiles: k8s_dev
   cloud:
     config:
-      uri: http://service-configuration-service:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true

@@ -11,21 +11,20 @@ import com.stayrascal.cloud.product.contract.dto.StoreProductDto;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
 @Component
 public class MockStoreProductServiceClient implements StoreProductServiceClient {
-
     private String storeProductJson = "";
-
 
     public void setStoreProductJson(String storeProductJson) {
         this.storeProductJson = storeProductJson;
     }
 
     @Override
-    public CreatedResult createStoreProduct(CreateStoreProductCommand var1) {
+    public CreatedResult createStoreProduct(CreateStoreProductCommand createStoreProductCommand) {
         return null;
     }
 
@@ -35,22 +34,33 @@ public class MockStoreProductServiceClient implements StoreProductServiceClient 
     }
 
     @Override
-    public PageResult listStoreProducts(SortType var1, String var2, Integer var3, Integer var4, Map<String, String> var5) {
+    public PageResult listStoreProducts(@RequestParam("sort_type") SortType sortType,
+                                        @RequestParam("sort_by") String sortBy,
+                                        @RequestParam("page_size") Integer pageSize,
+                                        @RequestParam("page_index") Integer pageIndex,
+                                        @RequestParam Map<String, String> queryMap) {
         return null;
     }
 
     @Override
-    public void updateStoreProductItem(String var1, String var2, UpdateStoreItemCommand var3) {
+    public void updateStoreProductItem(@PathVariable("id") String id,
+                                       @PathVariable("item_id") String itemId,
+                                       UpdateStoreItemCommand updateStoreItemCommand) {
 
     }
 
     @Override
-    public void updateStoreProduct(String var1, UpdateStoreProductCommand var2) {
-
+    public void updateStoreProduct(@PathVariable("id") String id,
+                                   UpdateStoreProductCommand updateStoreProductCommand) {
     }
 
     @Override
-    public PageResult listStoreProductsByCategory(String var1, String var2, String var3, String var4, Integer var5, Integer var6) {
+    public PageResult listStoreProductsByCategory(@PathVariable("store_id") String storeId,
+                                                  @PathVariable("category_id") String categoryId,
+                                                  @RequestParam("sort_type") String sortType,
+                                                  @RequestParam("sort_by") String sortBy,
+                                                  @RequestParam("page_size") Integer pageSize,
+                                                  @RequestParam("page_index") Integer pageIndex) {
         return null;
     }
 }

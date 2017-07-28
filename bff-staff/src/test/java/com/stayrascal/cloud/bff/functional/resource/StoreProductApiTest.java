@@ -3,16 +3,20 @@ package com.stayrascal.cloud.bff.functional.resource;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
+import com.stayrascal.cloud.bff.functional.resource.mock.MockStoreProductServiceClient;
 import com.stayrascal.cloud.bff.product.request.BatchUpdateStoreProductCommand;
 import com.stayrascal.cloud.bff.product.request.UpdateStoreProductWithIdCommand;
 
 import com.exmertec.dummie.Dummie;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class StoreProductApiTest extends BaseFunctionalTest {
+    @Autowired
+    private MockStoreProductServiceClient mockStoreProductServiceClient;
 
     @Test
     public void shouldBatchUpdateStoreProductsStatus() throws Exception {
