@@ -4,6 +4,9 @@ import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.store.domain.entity.Store;
 import com.stayrascal.cloud.store.infrastructure.persistence.po.StorePo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StorePoMapper extends DefaultMapper {
     public StorePoMapper() {
         register(StorePo.class, Store.class);

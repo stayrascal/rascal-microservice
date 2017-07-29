@@ -66,12 +66,30 @@ public class StoreFacade {
         return storeDtoMapper.storeToDto(storeRepository.update(store));
     }
 
-    public long countStores(String provinceId, String cityId, String districtId, CommonStatus status) {
-        return storeRepository.countStores(provinceId, cityId, districtId, status);
+    public long countStores(Long provinceId, Long cityId, String name) {
+        return storeRepository.countStores(provinceId, cityId, name);
     }
 
-    public List<StoreDto> listStores(SortQuery sortQuery, String provinceId, String cityId, String districtId, CommonStatus status) {
-        List<Store> stores = storeRepository.listStores(sortQuery, provinceId, cityId, districtId, status);
+    public List<StoreDto> listStores(SortQuery sortQuery, Long provinceId, Long cityId, String name) {
+        List<Store> stores = storeRepository.listStores(sortQuery, provinceId, cityId, name);
         return stores.stream().map(storeDtoMapper::storeToDto).collect(Collectors.toList());
+    }
+
+    public StoreDto deleteStore(String storeId) {
+        Store store = getStoreById(storeId);
+        store.setStatus(CommonStatus.DISABLED);
+        return storeDtoMapper.storeToDto(storeRepository.update(store));
+    }
+
+    public List<StoreDto> listStoresWithLatitudeAndLongitude(SortQuery sortQuery, Long provinceId, Long cityId, String name,
+                                                             Double latitude, Double longitude, Double distance) {
+        List<Store> stores = storeRepository.listStores(sortQuery, provinceId, cityId, name);
+        Double radius = distance / 2;
+        return stores.stream()
+                .filter(store -> store.getLatitude() >= latitude - radius)
+                .filter(store -> store.getLatitude() <= latitude + radius)
+                .filter(store -> store.getLongitude() >= longitude - radius)
+                .filter(store -> store.getLongitude() <= latitude + radius)
+                .map(storeDtoMapper::storeToDto).collect(Collectors.toList());
     }
 }

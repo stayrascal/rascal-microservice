@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.store;
 
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
+import com.stayrascal.cloud.store.resource.LocationResource;
 import com.stayrascal.cloud.store.resource.StoreResource;
 
 import com.google.common.collect.Sets;
@@ -28,6 +29,6 @@ public class StoreJerseyConfig extends JerseyConfig {
 
     @Override
     protected Set<Class<?>> getModuleJerseyClasses() {
-        return Sets.newHashSet(StoreResource.class);
+        return Sets.newHashSet(StoreResource.class, LocationResource.class);
     }
 }

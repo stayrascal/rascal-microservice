@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(
-        name = "service-store"
-)
+@FeignClient(name = "service-store")
 public interface StoreServiceClient {
 
     @RequestMapping(
@@ -39,10 +37,9 @@ public interface StoreServiceClient {
             consumes = {"application/json"}
     )
     PageResult list(@RequestParam("province_id") Long var1, @RequestParam("city_id") Long var2,
-                    @RequestParam("from_date") Long var3, @RequestParam("to_date") Long var4,
-                    @RequestParam("name") String var5, @RequestParam("sort_type") String var6,
-                    @RequestParam("sort_by") String var7, @RequestParam("page_size") Integer var8,
-                    @RequestParam("page_index") Integer var9);
+                    @RequestParam("name") String var3, @RequestParam("sort_type") String var4,
+                    @RequestParam("sort_by") String var5, @RequestParam("page_size") Integer var6,
+                    @RequestParam("page_index") Integer var7);
 
     @RequestMapping(
             method = {RequestMethod.PUT},

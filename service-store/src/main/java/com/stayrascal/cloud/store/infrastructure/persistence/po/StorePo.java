@@ -27,10 +27,10 @@ public class StorePo extends BasePo {
     private String name;
 
     @Column(name = "shop_time")
-    private Date shopTime;
+    private String shopTime;
 
     @Column(name = "closing_time")
-    private Date closingTime;
+    private String closingTime;
 
     @Column(name = "address")
     private String address;
@@ -83,19 +83,19 @@ public class StorePo extends BasePo {
         this.name = name;
     }
 
-    public Date getShopTime() {
+    public String getShopTime() {
         return shopTime;
     }
 
-    public void setShopTime(Date shopTime) {
+    public void setShopTime(String shopTime) {
         this.shopTime = shopTime;
     }
 
-    public Date getClosingTime() {
+    public String getClosingTime() {
         return closingTime;
     }
 
-    public void setClosingTime(Date closingTime) {
+    public void setClosingTime(String closingTime) {
         this.closingTime = closingTime;
     }
 

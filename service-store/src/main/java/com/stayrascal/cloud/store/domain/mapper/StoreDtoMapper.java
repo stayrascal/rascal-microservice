@@ -4,6 +4,9 @@ import com.stayrascal.cloud.common.mapper.DefaultMapper;
 import com.stayrascal.cloud.store.contract.dto.StoreDto;
 import com.stayrascal.cloud.store.domain.entity.Store;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StoreDtoMapper extends DefaultMapper {
     public StoreDtoMapper() {
         register(StoreDto.class, Store.class);

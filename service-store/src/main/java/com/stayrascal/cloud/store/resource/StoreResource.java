@@ -1,8 +1,8 @@
 package com.stayrascal.cloud.store.resource;
 
-import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
 import com.stayrascal.cloud.common.contract.enumeration.SortType;
 import com.stayrascal.cloud.common.contract.query.SortQuery;
+import com.stayrascal.cloud.common.contract.result.ListResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.store.contract.command.CreateStoreCommand;
 import com.stayrascal.cloud.store.contract.command.UpdateStoreCommand;
@@ -15,11 +15,13 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.net.URI;
 import java.util.List;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -61,19 +63,16 @@ public class StoreResource {
             @ApiResponse(code = 200, message = "List stores successfully", response = PageResult.class)
     })
     @GET
-    public PageResult listOrders(@NotNull @QueryParam("page_size") Integer pageSize,
-                                 @NotNull @QueryParam("page_index") Integer pageIndex,
+    public PageResult listOrders(@NotNull @QueryParam("province_id") Long provinceId,
+                                 @NotNull @QueryParam("city_id") Long cityId,
+                                 @NotNull @QueryParam("name") String name,
                                  @NotNull @QueryParam("sort_type") SortType sortType,
                                  @NotNull @QueryParam("sort_by") String sortBy,
-                                 @QueryParam("provinceId") String provinceId,
-                                 @QueryParam("cityId") String cityId,
-                                 @QueryParam("distinctId") String distinctId,
-                                 @QueryParam("status") CommonStatus status) {
+                                 @NotNull @QueryParam("page_size") Integer pageSize,
+                                 @NotNull @QueryParam("page_index") Integer pageIndex) {
         SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
-        long totalCount = storeFacade.countStores(provinceId, cityId, distinctId, status);
-
-        List<StoreDto> orders = storeFacade.listStores(sortQuery, provinceId, cityId, distinctId, status);
-        return new PageResult(totalCount, pageSize, pageIndex, orders);
+        List<StoreDto> orders = storeFacade.listStores(sortQuery, provinceId, cityId, name);
+        return new PageResult((long) orders.size(), pageSize, pageIndex, orders);
     }
 
     @POST
@@ -88,7 +87,7 @@ public class StoreResource {
     }
 
     @PUT
-    @Path("{id}")
+    @Path("/{id}")
     @ApiOperation(value = "Update store info", response = StoreDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Update store info successfully"),
@@ -97,5 +96,26 @@ public class StoreResource {
     public StoreDto updateStore(@NotNull @PathParam("id") String storeId,
                                 @NotNull UpdateStoreCommand command) {
         return storeFacade.updateStore(storeId, command);
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @ApiOperation(value = "Delete store info", response = StoreDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Delete store info successfully"),
+            @ApiResponse(code = 404, message = "Could not find store by id")
+    })
+    public StoreDto delete(@PathVariable("id") String storeId) {
+        return storeFacade.deleteStore(storeId);
+    }
+
+    @GET
+    @Path("/cities")
+    @ApiOperation(value = "Get available cities")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "List cities successfully", response = ListResult.class)
+    })
+    public ListResult availableCities() {
+        return null;
     }
 }
