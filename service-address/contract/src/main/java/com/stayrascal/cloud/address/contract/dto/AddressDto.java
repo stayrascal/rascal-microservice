@@ -3,7 +3,7 @@ package com.stayrascal.cloud.address.contract.dto;
 public class AddressDto {
     private Long id;
     private String language;
-    private Integer parentId;
+    private Long parentId;
     private String path;
     private Integer grade;
     private String name;
@@ -28,11 +28,11 @@ public class AddressDto {
         this.language = language;
     }
 
-    public Integer getParentId() {
+    public Long getParentId() {
         return this.parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
 

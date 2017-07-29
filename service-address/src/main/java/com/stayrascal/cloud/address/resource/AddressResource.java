@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Component
-@Path("addresss")
+@Path("addresses")
 @Api(value = "address", description = "Access to address resource")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -44,10 +44,8 @@ public class AddressResource {
         @ApiResponse(code = 404, message = "No address matches given id")
     })
     @GET
-    public Response getAddress(@NotNull @PathParam("id") String addressId) {
-
-        AddressDto addressDto = addressFacade.getAddressById(addressId);
-        return Response.ok().entity(addressDto).build();
+    public AddressDto getAddress(@NotNull @PathParam("id") Long addressId) {
+        return addressFacade.getAddressById(addressId);
     }
 
     @POST
@@ -56,22 +54,20 @@ public class AddressResource {
         @ApiResponse(code = 201, message = "Create address successfully")
     })
     public Response createAddress(@NotNull CreateAddressCommand createAddressCommand) {
-        String id = addressFacade.createAddress(createAddressCommand);
+        Long id = addressFacade.createAddress(createAddressCommand);
 
         return Response.created(URI.create("/" + id)).build();
     }
 
     @PUT
-    @Path("{id}")
+    @Path("/{id}")
     @ApiOperation(value = "Update address info", response = AddressDto.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Update address info successfully"),
         @ApiResponse(code = 404, message = "Could not find address by id")
     })
-    public Response updateAddressInfo(@NotNull @PathParam("id") String addressId,
+    public AddressDto updateAddressInfo(@NotNull @PathParam("id") Long addressId,
                                       @NotNull UpdateAddressCommand command) {
-        addressFacade.updateAddressInfo(addressId, command);
-
-        return Response.ok().build();
+        return addressFacade.updateAddressInfo(addressId, command);
     }
 }
