@@ -9,7 +9,7 @@ public class OrganizationDto {
 
     private String name;
 
-    private OrganizationDto superior;
+    private String superiorId;
 
     private OrganizationType type;
 
@@ -31,12 +31,12 @@ public class OrganizationDto {
         this.name = name;
     }
 
-    public OrganizationDto getSuperior() {
-        return superior;
+    public String getSuperiorId() {
+        return superiorId;
     }
 
-    public void setSuperior(OrganizationDto superior) {
-        this.superior = superior;
+    public void setSuperiorId(String superiorId) {
+        this.superiorId = superiorId;
     }
 
     public OrganizationType getType() {

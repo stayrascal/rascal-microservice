@@ -1,17 +1,22 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true
   datasource:
     url: jdbc:mysql://127.0.0.1/service_organization
     username: root
-    password: password
+    password:
     driver-class-name: com.mysql.jdbc.Driver
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+cloud:
+  allowReloadTestData: true
 
 hystrix:
   command:
@@ -32,4 +37,6 @@ spring:
   profiles: k8s_dev
   cloud:
     config:
-      uri: http://service-configuration-service:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true

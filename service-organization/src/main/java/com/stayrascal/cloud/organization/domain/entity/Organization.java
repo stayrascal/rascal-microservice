@@ -1,22 +1,19 @@
 package com.stayrascal.cloud.organization.domain.entity;
 
-import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
-import com.stayrascal.cloud.organization.contract.dto.OrganizationDto;
+import com.stayrascal.cloud.organization.contract.enumeration.OrganizationType;
 
-import java.util.function.Consumer;
+import java.util.Date;
 
 public class Organization {
     private String id;
 
-    private CommonStatus status;
+    private String name;
 
-    private final OrganizationDtoMapper mapper;
+    private String superiorId;
 
-    private Consumer<Organization> notifyChange;
+    private OrganizationType type;
 
-    public Organization() {
-        mapper = new OrganizationDtoMapper();
-    }
+    private Date timeCreated;
 
     public String getId() {
         return id;
@@ -26,23 +23,35 @@ public class Organization {
         this.id = id;
     }
 
-    public CommonStatus getStatus() {
-        return status;
+    public String getName() {
+        return name;
     }
 
-    public void setStatus(CommonStatus status) {
-        this.status = status;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setNotifyChange(Consumer<Organization> notifyChange) {
-        this.notifyChange = notifyChange;
+    public String getSuperiorId() {
+        return superiorId;
     }
 
-    public void updateOrganization(OrganizationDto organization) {
-        notifyChange.accept(this);
+    public void setSuperiorId(String superiorId) {
+        this.superiorId = superiorId;
     }
 
-    public OrganizationDto toDto() {
-        return mapper.map(this, OrganizationDto.class);
+    public OrganizationType getType() {
+        return type;
+    }
+
+    public void setType(OrganizationType type) {
+        this.type = type;
+    }
+
+    public Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    public void setTimeCreated(Date timeCreated) {
+        this.timeCreated = timeCreated;
     }
 }

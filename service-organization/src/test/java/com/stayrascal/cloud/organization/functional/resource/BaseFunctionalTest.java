@@ -19,8 +19,8 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class,
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-        properties = "eureka.client.enabled:false")
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+        )
 @ContextConfiguration
 @Rollback
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,

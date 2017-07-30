@@ -164,4 +164,5 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile("org.springframework.cloud:spring-cloud-starter-zipkin")
 
+    testCompile("com.h2database:h2:1.4.196")
 }
