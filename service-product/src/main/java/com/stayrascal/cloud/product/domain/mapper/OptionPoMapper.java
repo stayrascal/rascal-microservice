@@ -23,7 +23,9 @@ public class OptionPoMapper extends DefaultMapper {
 
     public ProductOption productOptionFromPo(ProductOptionPo productOptionPo) {
         ProductOption option = map(productOptionPo, ProductOption.class);
-        option.setValues(productOptionPo.getValues().stream().map(this::optionValueFromPo).collect(Collectors.toList()));
+        if (option.getValues() != null){
+            option.setValues(productOptionPo.getValues().stream().map(this::optionValueFromPo).collect(Collectors.toList()));
+        }
         return option;
     }
 
@@ -37,7 +39,9 @@ public class OptionPoMapper extends DefaultMapper {
 
     public ProductOptionPo productOptionToPo(ProductOption option) {
         ProductOptionPo productOptionPo = map(option, ProductOptionPo.class);
-        productOptionPo.setValues(option.getValues().stream().map(this::optionValueToPo).collect(Collectors.toList()));
+        if (option.getValues() != null){
+            productOptionPo.setValues(option.getValues().stream().map(this::optionValueToPo).collect(Collectors.toList()));
+        }
         return productOptionPo;
     }
 

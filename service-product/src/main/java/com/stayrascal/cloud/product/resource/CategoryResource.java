@@ -29,6 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -41,13 +42,13 @@ public class CategoryResource {
     @Autowired
     private CategoryFacade categoryFacade;
 
+    @GET
     @Path("/{id}")
     @ApiOperation(value = "Get category by id", response = CategoryDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get category successfully"),
             @ApiResponse(code = 404, message = "No category matches given id")
     })
-    @GET
     public Response getCategory(@NotNull @PathParam("id") String categoryId) {
         CategoryDto category = categoryFacade.getCategoryById(categoryId);
         return Response.ok().entity(category).build();
@@ -57,8 +58,8 @@ public class CategoryResource {
     @ApiResponses(value = {
             @ApiResponse(code = 200, response = PageResult.class, message = "List Categories successfully")
     })
-    public PageResult listCategories(@RequestParam("sort_type") SortType sortType, @RequestParam("sort_by") String sortBy,
-                                     @RequestParam("page_size") Integer pageSize, @RequestParam("page_index") Integer pageIndex,
+    public PageResult listCategories(@QueryParam("sort_type") SortType sortType, @QueryParam("sort_by") String sortBy,
+                                     @QueryParam("page_size") Integer pageSize, @QueryParam("page_index") Integer pageIndex,
                                      @RequestParam Map<String, String> queryMaps) {
         SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
         List<CategoryDto> categoryDtos = categoryFacade.listCategories(sortQuery, queryMaps);
@@ -89,12 +90,13 @@ public class CategoryResource {
     }
 
     @POST
+    @Path("/{id}/options")
     @ApiOperation(value = "Create Product Option", response = ProductOptionDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Create category successfully")
     })
-    public Response createCategory(@NotNull @PathParam("id") String categoryId,
-                                   @NotNull CreateProductOptionCommand command) {
+    public Response createOptions(@NotNull @PathParam("id") String categoryId,
+                                  @NotNull CreateProductOptionCommand command) {
         String id = categoryFacade.createProductOption(categoryId, command);
 
         return Response.created(URI.create("/" + id)).build();

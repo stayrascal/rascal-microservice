@@ -24,13 +24,17 @@ public class StoreProductDtoMapper extends DefaultMapper {
 
     public StoreProductDto storeProductToDto(StoreProduct storeProduct) {
         StoreProductDto storeProductDto = map(storeProduct, StoreProductDto.class);
-        storeProductDto.setItems(storeProduct.getItems().stream().map(this::storeProductItemToDto).collect(Collectors.toList()));
+        if (storeProduct.getItems() != null){
+            storeProductDto.setItems(storeProduct.getItems().stream().map(this::storeProductItemToDto).collect(Collectors.toList()));
+        }
         return storeProductDto;
     }
 
     public StoreProductItemDto storeProductItemToDto(StoreProductItem storeProductItem) {
         StoreProductItemDto dto = map(storeProductItem, StoreProductItemDto.class);
-        dto.setOptionPairDtos(storeProductItem.getOptionPairs().stream().map(optionDtoMapper::optionPairToDto).collect(Collectors.toList()));
+        if (storeProductItem.getOptionPairs() != null) {
+            dto.setOptionPairDtos(storeProductItem.getOptionPairs().stream().map(optionDtoMapper::optionPairToDto).collect(Collectors.toList()));
+        }
         return dto;
     }
 }

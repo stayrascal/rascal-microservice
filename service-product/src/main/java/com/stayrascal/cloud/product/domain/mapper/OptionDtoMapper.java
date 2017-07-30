@@ -23,7 +23,9 @@ public class OptionDtoMapper extends DefaultMapper {
 
     public ProductOption optionFromDto(ProductOptionDto productOptionDto) {
         ProductOption option = map(productOptionDto, ProductOption.class);
-        option.setValues(productOptionDto.getValues().stream().map(this::optionValueFromDto).collect(Collectors.toList()));
+        if (productOptionDto.getValues() != null){
+            option.setValues(productOptionDto.getValues().stream().map(this::optionValueFromDto).collect(Collectors.toList()));
+        }
         return option;
     }
 
@@ -37,7 +39,9 @@ public class OptionDtoMapper extends DefaultMapper {
 
     public ProductOptionDto optionToDto(ProductOption option) {
         ProductOptionDto productOptionDto = map(option, ProductOptionDto.class);
-        productOptionDto.setValues(option.getValues().stream().map(this::optionValueToDto).collect(Collectors.toList()));
+        if (option.getValues() != null){
+            productOptionDto.setValues(option.getValues().stream().map(this::optionValueToDto).collect(Collectors.toList()));
+        }
         return productOptionDto;
     }
 

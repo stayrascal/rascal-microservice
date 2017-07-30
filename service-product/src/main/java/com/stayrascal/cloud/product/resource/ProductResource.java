@@ -28,6 +28,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -44,13 +45,13 @@ public class ProductResource {
         this.productFacade = productFacade;
     }
 
+    @GET
     @Path("/{id}")
     @ApiOperation(value = "Get product by id", response = ProductDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get product successfully"),
             @ApiResponse(code = 404, message = "No product matches given id")
     })
-    @GET
     public Response getProduct(@NotNull @PathParam("id") String productId) {
 
         ProductDto productDto = productFacade.getProductById(productId);
@@ -61,8 +62,8 @@ public class ProductResource {
     @ApiResponses(value = {
             @ApiResponse(code = 200, response = PageResult.class, message = "List Products successfully")
     })
-    public PageResult listProducts(@RequestParam("sort_type") SortType sortType, @RequestParam("sort_by") String sortBy,
-                                   @RequestParam("page_size") Integer pageSize, @RequestParam("page_index") Integer pageIndex,
+    public PageResult listProducts(@QueryParam("sort_type") SortType sortType, @QueryParam("sort_by") String sortBy,
+                                   @QueryParam("page_size") Integer pageSize, @QueryParam("page_index") Integer pageIndex,
                                    @RequestParam Map<String, String> queryMaps) {
         SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
         List<ProductDto> productDtos = productFacade.listProducts(sortQuery, queryMaps);

@@ -31,8 +31,12 @@ public class ProductFactory {
 
     public ProductDto createProduct(CreateProductCommand command) {
         ProductDto productDto = mapper.map(command, ProductDto.class);
-        productDto.setItems(command.getCreateProductItemCommands().stream().map(this::createProductItem).collect(Collectors.toList()));
-        productDto.setCategory(this.createCategory(command.getCategoryId()));
+        if (command.getCreateProductItemCommands() != null){
+            productDto.setItems(command.getCreateProductItemCommands().stream().map(this::createProductItem).collect(Collectors.toList()));
+        }
+        if (command.getCategoryId() != null){
+            productDto.setCategory(this.createCategory(command.getCategoryId()));
+        }
         productDto.setId(uniqueKeyGenerator.generateKey());
         productDto.setStatus(CommonStatus.ENABLED);
         productDto.setTimeCreated(DateTime.now().toDate());

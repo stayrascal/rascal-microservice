@@ -14,24 +14,21 @@ import org.junit.Test;
 @DatabaseSetup("classpath:ProductResourceFunctionalTest.xml")
 @DatabaseTearDown("classpath:ProductResourceFunctionalTest.xml")
 public class ProductResourceFunctionalTest extends BaseFunctionalTest {
-    private static final String USER_ID = "497f60a8-93ad-4f47-a54d-e99d651fcb4e";
+    private static final String PRODUCT_ID = "497f60a8-93ad-4f47-a54d-e99d651fcb4e";
 
     @Test
-    public void should_success_get_product_by_product_id() throws Exception {
+    public void shouldSuccessGetProductByProductId() throws Exception {
         given()
                 .header("Content-Type", "application/json")
                 .when()
-                .get("products/" + USER_ID)
+                .get("products/" + PRODUCT_ID)
                 .then()
                 .statusCode(is(200))
-                .body("id", equalTo(USER_ID))
-                .body("nickname", equalTo("name"))
-                .body("email", equalTo("xxx@gg"))
-                .body("mobile", equalTo("134567"));
+                .body("id", equalTo(PRODUCT_ID));
     }
 
     @Test
-    public void should_throw_404_when_get_product_with_invalid_product_id() throws Exception {
+    public void shouldThrow404WhenGetProductWithInvalidProductId() throws Exception {
         String invalidProductId = "invalidProductId";
         given()
                 .header("Content-Type", "application/json")
@@ -42,13 +39,13 @@ public class ProductResourceFunctionalTest extends BaseFunctionalTest {
     }
 
     @Test
-    public void should_success_update_product_info() throws Exception {
+    public void shouldSuccessUpdateProductInfo() throws Exception {
         UpdateProductCommand command = Dummie.create(UpdateProductCommand.class);
         given()
                 .header("Content-Type", "application/json")
                 .body(command)
                 .when()
-                .put("products/" + USER_ID)
+                .put("products/" + PRODUCT_ID)
                 .then()
                 .statusCode(is(200));
     }

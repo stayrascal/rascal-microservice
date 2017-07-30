@@ -26,28 +26,40 @@ public class ProductPoMapper extends DefaultMapper {
 
     public Product productFromPo(ProductPo productPo) {
         Product product = map(productPo, Product.class);
-        product.setItems(productPo.getItems().stream().map(this::productItemFromPo).collect(Collectors.toList()));
-        product.setCategory(categoryPoMapper.categoryFromPo(productPo.getCategory()));
+        if (productPo.getItems() != null) {
+            product.setItems(productPo.getItems().stream().map(this::productItemFromPo).collect(Collectors.toList()));
+        }
+        if (productPo.getCategory() != null) {
+            product.setCategory(categoryPoMapper.categoryFromPo(productPo.getCategory()));
+        }
         return product;
     }
 
 
     private ProductItem productItemFromPo(ProductItemPo productItemPo) {
         ProductItem productItem = map(productItemPo, ProductItem.class);
-        productItem.setOptionPairDtos(productItemPo.getOptionPairs().stream().map(optionPoMapper::optionPairFromPo).collect(Collectors.toList()));
+        if (productItemPo.getOptionPairs() != null) {
+            productItem.setOptionPairDtos(productItemPo.getOptionPairs().stream().map(optionPoMapper::optionPairFromPo).collect(Collectors.toList()));
+        }
         return productItem;
     }
 
     public ProductPo productToPo(Product product) {
         ProductPo productPo = map(product, ProductPo.class);
-        productPo.setItems(product.getItems().stream().map(this::productItemToPo).collect(Collectors.toList()));
-        productPo.setCategory(categoryPoMapper.categoryToPo(product.getCategory()));
+        if (product.getItems() != null) {
+            productPo.setItems(product.getItems().stream().map(this::productItemToPo).collect(Collectors.toList()));
+        }
+        if (product.getCategory() != null) {
+            productPo.setCategory(categoryPoMapper.categoryToPo(product.getCategory()));
+        }
         return productPo;
     }
 
     private ProductItemPo productItemToPo(ProductItem productItem) {
         ProductItemPo productItemPo = map(productItem, ProductItemPo.class);
-        productItemPo.setOptionPairs(productItem.getOptionPairDtos().stream().map(optionPoMapper::optionPairToPo).collect(Collectors.toList()));
+        if (productItem.getOptionPairDtos() != null) {
+            productItemPo.setOptionPairs(productItem.getOptionPairDtos().stream().map(optionPoMapper::optionPairToPo).collect(Collectors.toList()));
+        }
         return productItemPo;
     }
 

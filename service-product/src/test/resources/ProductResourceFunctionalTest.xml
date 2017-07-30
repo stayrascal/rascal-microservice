@@ -1,4 +1,4 @@
 <dataset>
-<product id="497f60a8-93ad-4f47-a54d-e99d651fcb4e" nickname="name" gender="MALE" birthday="2017-01-12 18:00:59.0"
-      time_created="2017-01-12 18:24:20.0" email="xxx@gg" mobile="134567" status="ENABLED" />
+    <product id="497f60a8-93ad-4f47-a54d-e99d651fcb4e" name="productName" description="This is description" thumbnail="thumbnail"
+             create_time_from="123" create_time_to="456" filter_included="1" status="ENABLED" time_created="2017-01-12 18:24:20.0"/>
 </dataset>

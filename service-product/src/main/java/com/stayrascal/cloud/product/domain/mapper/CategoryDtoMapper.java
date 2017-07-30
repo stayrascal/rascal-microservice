@@ -21,13 +21,17 @@ public class CategoryDtoMapper extends DefaultMapper {
 
     public Category categoryFromDto(CategoryDto categoryDto) {
         Category category = map(categoryDto, Category.class);
-        category.setProductOptions(categoryDto.getOptions().stream().map(optionDtoMapper::optionFromDto).collect(Collectors.toList()));
+        if (categoryDto.getOptions() != null){
+            category.setProductOptions(categoryDto.getOptions().stream().map(optionDtoMapper::optionFromDto).collect(Collectors.toList()));
+        }
         return category;
     }
 
     public CategoryDto categoryToDto(Category category) {
         CategoryDto categoryDto = map(category, CategoryDto.class);
-        categoryDto.setOptions(category.getProductOptions().stream().map(optionDtoMapper::optionToDto).collect(Collectors.toList()));
+        if (category.getProductOptions() != null){
+            categoryDto.setOptions(category.getProductOptions().stream().map(optionDtoMapper::optionToDto).collect(Collectors.toList()));
+        }
         return categoryDto;
     }
 }

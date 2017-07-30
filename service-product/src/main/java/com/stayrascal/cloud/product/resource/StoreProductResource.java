@@ -29,6 +29,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -42,20 +43,20 @@ public class StoreProductResource {
     @Autowired
     private StoreProductFacade facade;
 
+    @GET
     @Path("/{id}")
     @ApiOperation(value = "Get product by id", response = ProductDto.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get product successfully"),
             @ApiResponse(code = 404, message = "No product matches given id")
     })
-    @GET
     public Response getStoreProduct(@NotNull @PathParam("id") String id) {
 
         StoreProductDto storeProduct = facade.getStoreProductById(id);
         return Response.ok().entity(storeProduct).build();
     }
 
-    @GET
+    /*@GET
     @ApiResponses(value = {
             @ApiResponse(code = 200, response = PageResult.class, message = "List Store Products successfully")
     })
@@ -65,7 +66,7 @@ public class StoreProductResource {
         SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
         List<StoreProductDto> storeProductDtos = facade.listStoreProducts(sortQuery, queryMaps);
         return new PageResult((long) storeProductDtos.size(), pageSize, pageIndex, storeProductDtos);
-    }
+    }*/
 
     @GET
     @Path("/{store_id}/categories/{category_id}/products")
@@ -74,8 +75,8 @@ public class StoreProductResource {
     })
     public PageResult listStoreProductsByCategory(@NotNull @PathParam("store_id") String storeId,
                                                   @NotNull @PathParam("category_id") String categoryId,
-                                                  @RequestParam("sort_type") SortType sortType, @RequestParam("sort_by") String sortBy,
-                                                  @RequestParam("page_size") Integer pageSize, @RequestParam("page_index") Integer pageIndex,
+                                                  @QueryParam("sort_type") SortType sortType, @QueryParam("sort_by") String sortBy,
+                                                  @QueryParam("page_size") Integer pageSize, @QueryParam("page_index") Integer pageIndex,
                                                   @RequestParam Map<String, String> queryMaps) {
         SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
         queryMaps.put("store_id", storeId);

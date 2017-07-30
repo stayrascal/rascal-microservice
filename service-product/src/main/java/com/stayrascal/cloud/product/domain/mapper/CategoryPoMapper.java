@@ -21,14 +21,18 @@ public class CategoryPoMapper extends DefaultMapper {
 
     public Category categoryFromPo(CategoryPo categoryPo) {
         Category category = map(categoryPo, Category.class);
-        category.setProductOptions(categoryPo.getOptions().stream().map(optionPoMapper::productOptionFromPo).collect(Collectors.toList()));
+        if (categoryPo.getOptions() != null){
+            category.setProductOptions(categoryPo.getOptions().stream().map(optionPoMapper::productOptionFromPo).collect(Collectors.toList()));
+        }
         return category;
     }
 
 
     public CategoryPo categoryToPo(Category category) {
         CategoryPo categoryPo = map(category, CategoryPo.class);
-        categoryPo.setOptions(category.getProductOptions().stream().map(optionPoMapper::productOptionToPo).collect(Collectors.toList()));
+        if (category.getProductOptions() != null){
+            categoryPo.setOptions(category.getProductOptions().stream().map(optionPoMapper::productOptionToPo).collect(Collectors.toList()));
+        }
         return categoryPo;
     }
 

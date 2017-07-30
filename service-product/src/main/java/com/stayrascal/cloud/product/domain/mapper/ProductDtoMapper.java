@@ -28,29 +28,41 @@ public class ProductDtoMapper extends DefaultMapper {
 
     public Product productFromDto(ProductDto productDto) {
         Product product = map(productDto, Product.class);
-        product.setItems(productDto.getItems().stream().map(this::productItemFromDto).collect(Collectors.toList()));
-        product.setCategory(categoryDtoMapper.categoryFromDto(productDto.getCategory()));
+        if (product.getItems() != null){
+            product.setItems(productDto.getItems().stream().map(this::productItemFromDto).collect(Collectors.toList()));
+        }
+        if (product.getCategory() != null){
+            product.setCategory(categoryDtoMapper.categoryFromDto(productDto.getCategory()));
+        }
         return product;
     }
 
 
     public ProductItem productItemFromDto(ProductItemDto productItemDto) {
         ProductItem productItem = map(productItemDto, ProductItem.class);
-        productItem.setOptionPairDtos(productItemDto.getOptionPairDtos().stream().map(optionDtoMapper::optionPairFromDto).collect(Collectors.toList()));
+        if (productItemDto.getOptionPairDtos() != null){
+            productItem.setOptionPairDtos(productItemDto.getOptionPairDtos().stream().map(optionDtoMapper::optionPairFromDto).collect(Collectors.toList()));
+        }
         return productItem;
     }
 
     public ProductDto productToDto(Product product) {
         ProductDto productDto = map(product, ProductDto.class);
-        productDto.setItems(product.getItems().stream().map(this::productItemToDto).collect(Collectors.toList()));
-        productDto.setCategory(categoryDtoMapper.categoryToDto(product.getCategory()));
+        if (product.getItems() != null){
+            productDto.setItems(product.getItems().stream().map(this::productItemToDto).collect(Collectors.toList()));
+        }
+        if (product.getCategory() != null){
+            productDto.setCategory(categoryDtoMapper.categoryToDto(product.getCategory()));
+        }
         return productDto;
     }
 
 
     public ProductItemDto productItemToDto(ProductItem productItem) {
         ProductItemDto productItemDto = map(productItem, ProductItemDto.class);
-        productItemDto.setOptionPairDtos(productItem.getOptionPairDtos().stream().map(optionDtoMapper::optionPairToDto).collect(Collectors.toList()));
+        if (productItem.getOptionPairDtos() != null){
+            productItemDto.setOptionPairDtos(productItem.getOptionPairDtos().stream().map(optionDtoMapper::optionPairToDto).collect(Collectors.toList()));
+        }
         return productItemDto;
     }
 }
