@@ -6,7 +6,7 @@ public class CategoryDto {
     private String id;
     private String name;
     private int index;
-    private List<OptionDto> options;
+    private List<ProductOptionDto> options;
 
     public CategoryDto() {
     }
@@ -35,11 +35,11 @@ public class CategoryDto {
         this.index = index;
     }
 
-    public List<OptionDto> getOptions() {
+    public List<ProductOptionDto> getOptions() {
         return this.options;
     }
 
-    public void setOptions(List<OptionDto> options) {
+    public void setOptions(List<ProductOptionDto> options) {
         this.options = options;
     }
 }

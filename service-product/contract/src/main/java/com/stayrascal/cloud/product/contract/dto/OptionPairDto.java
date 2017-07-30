@@ -1,14 +1,14 @@
 package com.stayrascal.cloud.product.contract.dto;
 
-public class OptionPair {
+public class OptionPairDto {
     private String valueId;
     private String name;
     private String value;
 
-    public OptionPair() {
+    public OptionPairDto() {
     }
 
-    public OptionPair(String valueId, String name, String value) {
+    public OptionPairDto(String valueId, String name, String value) {
         this.valueId = valueId;
         this.name = name;
         this.value = value;

@@ -1,19 +1,20 @@
 package com.stayrascal.cloud.product.domain.entity;
 
-import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
+import com.stayrascal.cloud.product.contract.enumeration.StoreProductStatus;
 
 import java.util.Date;
 import java.util.List;
 
-public class Product {
+public class StoreProduct {
     private String id;
+    private String productId;
     private String categoryId;
-    private Category category;
+    private String storeId;
     private String name;
     private String description;
     private String thumbnail;
-    private CommonStatus status;
-    private List<ProductItem> items;
+    private List<StoreProductItem> items;
+    private StoreProductStatus status;
     private Date timeCreated;
 
     public String getId() {
@@ -24,12 +25,28 @@ public class Product {
         this.id = id;
     }
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
     public String getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(String storeId) {
+        this.storeId = storeId;
     }
 
     public String getName() {
@@ -56,11 +73,19 @@ public class Product {
         this.thumbnail = thumbnail;
     }
 
-    public CommonStatus getStatus() {
+    public List<StoreProductItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<StoreProductItem> items) {
+        this.items = items;
+    }
+
+    public StoreProductStatus getStatus() {
         return status;
     }
 
-    public void setStatus(CommonStatus status) {
+    public void setStatus(StoreProductStatus status) {
         this.status = status;
     }
 
@@ -70,21 +95,5 @@ public class Product {
 
     public void setTimeCreated(Date timeCreated) {
         this.timeCreated = timeCreated;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public List<ProductItem> getItems() {
-        return items;
-    }
-
-    public void setItems(List<ProductItem> items) {
-        this.items = items;
     }
 }

@@ -33,7 +33,7 @@ public interface CategoryServiceClient {
             path = {"/rest/categories/{id}"},
             consumes = {"application/json"}
     )
-    CategoryDto getCategory(@PathVariable("id") String var1);
+    CategoryDto getCategory(@PathVariable("id") Long var1);
 
     @RequestMapping(
             method = {RequestMethod.GET},
@@ -53,7 +53,7 @@ public interface CategoryServiceClient {
             path = {"rest/categories/{id}"},
             consumes = {"application/json"}
     )
-    void updateCategory(@PathVariable("id") String var1, UpdateCategoryCommand var2);
+    void updateCategory(@PathVariable("id") Long var1, UpdateCategoryCommand var2);
 
     @RequestMapping(
             method = {RequestMethod.GET},
@@ -67,5 +67,5 @@ public interface CategoryServiceClient {
             path = {"/rest/categories/{id}/options"},
             consumes = {"application/json"}
     )
-    CreatedResult createOptions(@PathVariable("id") String var1, CreateProductOptionCommand var2);
+    CreatedResult createOptions(@PathVariable("id") Long var1, CreateProductOptionCommand var2);
 }

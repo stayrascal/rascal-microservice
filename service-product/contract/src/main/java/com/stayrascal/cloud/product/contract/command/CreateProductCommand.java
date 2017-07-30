@@ -1,6 +1,6 @@
 package com.stayrascal.cloud.product.contract.command;
 
-import com.stayrascal.cloud.product.contract.dto.OptionDto;
+import com.stayrascal.cloud.product.contract.dto.ProductOptionDto;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class CreateProductCommand {
     private String description;
     private String thumbnail;
     private String categoryId;
-    private List<OptionDto> options;
+    private List<ProductOptionDto> options;
     private List<CreateProductItemCommand> createProductItemCommands;
 
     public CreateProductCommand() {
@@ -47,11 +47,11 @@ public class CreateProductCommand {
         this.categoryId = categoryId;
     }
 
-    public List<OptionDto> getOptions() {
+    public List<ProductOptionDto> getOptions() {
         return this.options;
     }
 
-    public void setOptions(List<OptionDto> options) {
+    public void setOptions(List<ProductOptionDto> options) {
         this.options = options;
     }
 

@@ -1,23 +1,23 @@
 package com.stayrascal.cloud.product.contract.command;
 
-import com.stayrascal.cloud.product.contract.dto.OptionPair;
+import com.stayrascal.cloud.product.contract.dto.OptionPairDto;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public class CreateProductItemCommand {
-    private List<OptionPair> optionPairs;
+    private List<OptionPairDto> optionPairDtos;
     private BigDecimal price;
 
     public CreateProductItemCommand() {
     }
 
-    public List<OptionPair> getOptionPairs() {
-        return this.optionPairs;
+    public List<OptionPairDto> getOptionPairDtos() {
+        return this.optionPairDtos;
     }
 
-    public void setOptionPairs(List<OptionPair> optionPairs) {
-        this.optionPairs = optionPairs;
+    public void setOptionPairDtos(List<OptionPairDto> optionPairDtos) {
+        this.optionPairDtos = optionPairDtos;
     }
 
     public BigDecimal getPrice() {

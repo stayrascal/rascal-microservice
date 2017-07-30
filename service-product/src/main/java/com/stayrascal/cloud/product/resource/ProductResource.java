@@ -1,5 +1,8 @@
 package com.stayrascal.cloud.product.resource;
 
+import com.stayrascal.cloud.common.contract.enumeration.SortType;
+import com.stayrascal.cloud.common.contract.query.SortQuery;
+import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.product.contract.command.CreateProductCommand;
 import com.stayrascal.cloud.product.contract.command.UpdateProductCommand;
 import com.stayrascal.cloud.product.contract.dto.ProductDto;
@@ -11,11 +14,14 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.net.URI;
-
+import java.util.List;
+import java.util.Map;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -41,8 +47,8 @@ public class ProductResource {
     @Path("/{id}")
     @ApiOperation(value = "Get product by id", response = ProductDto.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "Get product successfully"),
-        @ApiResponse(code = 404, message = "No product matches given id")
+            @ApiResponse(code = 200, message = "Get product successfully"),
+            @ApiResponse(code = 404, message = "No product matches given id")
     })
     @GET
     public Response getProduct(@NotNull @PathParam("id") String productId) {
@@ -51,10 +57,22 @@ public class ProductResource {
         return Response.ok().entity(productDto).build();
     }
 
+    @GET
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, response = PageResult.class, message = "List Products successfully")
+    })
+    public PageResult listProducts(@RequestParam("sort_type") SortType sortType, @RequestParam("sort_by") String sortBy,
+                                   @RequestParam("page_size") Integer pageSize, @RequestParam("page_index") Integer pageIndex,
+                                   @RequestParam Map<String, String> queryMaps) {
+        SortQuery sortQuery = new SortQuery(sortType, sortBy, pageSize, pageIndex);
+        List<ProductDto> productDtos = productFacade.listProducts(sortQuery, queryMaps);
+        return new PageResult((long) productDtos.size(), pageSize, pageIndex, productDtos);
+    }
+
     @POST
     @ApiOperation(value = "Create product", response = ProductDto.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 201, message = "Create product successfully")
+            @ApiResponse(code = 201, message = "Create product successfully")
     })
     public Response createProduct(@NotNull CreateProductCommand createProductCommand) {
         String id = productFacade.createProduct(createProductCommand);
@@ -63,16 +81,25 @@ public class ProductResource {
     }
 
     @PUT
-    @Path("{id}")
+    @Path("/{id}")
     @ApiOperation(value = "Update product info", response = ProductDto.class)
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "Update product info successfully"),
-        @ApiResponse(code = 404, message = "Could not find product by id")
+            @ApiResponse(code = 200, message = "Update product info successfully"),
+            @ApiResponse(code = 404, message = "Could not find product by id")
     })
-    public Response updateProductInfo(@NotNull @PathParam("id") String productId,
-                                      @NotNull UpdateProductCommand command) {
-        productFacade.updateProductInfo(productId, command);
+    public ProductDto updateProduct(@NotNull @PathParam("id") String productId,
+                                    @NotNull UpdateProductCommand command) {
+        return productFacade.updateProduct(productId, command);
+    }
 
-        return Response.ok().build();
+    @DELETE
+    @Path("/{id}")
+    @ApiOperation(value = "Update product info", response = ProductDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Update product info successfully"),
+            @ApiResponse(code = 404, message = "Could not find product by id")
+    })
+    public ProductDto deleteProduct(@NotNull @PathParam("id") String id) {
+        return productFacade.delete(id);
     }
 }

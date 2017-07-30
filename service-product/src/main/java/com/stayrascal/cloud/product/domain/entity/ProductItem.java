@@ -1,19 +1,26 @@
-package com.stayrascal.cloud.product.contract.dto;
+package com.stayrascal.cloud.product.domain.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
-public class ProductItemDto {
+public class ProductItem {
     private String id;
     private String productId;
     private BigDecimal price;
-    private List<OptionPairDto> optionPairDtos;
+    private List<OptionPair> optionPairDtos;
+    private Date timeCreated;
 
-    public ProductItemDto() {
+    public Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    public void setTimeCreated(Date timeCreated) {
+        this.timeCreated = timeCreated;
     }
 
     public String getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(String id) {
@@ -21,7 +28,7 @@ public class ProductItemDto {
     }
 
     public String getProductId() {
-        return this.productId;
+        return productId;
     }
 
     public void setProductId(String productId) {
@@ -29,18 +36,18 @@ public class ProductItemDto {
     }
 
     public BigDecimal getPrice() {
-        return this.price;
+        return price;
     }
 
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public List<OptionPairDto> getOptionPairDtos() {
-        return this.optionPairDtos;
+    public List<OptionPair> getOptionPairDtos() {
+        return optionPairDtos;
     }
 
-    public void setOptionPairDtos(List<OptionPairDto> optionPairDtos) {
+    public void setOptionPairDtos(List<OptionPair> optionPairDtos) {
         this.optionPairDtos = optionPairDtos;
     }
 }

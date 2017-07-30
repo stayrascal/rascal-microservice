@@ -78,7 +78,7 @@ public interface StoreProductServiceClient {
 
     @RequestMapping(
             method = {RequestMethod.GET},
-            path = {"/rest/stores/{store_id}/categories/{category_id}/products"},
+            path = {"/rest/store-products/{store_id}/categories/{category_id}/products"},
             consumes = {"application/json"}
     )
     PageResult listStoreProductsByCategory(@PathVariable("store_id") String var1, @PathVariable("category_id") String var2,

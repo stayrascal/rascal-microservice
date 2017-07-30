@@ -1,13 +1,13 @@
 package com.stayrascal.cloud.product.contract.command;
 
-import com.stayrascal.cloud.product.contract.dto.OptionDto;
+import com.stayrascal.cloud.product.contract.dto.ProductOptionDto;
 
 import java.util.List;
 
 public class UpdateCategoryCommand {
     private String name;
     private Integer index;
-    private List<OptionDto> options;
+    private List<ProductOptionDto> options;
 
     public UpdateCategoryCommand() {
     }
@@ -28,11 +28,11 @@ public class UpdateCategoryCommand {
         this.index = index;
     }
 
-    public List<OptionDto> getOptions() {
+    public List<ProductOptionDto> getOptions() {
         return options;
     }
 
-    public void setOptions(List<OptionDto> options) {
+    public void setOptions(List<ProductOptionDto> options) {
         this.options = options;
     }
 }

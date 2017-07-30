@@ -1,10 +1,10 @@
-package com.stayrascal.cloud.product.contract.dto;
+package com.stayrascal.cloud.product.domain.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-public class StoreProductItemDto {
+public class StoreProductItem {
     private String id;
     private String storeProductId;
     private String itemId;
@@ -12,13 +12,10 @@ public class StoreProductItemDto {
     private Integer quantity;
     private BigDecimal price;
     private Date timeCreated;
-    private List<OptionPairDto> optionPairDtos;
-
-    public StoreProductItemDto() {
-    }
+    private List<OptionPair> optionPairs;
 
     public String getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(String id) {
@@ -26,7 +23,7 @@ public class StoreProductItemDto {
     }
 
     public String getStoreProductId() {
-        return this.storeProductId;
+        return storeProductId;
     }
 
     public void setStoreProductId(String storeProductId) {
@@ -34,7 +31,7 @@ public class StoreProductItemDto {
     }
 
     public String getItemId() {
-        return this.itemId;
+        return itemId;
     }
 
     public void setItemId(String itemId) {
@@ -42,7 +39,7 @@ public class StoreProductItemDto {
     }
 
     public String getStoreId() {
-        return this.storeId;
+        return storeId;
     }
 
     public void setStoreId(String storeId) {
@@ -50,7 +47,7 @@ public class StoreProductItemDto {
     }
 
     public Integer getQuantity() {
-        return this.quantity;
+        return quantity;
     }
 
     public void setQuantity(Integer quantity) {
@@ -58,7 +55,7 @@ public class StoreProductItemDto {
     }
 
     public BigDecimal getPrice() {
-        return this.price;
+        return price;
     }
 
     public void setPrice(BigDecimal price) {
@@ -66,18 +63,18 @@ public class StoreProductItemDto {
     }
 
     public Date getTimeCreated() {
-        return this.timeCreated;
+        return timeCreated;
     }
 
     public void setTimeCreated(Date timeCreated) {
         this.timeCreated = timeCreated;
     }
 
-    public List<OptionPairDto> getOptionPairDtos() {
-        return this.optionPairDtos;
+    public List<OptionPair> getOptionPairs() {
+        return optionPairs;
     }
 
-    public void setOptionPairDtos(List<OptionPairDto> optionPairDtos) {
-        this.optionPairDtos = optionPairDtos;
+    public void setOptionPairs(List<OptionPair> optionPairs) {
+        this.optionPairs = optionPairs;
     }
 }

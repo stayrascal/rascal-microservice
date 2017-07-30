@@ -2,12 +2,12 @@ package com.stayrascal.cloud.product.contract.dto;
 
 import java.util.List;
 
-public class OptionDto {
+public class ProductOptionDto {
     private String id;
     private String name;
     private List<OptionValueDto> values;
 
-    public OptionDto() {
+    public ProductOptionDto() {
     }
 
     public String getId() {
