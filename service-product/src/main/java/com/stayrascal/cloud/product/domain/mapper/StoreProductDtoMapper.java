@@ -24,7 +24,7 @@ public class StoreProductDtoMapper extends DefaultMapper {
 
     public StoreProductDto storeProductToDto(StoreProduct storeProduct) {
         StoreProductDto storeProductDto = map(storeProduct, StoreProductDto.class);
-        if (storeProduct.getItems() != null){
+        if (storeProduct.getItems() != null) {
             storeProductDto.setItems(storeProduct.getItems().stream().map(this::storeProductItemToDto).collect(Collectors.toList()));
         }
         return storeProductDto;

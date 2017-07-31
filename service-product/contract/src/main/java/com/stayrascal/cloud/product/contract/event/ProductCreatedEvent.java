@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.product.contract.event;
 
-
 import com.stayrascal.cloud.common.contract.DomainEvent;
 
 public class ProductCreatedEvent implements DomainEvent {

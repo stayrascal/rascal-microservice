@@ -65,7 +65,7 @@ public class CategoryFacade {
         if (!Strings.isNullOrEmpty(command.getName())) {
             category.setName(category.getName());
         }
-        if (category.getProductOptions() != null && category.getProductOptions().size() >= 0) {
+        if (category.getProductOptions() != null) {
             category.setProductOptions(command.getOptions().stream().map(optionDtoMapper::optionFromDto).collect(Collectors.toList()));
         }
         return mapper.categoryToDto(categoryRepository.update(category));

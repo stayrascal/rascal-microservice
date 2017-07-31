@@ -21,7 +21,7 @@ public class CategoryDtoMapper extends DefaultMapper {
 
     public Category categoryFromDto(CategoryDto categoryDto) {
         Category category = map(categoryDto, Category.class);
-        if (categoryDto.getOptions() != null){
+        if (categoryDto.getOptions() != null) {
             category.setProductOptions(categoryDto.getOptions().stream().map(optionDtoMapper::optionFromDto).collect(Collectors.toList()));
         }
         return category;
@@ -29,7 +29,7 @@ public class CategoryDtoMapper extends DefaultMapper {
 
     public CategoryDto categoryToDto(Category category) {
         CategoryDto categoryDto = map(category, CategoryDto.class);
-        if (category.getProductOptions() != null){
+        if (category.getProductOptions() != null) {
             categoryDto.setOptions(category.getProductOptions().stream().map(optionDtoMapper::optionToDto).collect(Collectors.toList()));
         }
         return categoryDto;

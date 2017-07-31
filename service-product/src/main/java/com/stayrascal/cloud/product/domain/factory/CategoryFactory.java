@@ -28,12 +28,12 @@ public class CategoryFactory {
                 .build();
     }
 
-    public Category createCategory(CreateCategoryCommand createCategoryCommand) {
-        Category category = mapper.map(createCategoryCommand, Category.class);
+    public Category createCategory(CreateCategoryCommand command) {
+        Category category = mapper.map(command, Category.class);
         category.setId(generator.generateKey());
         category.setTimeCreated(DateTime.now().toDate());
-        if (createCategoryCommand.getOptionCommands() != null){
-            category.setProductOptions(createCategoryCommand.getOptionCommands().stream().map(this::createProductOption).collect(Collectors.toList()));
+        if (command.getOptionCommands() != null) {
+            category.setProductOptions(command.getOptionCommands().stream().map(this::createProductOption).collect(Collectors.toList()));
         }
         return category;
     }
@@ -42,7 +42,7 @@ public class CategoryFactory {
         ProductOption productOption = mapper.map(createProductOptionCommand, ProductOption.class);
         productOption.setId(generator.generateKey());
         productOption.setTimeCreated(DateTime.now().toDate());
-        if (createProductOptionCommand.getValues() != null){
+        if (createProductOptionCommand.getValues() != null) {
             productOption.setValues(createProductOptionCommand.getValues().stream().map(this::createProductOptionValue).collect(Collectors.toList()));
         }
         return productOption;

@@ -32,7 +32,7 @@ cloud:
     allow_public_access: true
 
 server:
-  port: 8081
+  port: 8079
   context-path: /
   servlet-path: /
 

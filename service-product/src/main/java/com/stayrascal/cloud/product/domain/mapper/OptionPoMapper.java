@@ -1,12 +1,12 @@
 package com.stayrascal.cloud.product.domain.mapper;
 
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
-import com.stayrascal.cloud.product.domain.entity.ProductOption;
 import com.stayrascal.cloud.product.domain.entity.OptionPair;
 import com.stayrascal.cloud.product.domain.entity.OptionValue;
+import com.stayrascal.cloud.product.domain.entity.ProductOption;
 import com.stayrascal.cloud.product.infrastructure.persistence.po.OptionPairPo;
-import com.stayrascal.cloud.product.infrastructure.persistence.po.ProductOptionPo;
 import com.stayrascal.cloud.product.infrastructure.persistence.po.OptionValuePo;
+import com.stayrascal.cloud.product.infrastructure.persistence.po.ProductOptionPo;
 
 import org.springframework.stereotype.Component;
 
@@ -23,7 +23,7 @@ public class OptionPoMapper extends DefaultMapper {
 
     public ProductOption productOptionFromPo(ProductOptionPo productOptionPo) {
         ProductOption option = map(productOptionPo, ProductOption.class);
-        if (option.getValues() != null){
+        if (option.getValues() != null) {
             option.setValues(productOptionPo.getValues().stream().map(this::optionValueFromPo).collect(Collectors.toList()));
         }
         return option;
@@ -39,7 +39,7 @@ public class OptionPoMapper extends DefaultMapper {
 
     public ProductOptionPo productOptionToPo(ProductOption option) {
         ProductOptionPo productOptionPo = map(option, ProductOptionPo.class);
-        if (option.getValues() != null){
+        if (option.getValues() != null) {
             productOptionPo.setValues(option.getValues().stream().map(this::optionValueToPo).collect(Collectors.toList()));
         }
         return productOptionPo;

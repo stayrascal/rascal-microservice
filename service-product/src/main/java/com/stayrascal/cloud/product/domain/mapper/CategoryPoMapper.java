@@ -21,7 +21,7 @@ public class CategoryPoMapper extends DefaultMapper {
 
     public Category categoryFromPo(CategoryPo categoryPo) {
         Category category = map(categoryPo, Category.class);
-        if (categoryPo.getOptions() != null){
+        if (categoryPo.getOptions() != null) {
             category.setProductOptions(categoryPo.getOptions().stream().map(optionPoMapper::productOptionFromPo).collect(Collectors.toList()));
         }
         return category;
@@ -30,7 +30,7 @@ public class CategoryPoMapper extends DefaultMapper {
 
     public CategoryPo categoryToPo(Category category) {
         CategoryPo categoryPo = map(category, CategoryPo.class);
-        if (category.getProductOptions() != null){
+        if (category.getProductOptions() != null) {
             categoryPo.setOptions(category.getProductOptions().stream().map(optionPoMapper::productOptionToPo).collect(Collectors.toList()));
         }
         return categoryPo;

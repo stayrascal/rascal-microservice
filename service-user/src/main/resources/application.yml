@@ -31,7 +31,7 @@ cloud:
     allow_public_access: true
 
 server:
-  port: 8080
+  port: 8078
   context-path: /
   servlet-path: /
 

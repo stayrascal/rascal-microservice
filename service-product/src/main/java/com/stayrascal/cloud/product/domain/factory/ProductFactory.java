@@ -31,10 +31,10 @@ public class ProductFactory {
 
     public ProductDto createProduct(CreateProductCommand command) {
         ProductDto productDto = mapper.map(command, ProductDto.class);
-        if (command.getCreateProductItemCommands() != null){
+        if (command.getCreateProductItemCommands() != null) {
             productDto.setItems(command.getCreateProductItemCommands().stream().map(this::createProductItem).collect(Collectors.toList()));
         }
-        if (command.getCategoryId() != null){
+        if (command.getCategoryId() != null) {
             productDto.setCategory(this.createCategory(command.getCategoryId()));
         }
         productDto.setId(uniqueKeyGenerator.generateKey());

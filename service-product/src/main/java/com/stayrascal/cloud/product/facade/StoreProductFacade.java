@@ -62,7 +62,7 @@ public class StoreProductFacade {
             for (Map.Entry<String, UpdateStoreProductItemCommand> entry : command.getUpdateItemCommands().entrySet()) {
                 UpdateStoreProductItemCommand value = entry.getValue();
                 for (StoreProductItem item : items) {
-                    if (item.getItemId() == entry.getKey()) {
+                    if (item.getItemId().equals(entry.getKey())) {
                         if (value.getPrice() != null) {
                             item.setPrice(value.getPrice());
                         }

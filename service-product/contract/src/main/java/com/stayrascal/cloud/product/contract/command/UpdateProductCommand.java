@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.product.contract.command;
 
-
 import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
 
 import java.util.List;

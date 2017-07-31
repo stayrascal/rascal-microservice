@@ -24,7 +24,7 @@ public class StoreProductPoMapper extends DefaultMapper {
 
     public StoreProduct storeProductFromPo(StoreProductPo storeProductPo) {
         StoreProduct storeProduct = map(storeProductPo, StoreProduct.class);
-        if (storeProductPo.getItems() != null){
+        if (storeProductPo.getItems() != null) {
             storeProduct.setItems(storeProductPo.getItems().stream().map(this::storeProductItemFromPo).collect(Collectors.toList()));
         }
         return storeProduct;
@@ -32,7 +32,7 @@ public class StoreProductPoMapper extends DefaultMapper {
 
     public StoreProductItem storeProductItemFromPo(StoreProductItemPo storeProductItemPo) {
         StoreProductItem item = map(storeProductItemPo, StoreProductItem.class);
-        if (storeProductItemPo.getOptionPairs() != null){
+        if (storeProductItemPo.getOptionPairs() != null) {
             item.setOptionPairs(storeProductItemPo.getOptionPairs().stream().map(optionPoMapper::optionPairFromPo).collect(Collectors.toList()));
         }
         return item;
@@ -40,7 +40,7 @@ public class StoreProductPoMapper extends DefaultMapper {
 
     public StoreProductPo storeProductToPo(StoreProduct storeProduct) {
         StoreProductPo storeProductPo = map(storeProduct, StoreProductPo.class);
-        if (storeProduct.getItems() != null){
+        if (storeProduct.getItems() != null) {
             storeProductPo.setItems(storeProduct.getItems().stream().map(this::storeProductItemToPo).collect(Collectors.toList()));
         }
         return storeProductPo;
@@ -48,7 +48,7 @@ public class StoreProductPoMapper extends DefaultMapper {
 
     public StoreProductItemPo storeProductItemToPo(StoreProductItem storeProductItem) {
         StoreProductItemPo po = map(storeProductItem, StoreProductItemPo.class);
-        if (storeProductItem.getOptionPairs() != null){
+        if (storeProductItem.getOptionPairs() != null) {
             po.setOptionPairs(storeProductItem.getOptionPairs().stream().map(optionPoMapper::optionPairToPo).collect(Collectors.toList()));
         }
         return po;

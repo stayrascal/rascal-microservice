@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.product.contract.dto;
 
-
 import com.stayrascal.cloud.common.contract.enumeration.CommonStatus;
 
 import java.util.Date;
