@@ -1,5 +1,5 @@
 swagger-ui:
-  image: stayrascal/swagger-ui
+  image: schickling/swagger-ui
   ports:
     - '8081:80'
   environment:
