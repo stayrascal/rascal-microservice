@@ -1,0 +1,13 @@
+version: "2"
+services:
+  infra-eureka-server:
+    image: stayrascal/infra-eureka-server
+    ports:
+      - '8761:8761'
+
+  infra-config-server:
+    image: stayrascal/infra-config-server
+    ports:
+      - '8888:8888'
+    depends_on:
+      - infra-eureka-server
