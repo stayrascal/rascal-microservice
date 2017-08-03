@@ -5,6 +5,11 @@ services:
     ports:
       - '8761:8761'
 
+  infra-eureka-server:
+      image: stayrascal/infra-zipkin
+      ports:
+        - '9411:9411'
+
   infra-config-server:
     image: stayrascal/infra-config-server
     ports:
