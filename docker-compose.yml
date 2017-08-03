@@ -9,5 +9,6 @@ services:
     image: stayrascal/infra-config-server
     ports:
       - '8888:8888'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "20", "infra-eureka-server:8761", "--", "./run.sh"]
     depends_on:
       - infra-eureka-server
