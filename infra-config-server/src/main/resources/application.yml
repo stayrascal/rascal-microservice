@@ -1,3 +1,6 @@
+docker:
+  host: 192.168.99.100
+
 spring:
   application:
     name: infra-config-server
@@ -9,8 +12,9 @@ spring:
           uri: file://${user.home}/workspace/java/microservices/config-repo
 server:
   port: 8888
+
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.99.100:8761/eureka/
+      defaultZone: http://${docker.host}:8761/eureka/
 

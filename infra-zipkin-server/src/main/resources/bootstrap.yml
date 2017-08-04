@@ -1,6 +1,6 @@
 spring:
   application:
-    name: infra-zipkin
+    name: infra-zipkin-server
   cloud:
     config:
       discovery:
