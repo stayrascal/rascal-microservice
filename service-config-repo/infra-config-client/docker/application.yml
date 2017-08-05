@@ -1,6 +1,12 @@
 info:
   profile: docker
+  descript: '{cipher}AEALbWyQUGdKagAg/FZFC4hJ80puriLB64GXT5K997kp5OZWuWDKChO2Md2Y57NO3lY8lIwRGYNZVHDbzPfJ982ANFEDEDK+sYoMhisP4+PH2LBPNu3+9JFbgDFfoukekEnGB/MVI/cJHKrcAK67Tsms'
 
 cloud:
   docker:
     host: 192.168.99.100
+
+spring:
+  datasource:
+    username: dbuser
+    password: '{cipher}FKSAJDFGYOS8F7GLHAKERGFHLSAJ'

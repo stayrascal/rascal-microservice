@@ -1,5 +1,6 @@
 info:
   profile: prod
+  descript: '{cipher}AEAvZlT9iHhVw6eQ0+7FCOokKvDl4vYzQ7dpXTpeo5DIc6b3+MNfPYawfoRTqsiwAE9gtXpi5Fu0Wv02alK7dnJVCHQbF5BXsxgYQn1ydmZ62kl65xyzx5YvxAS79dSb/2axERsWPOMjFSkamZtk5dYA'
 
 cloud:
   docker:
