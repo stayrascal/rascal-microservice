@@ -4,3 +4,12 @@ info:
 cloud:
   docker:
     host: 192.168.99.100
+
+spring:
+  logging:
+    level:
+      org.springframework.web: DEBUG
+      org.hibernate: DEBUG
+    file: logs/application.log
+    pattern: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
