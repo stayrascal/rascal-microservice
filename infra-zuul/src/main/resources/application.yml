@@ -3,13 +3,38 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      defaultZone: http://192.168.99.100:8761/eureka/
+      defaultZone: http://${cloud.docker.host}:8761/eureka/
 
 server:
   port: 8765
 
-  zuul:
-    routes:
-      bff-staff:
-        path: /desktop/staff/**
-        serviceId: service-staff-desktop-bff
+zuul:
+  routes:
+    bff-staff:
+      path: /desktop/staff/**
+      stripPrefix: false
+      sensitiveHeaders: Cookie, Set-Cookie, Authorization
+      serviceId: service-staff-desktop-bff
+  ignored-services: '*'
+
+ribbon:
+  eureka:
+    enabled: false
+
+service-staff-desktop-bff:
+  ribbon:
+    listOfServers: example.com, google.com
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100

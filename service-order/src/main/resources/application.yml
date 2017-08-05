@@ -48,6 +48,14 @@ logging:
     org.springframework.web: DEBUG
     org.hibernate: ERROR
     me.chanjat.weixin.mp: DEBUG
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,appliaiton/json
+      min-request-size: 2048
+    response:
+      enabled: true
 
 ---
   spring:

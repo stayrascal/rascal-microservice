@@ -7,6 +7,31 @@ spring:
         bootstrap: true
         git:
           uri: https://github.com/stayrascal/rascal-microservice
-          search-paths: service-config-repo
+          search-paths: 'service-config-repo/{application}/{profile}'
+#          repos:
+#            service-user:
+#              cloneOnStart: true
+#              pattern:
+#                - */development
+#                - */staging
+#              url: https://github.com/stayrascal/rascal-microservice
+#              search-paths: service-config-repo
+#              username: stayral
+#              password: ${password}
+
 server:
   port: 8888
+
+
+security:
+  user:
+    name: stayrascal
+    password: '{cipher}AECF4iJu4pisDnJ30nMHJZwUSSYpOINhtEzdb8rMU4wGb63STYcszIdFFdr7KJOa2NyQNPI4mto9KPdN0JolWrZbf/LUCqqZYDm7BOE8yFu7qRxfZNlEyNwl3N/So2U/F3E='
+
+encrypt:
+  key-store:
+    location: file:${JAVA_HOME}/infra-config-server.jks
+#    password:
+#    alias:
+#    secret:
+

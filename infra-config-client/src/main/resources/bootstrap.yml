@@ -1,6 +1,6 @@
 spring:
   application:
-    name: infra-api-gateway
+    name: infra-config-client
   cloud:
     config:
       discovery:
@@ -10,3 +10,11 @@ spring:
       label: master
       username: stayrascal
       password: stayrascal
+server:
+  port: 7888
+
+management:
+  context-path: /system
+  security:
+      enabled: false
+
