@@ -1,10 +1,12 @@
 rootProject.name = 'rascal-microservice'
 include 'infra-eureka-server',
         'infra-config-server',
+        'infra-config-client',
         'infra-zuul',
         'infra-zipkin-server',
         'infra-zipkin-stream-server',
         'service-common-contract',
         'service-common-lib',
         'service-fill-data',
+        'service-config-repo',
         'bff-staff'

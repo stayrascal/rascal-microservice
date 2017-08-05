@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: infra-config-server
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://github.com/stayrascal/rascal-microservice
+          search-paths: service-config-repo
+server:
+  port: 8888
