@@ -1,3 +1,6 @@
+info:
+  profile: default
+
 cloud:
   docker:
     host: localhost
