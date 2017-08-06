@@ -29,6 +29,8 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-config')
     compile('org.springframework.cloud:spring-cloud-starter-eureka')
     compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('io.jmnarloch:ribbon-discovery-filter-spring-cloud-starter:2.1.0')
+    compile('com.marcosbarbero.cloud:spring-cloud-zuul-ratelimit:1.1.0.RELEASE')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

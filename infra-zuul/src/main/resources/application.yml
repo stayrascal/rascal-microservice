@@ -16,14 +16,53 @@ zuul:
       sensitiveHeaders: Cookie, Set-Cookie, Authorization
       serviceId: service-staff-desktop-bff
   ignored-services: '*'
+  ratelimit:
+    enabled: true #default false
+    behind-proxy: true #default false
+    policies:
+      bff-staff:
+        limit: 10
+        refresh-interval: 120 #60 default value (in seconds)
+        type: #optional
+          - user
+          - origin
+          - url
+  host:
+    max-per-route-connections: 500
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+
 
 ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OKToRetryOnAllOperations: false
   eureka:
-    enabled: false
+    enabled: true
 
-service-staff-desktop-bff:
-  ribbon:
-    listOfServers: example.com, google.com
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+spring:
+  redis:
+    database: 0
+    timeout: 10
+    host: localhost
+    port: 6379
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+
 
 ---
 spring:

@@ -8,6 +8,7 @@ import com.stayrascal.cloud.order.contract.command.CreateOrderCommand;
 import com.stayrascal.cloud.order.contract.command.UpdateOrderCommand;
 import com.stayrascal.cloud.order.contract.dto.OrderDto;
 import com.stayrascal.cloud.order.contract.enumeration.OrderStatus;
+import com.stayrascal.cloud.order.contract.hystrix.OrderServiceClientHystrix;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 import javax.ws.rs.core.MediaType;
 
-@FeignClient(value = "service-order")
+@FeignClient(value = "service-order", fallback = OrderServiceClientHystrix.class)
 public interface OrderServiceClient {
     @RequestMapping(method = RequestMethod.POST, path = "/rest/orders", consumes = MediaType.APPLICATION_JSON)
     CreatedResult createOrder(CreateOrderCommand createOrderCommand);

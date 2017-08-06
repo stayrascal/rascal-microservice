@@ -1,10 +1,14 @@
 eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 90
   client:
     service-url:
       defaultZone: http://${cloud.docker.host}:8761/eureka/
     healthcheck:
       enabled: true
-
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
 #spring:
 #  logging:
 #    level:

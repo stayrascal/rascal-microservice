@@ -10,6 +10,14 @@ nginx:
     name: docker.com
 
 spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.79.96.52:9092
+          zk-nodes: 10.79.96.52:2182
+
+spring:
   datasource:
     username: dbuser
     password: '{cipher}AEALbWyQUGdKagAg/FZFC4hJ80puriLB64GXT5K997kp5OZWuWDKChO2Md2Y57NO3lY8lIwRGYNZVHDbzPfJ982ANFEDEDK+sYoMhisP4+PH2LBPNu3+9JFbgDFfoukekEnGB/MVI/cJHKrcAK67Tsms'

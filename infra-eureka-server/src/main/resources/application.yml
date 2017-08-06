@@ -13,19 +13,28 @@ eureka:
 ---
 spring:
   profiles: peer1
+server:
+  port: 8762
 eureka:
+  server:
+    wait-time-in-ms-when-sync-empty: 5
+    number-of-replication-retries: 5
+    enable-self-preservation: true
+    renewal-percent-threshold: 0.85
   instance:
     hostname: peer1
   client:
     service-url:
-      defaultZone: http://peer2/eureka/
+      defaultZone: http://peer2:8763/eureka/, http://localhost:8761/eureka/
 
 ---
 spring:
   profiles: peer2
+server:
+    port: 8763
 eureka:
   instance:
     hostname: peer2
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://peer1:8762/eureka/, http://localhost:8761/eureka/

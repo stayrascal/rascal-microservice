@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.zuul;
 
 import com.stayrascal.cloud.zuul.filter.AccessFilter;
+import com.stayrascal.cloud.zuul.filter.DynamicRoutesFilter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,5 +19,10 @@ public class InfraZuulApplication {
     @Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
+    }
+
+    @Bean
+    public DynamicRoutesFilter dynamicRoutesFilter() {
+        return new DynamicRoutesFilter();
     }
 }
