@@ -17,7 +17,7 @@ spring:
         git:
           uri: https://github.com/stayrascal/rascal-microservice
           search-paths: 'service-config-repo/{application}/{profile}'
-          basedir: /apps/
+#          basedir: /apps/
 #          repos:
 #            service-user:
 #              cloneOnStart: true

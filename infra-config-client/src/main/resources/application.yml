@@ -4,7 +4,8 @@ eureka:
     lease-expiration-duration-in-seconds: 90
   client:
     service-url:
-      defaultZone: http://${cloud.docker.host}:8761/eureka/
+#      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
     healthcheck:
       enabled: true
     fetch-registry: true
