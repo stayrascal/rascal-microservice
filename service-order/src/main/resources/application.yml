@@ -57,6 +57,10 @@ feign:
     response:
       enabled: true
 
+feign:
+  httpclient:
+    enabled: true
+
 ---
   spring:
     profiles: local

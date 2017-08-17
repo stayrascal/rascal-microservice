@@ -1,15 +1,3 @@
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-    lease-expiration-duration-in-seconds: 90
-  client:
-    service-url:
-#      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
-      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
-    healthcheck:
-      enabled: true
-    fetch-registry: true
-    registry-fetch-interval-seconds: 30
 #spring:
 #  logging:
 #    level:
@@ -18,17 +6,3 @@ eureka:
 #    file: logs/application.log
 #    pattern: "%d %-5level %logger : %msg%n"
 #    file: "%d %-5level [%thread] %logger : %msg%n"
-
----
-spring:
-  profiles: default
-cloud:
-  docker:
-    host: localhost
-
----
-spring:
-  profiles: docker
-cloud:
-  docker:
-    host: 192.168.99.100

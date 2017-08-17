@@ -11,11 +11,11 @@ spring:
       username: stayrascal
       password: stayrascal
       fail-fast: true # don't start if connect config server failed
-  rabbitmq:
-      port: 5672
-      host: localhost
-      username: springcloud
-      password: 123456
+#  rabbitmq:
+#      port: 5672
+#      host: localhost
+#      username: springcloud
+#      password: 123456
 
 server:
   port: 7888
@@ -24,4 +24,31 @@ management:
   context-path: /system
   security:
       enabled: false
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 90
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+    healthcheck:
+      enabled: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100
+
 
