@@ -5,7 +5,7 @@ import com.netflix.zuul.context.RequestContext;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class WebSockerHeaderFilter extends ZuulFilter {
+public class WebSocketHeaderFilter extends ZuulFilter {
     @Override
     public String filterType() {
         return "pre";

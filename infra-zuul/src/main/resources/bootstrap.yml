@@ -10,3 +10,24 @@ spring:
       label: master
       username: stayrascal
       password: stayrascal
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${cloud.docker.host}:8761/eureka/
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100
