@@ -5,13 +5,29 @@ spring:
     config:
       discovery:
         service-id: infra-config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
-      defaultZone: http://192.168.99.100:8761/eureka/
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
 
 server:
   port: 9411
 
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100

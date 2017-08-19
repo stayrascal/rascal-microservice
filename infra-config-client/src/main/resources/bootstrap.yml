@@ -27,8 +27,8 @@ management:
 
 eureka:
   instance:
-    lease-renewal-interval-in-seconds: 20
-    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30 # the time send Renew operation to Eureka Server
+    lease-expiration-duration-in-seconds: 90 # the time Eureka Server move out this instance if without renew operation within 90 seconds
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
