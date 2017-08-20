@@ -13,4 +13,4 @@ RUN chmod u+x run.sh
 ENV JAR_FILE=$jar
 CMD ["./run.sh"]
 
-EXPOSE 8888
+EXPOSE 7888

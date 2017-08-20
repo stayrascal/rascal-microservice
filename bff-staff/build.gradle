@@ -148,7 +148,6 @@ allprojects {
 }
 
 dependencies {
-
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-logging")
     compile("org.springframework.boot:spring-boot-starter-actuator")
@@ -169,6 +168,7 @@ dependencies {
     compile('com.stayrascal.cloud:service-address-contract:1.0.0')
     compile('com.stayrascal.cloud:service-organization-contract:1.0.0')
     compile('com.stayrascal.cloud:service-order-contract:1.0.0')
+    compile 'junit:junit:4.12'
 }
 
 task sourceJar(type: Jar) {

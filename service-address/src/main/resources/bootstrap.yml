@@ -1,38 +1,61 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
+
+---
 spring:
+  profiles: default
   cloud:
     config:
-      uri: http://localhost:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
   datasource:
     url: jdbc:mysql://127.0.0.1/service_address
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-
+    tomcat:
+      max-active: 50
 cloud:
-  allowReloadTestData: true
+  docker:
+    host: localhost
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 1000
-      circuitBreaker:
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
         enabled: true
-        requestVolumeThreshold: 1000
-        sleepWindowInMilliseconds: 5000
-        errorThresholdPercentage: 50
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
+  datasource:
+      url: jdbc:mysql://${cloud.docker.host}/service_address
+      username: root
+      password: password
+      driver-class-name: com.mysql.jdbc.Driver
+      tomcat:
+        max-active: 50
+cloud:
+  docker:
+    host: 192.168.99.100
 
 ---
 spring:
   profiles: k8s_dev
   cloud:
     config:
-      uri: http://service-configuration-service:8888
+      discovery:
+        service-id: infra-config-server
+        enabled: true

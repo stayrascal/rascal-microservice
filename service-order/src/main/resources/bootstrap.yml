@@ -1,9 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
+
+---
 spring:
+  profiles: default
   cloud:
     config:
       discovery:
         service-id: infra-config-server
         enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
   datasource:
     url: jdbc:mysql://127.0.0.1/service_order
     username: root
@@ -11,46 +23,34 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       max-active: 50
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
 cloud:
-  allowReloadTestData: true
-  transaction:
-    weChat:
-      appId: wxcf0848f15d297fb3
-      secret: da2605c98f732ba23475d9affc427f3f
-      token: iN09j41p3mr5
-      partnerKey: Br4AwHiDU3hHRGj6gGWFtPvkANFFHCqi
-      encodingAesKey: CiXqCms3W9kcm7AR7hTTpHnawJ8nJl1zt9L2reTyviN
-      mchId: 10014392
-      notifyUrl: https://localhost:9441/rest/we-chat/notify
-
-  weChat:
-    redirectUrl: https://click-n-collect.exmertec.com/wechat-auth
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutMilliseconds: 1000
-      cirsuitBreaker:
-        enabled: true
-        requestVolumeThreshold: 1000
-        sleepWindowInMilliseconds: 5000
-        errorThresholdPercentage: 50
+  docker:
+    host: localhost
 
 ---
 spring:
-  profiles: k8s_dev
+  profiles: docker
   cloud:
     config:
       discovery:
         service-id: infra-config-server
         enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
+  datasource:
+      url: jdbc:mysql://${cloud.docker.host}/service_order
+      username: root
+      password: password
+      driver-class-name: com.mysql.jdbc.Driver
+      tomcat:
+        max-active: 50
+cloud:
+  docker:
+    host: 192.168.99.100
+
+---
+spring:
+  profiles: k8s_dev

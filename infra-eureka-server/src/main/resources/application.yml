@@ -15,6 +15,7 @@ security:
   user:
     name: stayrascal
     password: stayrascal
+    role: SYSTEM
 
 ---
 spring:

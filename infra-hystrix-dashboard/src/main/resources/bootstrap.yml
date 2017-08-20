@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: infra-hystrix-dashboard
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+
+server:
+  port: 8030
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100

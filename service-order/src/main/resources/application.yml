@@ -14,9 +14,7 @@ spring:
     application-path: /rest
   sleuth:
     sampler:
-      percentage: 1
-  zipkin:
-    base-url: http://localhost:9411
+      percentage: 1.0
 
 flyway:
   enabled: true
@@ -26,10 +24,36 @@ flyway:
 cloud:
   jersey:
     access_control_allow_origin: '*'
-
   auth:
     admin_token_expire_minutes: 30
     allow_public_access: true
+  allowReloadTestData: true
+  transaction:
+    weChat:
+      appId: wxcf0848f15d297fb3
+      secret: da2605c98f732ba23475d9affc427f3f
+      token: iN09j41p3mr5
+      partnerKey: Br4AwHiDU3hHRGj6gGWFtPvkANFFHCqi
+      encodingAesKey: CiXqCms3W9kcm7AR7hTTpHnawJ8nJl1zt9L2reTyviN
+      mchId: 10014392
+      notifyUrl: https://localhost:9441/rest/we-chat/notify
+
+  weChat:
+    redirectUrl: https://click-n-collect.exmertec.com/wechat-auth
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutMilliseconds: 1000
+      cirsuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
 
 server:
   port: 8079
@@ -57,13 +81,6 @@ feign:
     response:
       enabled: true
 
-feign:
+
   httpclient:
     enabled: true
-
----
-  spring:
-    profiles: local
-    zipkin:
-      enabled: false
-      base-url: http://localhost:9411

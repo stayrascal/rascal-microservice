@@ -1,9 +1,24 @@
+spring:
+  application:
+    name: infra-config-server
+  rabbitmq:
+    port: 5672
+    host: localhost
+    username: springcloud
+    password: 123456
+  cloud:
+    inetutils:
+      ignored-interfaces:
+        - docker0
+        - veth.*
+
+server:
+  port: 8888
+
 eureka:
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
-#  instance:
-#    hostname: infr-config-server
 
 ---
 spring:

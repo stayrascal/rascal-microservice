@@ -4,17 +4,14 @@ import com.stayrascal.cloud.zuul.interceptor.CoreHeaderInterceptor;
 import com.stayrascal.cloud.zuul.interceptor.CoreHttpRequestInterceptor;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@Configuration
-@EnableWebMvc
-@RibbonClients(defaultConfiguration = DefaultRibbonConfiguration.class)
+//@Configuration
+//@EnableWebMvc
+//@RibbonClients(defaultConfiguration = DefaultRibbonConfiguration.class)
 public class CoreAutoConfiguration extends WebMvcConfigurerAdapter {
 
     @LoadBalanced

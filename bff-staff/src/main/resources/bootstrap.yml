@@ -1,44 +1,39 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+
+---
 spring:
+  profiles: default
   cloud:
     config:
       discovery:
         service-id: infra-config-server
         enabled: true
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
 cloud:
-  jersey:
-    swagger:
-      version: '0.0.1'
-      host: 'localhost:8080'
-      scheme: 'http'
-      base-path: '/desktop/staff'
-  redis:
+  docker:
     host: localhost
 
-  jms:
-    url: tcp://localhost:61616
-    username: korprulu
-    password: korprulu
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 5000
-      circuitBreaker:
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
         enabled: true
-        requestVolumeThreshold: 1000
-        sleepWindowInMilliseconds: 5000
-        errorThresholdPercentage: 50
-
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+cloud:
+  docker:
+    host: 192.168.99.100
 ---
 spring:
   profiles: k8s_dev
@@ -47,3 +42,7 @@ spring:
       discovery:
         service-id: infra-config-server
         enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal

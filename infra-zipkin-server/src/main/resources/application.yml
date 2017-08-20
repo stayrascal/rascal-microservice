@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: infra-zipkin-server
+
+server:
+  port: 9412

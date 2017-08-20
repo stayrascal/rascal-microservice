@@ -11,19 +11,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FeginConfig {
 
-    @Value("ribbon.retry.period:100")
+    @Value("${ribbon.retry.period:100}")
     private long retryPeriod;
 
-    @Value("ribbon.retry.maxPeriod:1")
+    @Value("${ribbon.retry.maxPeriod:1}")
     private long maxRetryPeriod;
 
-    @Value("ribbon.retry.maxAttempts:5")
+    @Value("${ribbon.retry.maxAttempts:5}")
     private int maxRetryAttempts;
 
-    @Value("ribbon.ReadTimeout:6000")
+    @Value("${ribbon.ReadTimeout:6000}")
     private int ribbonReadTimeout;
 
-    @Value("ribbon.ConnectTimeout:3000")
+    @Value("${ribbon.ConnectTimeout:3000}")
     private int ribbonConnectionTimeout;
 
     @Bean

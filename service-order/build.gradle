@@ -166,3 +166,10 @@ dependencies {
     compile('com.stayrascal.cloud:fill-data:1.0.1')
     compile('com.stayrascal.cloud:service-product-contract:1.0.0')
 }
+
+
+bootRun {
+    if (System.properties.containsKey('spring.profiles.active')) {
+        systemProperty "spring.profiles.active", System.properties['spring.profiles.active']
+    }
+}

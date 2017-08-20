@@ -6,16 +6,38 @@ spring:
   sleuth:
     sampler:
       percentage: 1
-  zipkin:
-    base-url: http://localhost:9411
 
 cloud:
-  jersey:
-    access_control_allow_origin: '*'
-
   auth:
     admin_token_expire_minutes: 30
     allow_public_access: true
+  jersey:
+    access_control_allow_origin: '*'
+    swagger:
+      version: '0.0.1'
+      host: 'localhost:8080'
+      scheme: 'http'
+      base-path: '/desktop/staff'
+  redis:
+    host: localhost
+  jms:
+    url: tcp://localhost:61616
+    username: korprulu
+    password: korprulu
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 5000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
 
 server:
   servlet-path: /
@@ -38,10 +60,3 @@ eureka:
 logging:
   level:
     org.springframework.web: debug
-
----
-spring:
-  profiles: local
-  zipkin:
-    enabled: false
-    base-url: http://localhost:9411

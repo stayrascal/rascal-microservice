@@ -21,10 +21,24 @@ flyway:
 cloud:
   jersey:
     access_control_allow_origin: '*'
-
   auth:
     admin_token_expire_minutes: 30
     allow_public_access: true
+  allowReloadTestData: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
 
 server:
   port: 8086
@@ -43,16 +57,3 @@ logging:
   level:
     org.springframework.web: DEBUG
     org.hibernate: ERROR
-
----
-spring:
-  profiles: test
-  datasource:
-    url: jdbc:h2:mem:service_organization;DB_CLOSE_DELAY=-1;MODE=MySQL;INIT=RUNSCRIPT FROM 'classpath:init_test_db.sql';
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-
----
-spring:
-  profiles: production

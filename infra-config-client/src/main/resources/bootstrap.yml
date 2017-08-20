@@ -1,6 +1,36 @@
+---
 spring:
-  application:
-    name: infra-config-client
+  profiles: default
+  cloud:
+  config:
+    discovery:
+      service-id: infra-config-server
+      enabled: true
+    profile: ${spring.profiles.active}
+    label: master
+    username: stayrascal
+    password: stayrascal
+    fail-fast: true # don't start if connect config server failed
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30 # the time send Renew operation to Eureka Server
+    lease-expiration-duration-in-seconds: 90 # the time Eureka Server move out this instance if without renew operation within 90 seconds
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+#    healthcheck:
+#      enabled: true
+#    fetch-registry: true
+#    registry-fetch-interval-seconds: 30
+
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
   cloud:
     config:
       discovery:
@@ -11,19 +41,6 @@ spring:
       username: stayrascal
       password: stayrascal
       fail-fast: true # don't start if connect config server failed
-#  rabbitmq:
-#      port: 5672
-#      host: localhost
-#      username: springcloud
-#      password: 123456
-
-server:
-  port: 7888
-
-management:
-  context-path: /system
-  security:
-      enabled: false
 
 eureka:
   instance:
@@ -32,23 +49,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
-    healthcheck:
-      enabled: true
-    fetch-registry: true
-    registry-fetch-interval-seconds: 30
+#    healthcheck:
+#      enabled: true
+#    fetch-registry: true
+#    registry-fetch-interval-seconds: 30
 
----
-spring:
-  profiles: default
-cloud:
-  docker:
-    host: localhost
-
----
-spring:
-  profiles: docker
 cloud:
   docker:
     host: 192.168.99.100
 
-
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      enabled: false
+eureka:
+  client:
+    enabled: false

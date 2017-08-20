@@ -15,8 +15,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1
-  zipkin:
-    base-url: http://localhost:9411
 
 flyway:
   enabled: true
@@ -29,6 +27,37 @@ cloud:
   auth:
     admin_token_expire_minutes: 30
     allow_public_access: true
+  allowReloadTestData: true
+  auth:
+    randomKeyLength: 6
+    email:
+      defaultKeyExpireMinutes: 1440
+      title:
+      contentTemplate:
+
+  redis:
+    host: localhost
+
+  jms:
+    url: tcp://localhost:61616
+    username: cloud
+    password: cloud
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        enabled: true
+        requestvolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+
 
 server:
   port: 8078
@@ -51,10 +80,3 @@ logging:
 endpoints:
   env:
     enabled: true
-
----
-spring:
-  profiles: local
-  zipkin:
-    enabled: false
-    base-url: http://localhost:9411

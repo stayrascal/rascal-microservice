@@ -1,9 +1,21 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
+
+---
 spring:
+  profiles: default
   cloud:
     config:
       discovery:
         service-id: infra-config-server
         enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
   datasource:
     url: jdbc:mysql://127.0.0.1/service_user
     username: root
@@ -11,44 +23,33 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     tomcat:
       max-active: 50
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
-
 cloud:
-  allowReloadTestData: true
-  auth:
-    randomKeyLength: 6
-    email:
-      defaultKeyExpireMinutes: 1440
-      title:
-      contentTemplate:
-
-  redis:
+  docker:
     host: localhost
 
-  jms:
-    url: tcp://localhost:61616
-    username: cloud
-    password: cloud
-
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 1000
-      circuitBreaker:
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
         enabled: true
-        requestvolumeThreshold: 1000
-        sleepWindowInMilliseconds: 5000
-        errorThresholdPercentage: 50
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
+  datasource:
+      url: jdbc:mysql://${cloud.docker.host}/service_user
+      username: root
+      password: password
+      driver-class-name: com.mysql.jdbc.Driver
+      tomcat:
+        max-active: 50
+cloud:
+  docker:
+    host: 192.168.99.100
 
 ---
 spring:
