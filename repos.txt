@@ -1,0 +1,1 @@
+infra-eureka-server infra-config-server infra-zipkin-server infra-zuul infra-config-client service-user service-store service-product service-organization service-order service-address bff-staff

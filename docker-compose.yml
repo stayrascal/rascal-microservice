@@ -5,11 +5,6 @@ services:
     ports:
       - '8761:8761'
 
-#  infra-zipkin-server:
-#      image: stayrascal/infra-zipkin
-#      ports:
-#        - '9411:9411'
-#
   infra-config-server:
     image: stayrascal/infra-config-server
     ports:
@@ -17,3 +12,35 @@ services:
     command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "20", "infra-eureka-server:8761", "--", "./run.sh"]
     depends_on:
       - infra-eureka-server
+
+  infra-zuul:
+    image: stayrascal/infra-zuul
+    ports:
+      - '8765:8765'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  infra-zipkin-server:
+    image: stayrascal/infra-zipkin-server
+    ports:
+      - '9411:9411'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  infra-config-client:
+    image: stayrascal/infra-config-client
+    ports:
+      - '7888:7888'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  bff-staff:
+    image: stayrascal/bff-staff
+    ports:
+      - '8082:8082'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server

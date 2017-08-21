@@ -166,3 +166,9 @@ dependencies {
 
     testCompile("com.h2database:h2:1.4.196")
 }
+
+bootRun {
+    if (System.properties.containsKey('spring.profiles.active')) {
+        systemProperty "spring.profiles.active", System.properties['spring.profiles.active']
+    }
+}

@@ -165,3 +165,9 @@ dependencies {
 
 }
 
+bootRun {
+    if (System.properties.containsKey('spring.profiles.active')) {
+        systemProperty "spring.profiles.active", System.properties['spring.profiles.active']
+    }
+}
+

@@ -3,4 +3,4 @@ spring:
     name: infra-zipkin-server
 
 server:
-  port: 9412
+  port: 9411
