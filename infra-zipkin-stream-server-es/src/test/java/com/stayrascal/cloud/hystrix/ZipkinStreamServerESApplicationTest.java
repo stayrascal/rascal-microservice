@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "eureka.client.enabled:false")
-public class ZipkinStreamServerApplicationTest {
+public class ZipkinStreamServerESApplicationTest {
 
     @Test
     public void contextLoad() {

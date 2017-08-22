@@ -1,0 +1,9 @@
+rabbitmq:
+  image: rabbitmq
+  environment:
+    RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+    RABBITMQ_DEFAULT_USER: "stayrascal"
+    RABBITMQ_DEFAULT_PASS: "stayrascal"
+    RABBITMQ_DEFAULT_VHOST: "/"
+  ports:
+    - "5672:5672"
