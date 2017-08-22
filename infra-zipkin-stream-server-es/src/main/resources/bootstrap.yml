@@ -1,0 +1,35 @@
+docker:
+  host: 192.168.99.100
+
+spring:
+  application:
+    name: infra-zipkin-stream-server
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://${docker.host}:3306/test
+    initialize: true
+    continue-on-error: true
+  sleuth:
+    enabled: false
+    sampler:
+      percentage: 1.0
+  rabbitmq:
+    host: ${docker.host}
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${docker.host}:8761/eureka/
+
+zipkin:
+  storage:
+    type: mysql

@@ -107,6 +107,12 @@ if (project.is(rootProject)) {
         }
     }
 
+    bootRun {
+        if (System.properties.containsKey('spring.profiles.active')) {
+            systemProperty "spring.profiles.active", System.properties['spring.profiles.active']
+        }
+    }
+
     idea {
         project {
             languageLevel = '1.8'
@@ -196,11 +202,5 @@ publishing {
                 password nexusPassword
             }
         }
-    }
-}
-
-bootRun {
-    if (System.properties.containsKey('spring.profiles.active')) {
-        systemProperty "spring.profiles.active", System.properties['spring.profiles.active']
     }
 }
