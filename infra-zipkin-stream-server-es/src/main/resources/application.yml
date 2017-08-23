@@ -6,10 +6,10 @@ spring:
     name: infra-zipkin-stream-server-es
   sleuth:
     enabled: false # current application don't use sleuth
-  host: 127.0.0.1
+  host: "${cloud.docker.host}"
     port: 5672
-    username: guest
-    password: guest
+    username: stayrascal
+    password: stayrascal
 
 zipkin:
   storage:
@@ -17,8 +17,16 @@ zipkin:
     type: elasticsearch
   elasticsearch:
     cluster: elasticsearch-zipkin-cluster
-    host: 127.0.0.1:9300
+    host: "${cloud.docker.host}:9300"
     max-requests: 64
     index: zipkin
     index-shards: 5
     index-replicas: 1
+
+---
+spring:
+  profiles:
+    active: docker
+cloud:
+  docker:
+    host: 192.168.99.100

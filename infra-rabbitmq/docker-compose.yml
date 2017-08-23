@@ -1,5 +1,6 @@
-rabbitmq:
-  image: rabbitmq
+rabbit1:
+  image: stayrascal/rabbitmq-cluster
+  hostname: rabbit1
   environment:
     RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
     RABBITMQ_DEFAULT_USER: "stayrascal"
@@ -7,3 +8,27 @@ rabbitmq:
     RABBITMQ_DEFAULT_VHOST: "/"
   ports:
     - "5672:5672"
+    - "15672:15672"
+rabbit2:
+  image: stayrascal/rabbitmq-cluster
+  hostname: rabbit2
+  links:
+    - rabbit1
+  environment:
+    RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+    CLUSTER_WITH: "rabbit1"
+    ENABLE_RAM: "true"
+  ports:
+    - "5673:5672"
+    - "15673:15672"
+rabbit3:
+  image: stayrascal/rabbitmq-cluster
+  hostname: rabbit3
+  links:
+    - rabbit1
+    - rabbit2
+  environment:
+    RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+    CLUSTER_WITH: "rabbit1"
+  ports:
+    - "5674:5672"
