@@ -6,6 +6,8 @@ spring:
     name: infra-zipkin-stream-server-es
   sleuth:
     enabled: false # current application don't use sleuth
+    sampler:
+      percentage: 1.0
   host: "${cloud.docker.host}"
     port: 5672
     username: stayrascal
@@ -30,3 +32,10 @@ spring:
 cloud:
   docker:
     host: 192.168.99.100
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost

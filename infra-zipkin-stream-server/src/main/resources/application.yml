@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: infra-zipkin-stream-server
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://${cloud.docker.host}:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    initialize: true
+    continue-on-error: true
+    driver-class-name: com.mysql.jdbc.Driver
+  sleuth:
+    enabled: false
+    sampler:
+      percentage: 1.0
+  rabbitmq:
+    host: ${cloud.docker.host}
+    port: 5672
+    username: stayrascal
+    password: stayrascal
+    virtual-host: /
+
+server:
+  port: 9412
+
+zipkin:
+  storage:
+    type: mysql
+
+
+---
+spring:
+  profiles:
+    active: docker
+cloud:
+  docker:
+    host: 192.168.99.100
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
