@@ -2,9 +2,10 @@ spring:
   application:
     name: infra-zipkin-stream-server
   datasource:
-    username: root
-    password:
-    url: jdbc:mysql://${cloud.docker.host}:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: stayrascal
+    password: stayrascal
+    url: jdbc:mysql://192.168.99.100:3306/infra-zipkin?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    schema: classpath:/zipkin-mysql.sql
     initialize: true
     continue-on-error: true
     driver-class-name: com.mysql.jdbc.Driver
