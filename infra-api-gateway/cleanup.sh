@@ -1,6 +1,6 @@
 #!/bin/bash
 
-image_name="infra-zuul"
+image_name="infra-api-gateway"
 
 docker ps | grep -E "${image_name}" | awk '{print $1}' | xargs -I {} docker kill {}
 

@@ -6,6 +6,11 @@ spring:
   sleuth:
     sampler:
       percentage: 1
+  rabbitmq:
+    port: 5672
+    host: "${cloud.docker.host}"
+    username: stayrascal
+    password: stayrascal
 
 cloud:
   auth:

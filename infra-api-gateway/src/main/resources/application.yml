@@ -26,18 +26,6 @@ server:
   port: 8765
 
 zuul:
-  routes:
-    bff-staff:
-      path: /desktop/staff/**
-#      stripPrefix: false
-      sensitiveHeaders: Cookie, Set-Cookie, Authorization
-      serviceId: service-staff-desktop-bff
-    infra-config-client:
-      path: /client/**
-#      stripPrefix: false
-      sensitiveHeaders: Cookie, Set-Cookie, Authorization
-      serviceId: infra-config-client
-#    ignored-services: '*'
   ratelimit:
     enabled: true #default false
     behind-proxy: true #default false
@@ -73,21 +61,3 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
-
-zipkin:
-  server:
-    name: infra-zipkin-stream-server
-
----
-spring:
-  profiles: default
-cloud:
-  docker:
-    host: localhost
-
----
-spring:
-  profiles: docker
-cloud:
-  docker:
-    host: 192.168.99.100

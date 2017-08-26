@@ -19,10 +19,6 @@ spring:
 #    pattern: "%d %-5level %logger : %msg%n"
 #    file: "%d %-5level [%thread] %logger : %msg%n"
 
-zipkin:
-  server:
-    name: infra-zipkin-stream-server
-
 server:
   port: 7888
 

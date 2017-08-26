@@ -161,9 +161,9 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-config")
     compile("org.springframework.cloud:spring-cloud-starter-zuul")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
-    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin')
     compile("org.springframework.cloud:spring-cloud-starter-feign")
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 
     compile("com.github.binarywang:weixin-java-mp:2.5.0")
     compile("org.sharegov:mjson:1.4.1")
@@ -185,7 +185,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId 'com.stayrascal.cloud'
-            artifactId 'service-order'
+            artifactId 'bff-staff'
             version "${project.version}"
             from components.java
 
