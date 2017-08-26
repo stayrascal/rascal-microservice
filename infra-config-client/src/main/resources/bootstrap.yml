@@ -14,6 +14,7 @@ spring:
 
 eureka:
   instance:
+    hostname: "${cloud.docker.host}" #infra-config-client
     lease-renewal-interval-in-seconds: 30 # the time send Renew operation to Eureka Server
     lease-expiration-duration-in-seconds: 90 # the time Eureka Server move out this instance if without renew operation within 90 seconds
   client:
@@ -44,6 +45,7 @@ spring:
 
 eureka:
   instance:
+#    hostname: "${cloud.docker.host}" #infra-config-client
     lease-renewal-interval-in-seconds: 30 # the time send Renew operation to Eureka Server
     lease-expiration-duration-in-seconds: 90 # the time Eureka Server move out this instance if without renew operation within 90 seconds
   client:

@@ -6,12 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.rx.RxResponse;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import rx.Observable;
 import rx.Single;
@@ -23,12 +21,8 @@ import java.util.concurrent.TimeUnit;
 @EnableDiscoveryClient
 @RestController
 @RefreshScope
+//@ComponentScan("com.stayrascal.cloud.common")
 public class InfraConfigClientApplication {
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
     @Value("${info.profile}")
     private String profile;

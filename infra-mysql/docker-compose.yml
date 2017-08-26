@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  infra-zipkin-db:
+    image: mysql:5.7
+    container_name: infra-zipkin-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=infra-zipkin
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/workspace/data/zipkin:/var/lib/mysql

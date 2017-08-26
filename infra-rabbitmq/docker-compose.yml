@@ -1,6 +1,7 @@
 rabbit1:
   image: stayrascal/rabbitmq-cluster
   hostname: rabbit1
+  container_name: infra-rabbitmq-1
   environment:
     - RABBITMQ_ERLANG_COOKIE=SWQOKODSQALRPCLNMEQG
     - RABBITMQ_DEFAULT_USER=stayrascal
@@ -12,6 +13,7 @@ rabbit1:
 rabbit2:
   image: stayrascal/rabbitmq-cluster
   hostname: rabbit2
+  container_name: infra-rabbitmq-2
   links:
     - rabbit1
   environment:
@@ -25,6 +27,7 @@ rabbit2:
 rabbit3:
   image: stayrascal/rabbitmq-cluster
   hostname: rabbit3
+  container_name: infra-rabbitmq-3
   links:
     - rabbit1
     - rabbit2
