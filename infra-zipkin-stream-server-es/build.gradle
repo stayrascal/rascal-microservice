@@ -37,7 +37,7 @@ dependencies {
 
     compile('io.zipkin.java:zipkin-server')
     runtime('io.zipkin.java:zipkin-autoconfigure-ui')
-    runtime('io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http')
+    runtime('io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:1.30.3')
     runtime('io.zipkin.dependencies:zipkin-dependencies-elasticsearch:1.9.0')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -16,6 +16,8 @@ server:
   port: 8888
 
 eureka:
+  instance:
+    hostname: "${cloud.docker.host}" # infra-config-server
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/

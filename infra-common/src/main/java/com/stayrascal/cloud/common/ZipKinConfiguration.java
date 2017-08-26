@@ -2,6 +2,8 @@ package com.stayrascal.cloud.common;
 
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -17,6 +19,8 @@ import zipkin.Span;
 @Configuration
 @ConditionalOnBean(value = EurekaClient.class)
 public class ZipKinConfiguration {
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(ZipKinConfiguration.class);
 
     @Autowired
     private EurekaClient eurekaClient;
@@ -37,6 +41,11 @@ public class ZipKinConfiguration {
     private String zipkinServerName;
 
     @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
     public ZipkinSpanReporter makeZipkinSpanReporter() {
         return new ZipkinSpanReporter() {
 
@@ -48,6 +57,7 @@ public class ZipKinConfiguration {
                 InstanceInfo instance = eurekaClient.getNextServerFromEureka(zipkinServerName, false);
                 if (!(baseUrl != null && instance.getHomePageUrl().equals(baseUrl))) {
                     baseUrl = instance.getHomePageUrl();
+                    LOGGER.info("The base url is {}", baseUrl);
                     delegate = new HttpZipkinSpanReporter(restTemplate, baseUrl, zipkinProperties.getFlushInterval(), spanMetricReporter);
                     if (!span.name.matches(skipPattern)) {
                         delegate.report(span);
