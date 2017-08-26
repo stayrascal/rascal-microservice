@@ -2,7 +2,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
-
+  instance:
+    hostname: "${cloud.docker.host}"
 ---
 spring:
   profiles: default

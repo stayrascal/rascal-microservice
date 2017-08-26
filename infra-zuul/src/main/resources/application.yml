@@ -6,6 +6,11 @@ spring:
       percentage: 1.0
     web:
       skip-pattern: (^cleanup.*|.+favicon.*)
+  rabbitmq:
+    port: 5672
+    host: "${cloud.docker.host}"
+    username: stayrascal
+    password: stayrascal
   redis:
     database: 0
     timeout: 10
@@ -68,3 +73,21 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
+
+zipkin:
+  server:
+    name: infra-zipkin-stream-server
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100
