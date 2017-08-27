@@ -1,0 +1,68 @@
+version: '2'
+services:
+  infra-elasticsearch1:
+    image: stayrascal/elasticsearch
+    container_name: infra-elasticsearch1
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data # TODO try to volume to local
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - elk
+
+  infra-elasticsearch2:
+    image: stayrascal/elasticsearch
+    container_name: infra-elasticsearch2
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=infra-elasticsearch1"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    volumes:
+      - esdata2:/usr/share/elasticsearch/data
+    networks:
+      - elk
+
+  infra-logstash:
+    image: stayrascal/logstash
+    container_name: infra-logstash
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    ports:
+      - "5000:5000"
+      - "5044:5044"
+    networks:
+      - elk
+    depends_on:
+      - infra-elasticsearch1
+
+  infra-kibana:
+    image: stayrascal/kibana
+    container_name: infra-kibana
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - infra-elasticsearch1
+
+volumes:
+  esdata1:
+    driver: local
+  esdata2:
+    driver: local
+
+networks:
+  elk:
+    driver: bridge

@@ -1,0 +1,13 @@
+---
+server:
+  name: infa-kibana
+  host: "0.0.0.0"
+
+elasticsearch.url: "http://192.168.99.100:9200/"
+
+xpack:
+  security.enabled: false
+  monitoring.enabled: false
+  ml.enabled: false
+  graph.enabled: false
+  watcher.enabled: false
