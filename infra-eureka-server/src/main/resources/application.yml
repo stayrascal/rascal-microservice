@@ -1,5 +1,10 @@
 server:
   port: 8761
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
+
 
 eureka:
   instance:
@@ -16,6 +21,11 @@ security:
     name: stayrascal
     password: stayrascal
     role: SYSTEM
+
+logging:
+  level:
+    com.stayrascal.cloud: info
+  config: classpath:logback-spring.xml
 
 ---
 spring:

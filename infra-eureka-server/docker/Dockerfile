@@ -10,6 +10,8 @@ COPY ./build/libs/$jar $jar
 COPY ./docker/run.sh run.sh
 RUN chmod u+x run.sh
 
+COPY ./config config
+
 ENV JAR_FILE=$jar
 CMD ["./run.sh"]
 

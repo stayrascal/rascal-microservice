@@ -1,0 +1,21 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /apps/boot/logs/access_log.*.log
+  document_type: tomcat
+
+- input_type: log
+  paths:
+    - /apps/boot/logs/applicaiton.log
+    document_type: application
+    multiline:
+      pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+      negate: true
+      match: after
+
+fields:
+  applicaiton: infra-eureka-server
+
+output:
+  logstash:
+    hosts: ["logstash:5044"]
