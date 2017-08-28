@@ -5,6 +5,7 @@ ARG jar
 
 WORKDIR /apps/boot
 
+COPY ./config config
 COPY ./build/libs/$jar $jar
 COPY ./docker/run.sh run.sh
 COPY ./docker/files/infra-config-server.jks /apps/java8/infra-config-server.jks

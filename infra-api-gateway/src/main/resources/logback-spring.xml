@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="LOG_HOME" value="logs"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date [%thread] %-5level %logger{16} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="applicationFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/application.log</file>
+        <!--if we only the log of INFO level, we can use below strategy-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+            <!--&lt;!&ndash;filter Error&ndash;&gt;-->
+            <!--<level>ERROR</level>-->
+            <!--&lt;!&ndash;forbidden if matched&ndash;&gt;-->
+            <!--<onMatch>DENY</onMatch>-->
+            <!--&lt;!&ndash;Accept if not matched&ndash;&gt;-->
+            <!--<onMismatch>ACCEPT</onMismatch>-->
+        <!--</filter>-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>%date [%thread] %-5level %logger{16} - %msg%n</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/archived/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="applicationFile"/>
+    </root>
+</configuration>

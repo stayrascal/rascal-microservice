@@ -14,6 +14,10 @@ spring:
 
 server:
   port: 8888
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
 
 eureka:
   instance:
@@ -21,6 +25,11 @@ eureka:
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
+
+logging:
+  level:
+    com.stayrascal.cloud: info
+  config: classpath:logback-spring.xml
 
 ---
 spring:

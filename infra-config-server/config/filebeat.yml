@@ -14,7 +14,7 @@ filebeat.prospectors:
     match: after
 
 fields:
-  applicaiton: infra-config-server
+  applicaiton: infra-eureka-server
 
 output:
   logstash:
