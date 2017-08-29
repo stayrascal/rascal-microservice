@@ -3,7 +3,7 @@ eureka:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
   instance:
-      hostname: "${cloud.docker.host}" # infra-zipkin-stream-server
+      hostname: "${cloud.docker.host}" # infra-zipkin-stream-server-es
 
 ---
 spring:

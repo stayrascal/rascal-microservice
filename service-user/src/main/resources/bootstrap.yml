@@ -1,4 +1,6 @@
 eureka:
+  instance:
+    hostname: ${cloud.docker.host} # service-bff
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
@@ -41,12 +43,12 @@ spring:
       password: stayrascal
       fail-fast: true
   datasource:
-      url: jdbc:mysql://${cloud.docker.host}/service_user
-      username: root
-      password: password
-      driver-class-name: com.mysql.jdbc.Driver
-      tomcat:
-        max-active: 50
+    url: jdbc:mysql://${cloud.docker.host}:13306/service-user
+    username: stayrascal
+    password: stayrascal
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 50
 cloud:
   docker:
     host: 192.168.99.100

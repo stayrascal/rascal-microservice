@@ -8,7 +8,7 @@ spring:
       percentage: 1
   rabbitmq:
     port: 5672
-    host: "${cloud.docker.host}"
+    host: ${cloud.docker.host}
     username: stayrascal
     password: stayrascal
 
@@ -48,6 +48,10 @@ server:
   servlet-path: /
   context-path: /
   port: 8082
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
 
 management:
   context-path: /system
@@ -64,4 +68,6 @@ eureka:
 
 logging:
   level:
-    org.springframework.web: debug
+    org.springframework.web: info
+    com.stayrascal.cloud: info
+  config: classpath:logback-spring.xml

@@ -1,6 +1,6 @@
 eureka:
   instance:
-    hostname: "${cloud.docker.host}" # bff-staff
+    hostname: ${cloud.docker.host} # bff-staff
   client:
     service-url:
       defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka/
@@ -36,6 +36,7 @@ spring:
 cloud:
   docker:
     host: 192.168.99.100
+
 ---
 spring:
   profiles: k8s_dev

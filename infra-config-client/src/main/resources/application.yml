@@ -8,16 +8,9 @@ spring:
       skip-pattern: (^cleanup.*|.+favicon.*)
   rabbitmq:
       port: 5672
-      host: "${cloud.docker.host}"
+      host: ${cloud.docker.host}
       username: stayrascal
       password: stayrascal
-#  logging:
-#    level:
-#      org.springframework.web: DEBUG
-#      org.hibernate: DEBUG
-#    file: logs/application.log
-#    pattern: "%d %-5level %logger : %msg%n"
-#    file: "%d %-5level [%thread] %logger : %msg%n"
 
 server:
   port: 7888
