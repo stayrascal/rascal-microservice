@@ -23,12 +23,12 @@ cloud:
       host: 'localhost:8080'
       scheme: 'http'
       base-path: '/desktop/staff'
-  redis:
-    host: localhost
-  jms:
-    url: tcp://localhost:61616
-    username: korprulu
-    password: korprulu
+#  redis:
+#    host: localhost
+#  jms:
+#    url: tcp://localhost:61616
+#    username: korprulu
+#    password: korprulu
 
 hystrix:
   command:

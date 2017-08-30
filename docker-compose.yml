@@ -11,7 +11,7 @@ services:
     container_name: infra-config-server
     ports:
       - '8888:8888'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "40", "infra-eureka-server:8761", "--", "./run.sh"]
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-eureka-server:8761", "--", "./run.sh"]
     depends_on:
       - infra-eureka-server
 
@@ -33,6 +33,24 @@ services:
     depends_on:
       - infra-config-server
 
+  service-user:
+    image: stayrascal/service-user
+    container_name: service-user
+    ports:
+      - '8087:8087'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  service-order:
+    image: stayrascal/service-order
+    container_name: service-order
+    ports:
+      - '8079:8079'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
 
 #  infra-zipkin-server:
 #    image: stayrascal/infra-zipkin-server
@@ -43,23 +61,23 @@ services:
 #    depends_on:
 #      - infra-config-server
 
-#  infra-zipkin-stream-server:
-#    image: stayrascal/infra-zipkin-stream-server
-#    container_name: infra-zipkin-stream-server
-#    ports:
-#      - '9411:9411'
-#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-#    depends_on:
-#      - infra-config-server
-
-  infra-zipkin-stream-server-es:
-    image: stayrascal/infra-zipkin-stream-server-es
-    container_name: infra-zipkin-stream-server-es
+  infra-zipkin-stream-server:
+    image: stayrascal/infra-zipkin-stream-server
+    container_name: infra-zipkin-stream-server
     ports:
       - '9411:9411'
     command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
     depends_on:
       - infra-config-server
+
+#  infra-zipkin-stream-server-es:
+#    image: stayrascal/infra-zipkin-stream-server-es
+#    container_name: infra-zipkin-stream-server-es
+#    ports:
+#      - '9411:9411'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
 
 #  infra-config-client:
 #    image: stayrascal/infra-config-client

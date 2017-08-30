@@ -1,5 +1,6 @@
 swagger-ui:
   image: schickling/swagger-ui
+  container_name: infra-swagger
   ports:
     - '8081:80'
   environment:

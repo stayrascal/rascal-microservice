@@ -158,7 +158,9 @@ dependencies {
 
     compile("org.springframework.cloud:spring-cloud-starter-config")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile("org.springframework.cloud:spring-cloud-starter-zipkin")
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+
     compile("org.flywaydb:flyway-core:4.2.0")
     compile("org.apache.httpcomponents:httpclient")
     compile("com.netflix.feign:feign-httpclient:8.18.0")

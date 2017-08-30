@@ -15,6 +15,11 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
+  rabbitmq:
+    port: 5672
+    host: "${cloud.docker.host}"
+    username: stayrascal
+    password: stayrascal
 
 flyway:
   enabled: true
@@ -59,6 +64,10 @@ server:
   port: 8079
   context-path: /
   servlet-path: /
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
 
 management:
   context-path: /system
@@ -67,11 +76,14 @@ eureka:
   instance:
     status-page-url-path: ${management.context-path}/info
     health-check-url-path: ${management.context-path}/health
+
 logging:
   level:
     org.springframework.web: DEBUG
     org.hibernate: ERROR
     me.chanjat.weixin.mp: DEBUG
+  config: classpath:logback-spring.xml
+
 feign:
   compression:
     request:

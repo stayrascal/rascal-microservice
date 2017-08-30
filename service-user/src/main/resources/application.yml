@@ -1,5 +1,3 @@
----
-
 spring:
   application:
     name: service-user
@@ -19,7 +17,7 @@ spring:
       percentage: 1
   rabbitmq:
     port: 5672
-    host: ${cloud.docker.host}
+    host: "${cloud.docker.host}"
     username: stayrascal
     password: stayrascal
 
@@ -30,7 +28,13 @@ flyway:
 
 cloud:
   jersey:
+    Access-Control-Allow-Origin: '*'
     access_control_allow_origin: '*'
+    swagger:
+      version: '0.0.1'
+      host: 'localhost:8082'
+      scheme: 'http'
+      base-path: /rest
   allowReloadTestData: true
   auth:
     admin_token_expire_minutes: 30
@@ -40,12 +44,6 @@ cloud:
       defaultKeyExpireMinutes: 1440
       title:
       contentTemplate:
-  redis:
-    host: localhost
-  jms:
-    url: tcp://localhost:61616
-    username: cloud
-    password: cloud
 
 hystrix:
   command:
@@ -86,6 +84,8 @@ eureka:
     health-check-url-path: ${management.context-path}/health
 
 endpoints:
+  cors:
+    allowed-origins: '*'
   env:
     enabled: true
 
