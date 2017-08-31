@@ -34,7 +34,7 @@ cloud:
       version: '0.0.1'
       host: 'localhost:8082'
       scheme: 'http'
-      base-path: /rest
+      base-path: /
   allowReloadTestData: true
   auth:
     admin_token_expire_minutes: 30

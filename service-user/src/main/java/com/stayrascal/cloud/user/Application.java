@@ -4,11 +4,8 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @ComponentScan("com.stayrascal.cloud.common")
@@ -19,23 +16,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
         "com.stayrascal.cloud.user.member.infrastructure.persistence.po",
         "com.stayrascal.cloud.user.admin.infrastructure.persistence.po"
 })
+@RestController
 public class Application {
     public static void main(String[] args) {
         new SpringApplicationBuilder(Application.class)
                 .bannerMode(Banner.Mode.OFF)
                 .run(args);
-    }
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedHeaders("*")
-                        .allowedMethods("*")
-                        .allowedOrigins("*");
-            }
-        };
     }
 }

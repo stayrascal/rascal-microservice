@@ -1,6 +1,7 @@
 package com.stayrascal.cloud.user;
 
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
+import com.stayrascal.cloud.common.jersey.filter.CorsFilter;
 import com.stayrascal.cloud.user.admin.resource.StaffResource;
 import com.stayrascal.cloud.user.auth.resource.AuthenticationResource;
 import com.stayrascal.cloud.user.auth.resource.RoleResource;
@@ -8,6 +9,7 @@ import com.stayrascal.cloud.user.member.resource.MemberResource;
 
 import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -40,5 +42,10 @@ public class ServiceJerseyConfig extends JerseyConfig {
                 "com.stayrascal.cloud.user.member.resource",
                 "com.stayrascal.cloud.user.admin.resource",
         };
+    }
+
+    @Bean
+    CorsFilter corsFilter() {
+        return new CorsFilter();
     }
 }
