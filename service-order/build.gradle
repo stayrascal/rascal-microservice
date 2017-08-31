@@ -164,7 +164,7 @@ dependencies {
     compile("org.flywaydb:flyway-core:4.2.0")
     compile("org.apache.httpcomponents:httpclient")
     compile("com.netflix.feign:feign-httpclient:8.18.0")
-    compile('com.stayrascal.cloud:common-lib:1.0.2')
+    compile('com.stayrascal.cloud:common-lib:1.0.4')
     compile('com.stayrascal.cloud:fill-data:1.0.1')
     compile('com.stayrascal.cloud:service-product-contract:1.0.0')
 }
