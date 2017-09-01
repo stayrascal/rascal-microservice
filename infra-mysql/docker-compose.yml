@@ -45,3 +45,18 @@ services:
       - "23306:3306"
     volumes:
       - ~/workspace/data/service/order:/var/lib/mysql
+
+  service-store-db:
+    image: mysql:5.7
+    container_name: service-store-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=service-store
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "33306:3306"
+    volumes:
+      - ~/workspace/data/service/store:/var/lib/mysql

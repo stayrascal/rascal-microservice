@@ -4,4 +4,4 @@ swagger-ui:
   ports:
     - '8081:80'
   environment:
-    API_URL: http://localhost:8080/swagger
+    API_URL: /rest/swagger.json

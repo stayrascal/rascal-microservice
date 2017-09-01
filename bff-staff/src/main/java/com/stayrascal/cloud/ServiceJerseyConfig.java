@@ -8,9 +8,11 @@ import com.stayrascal.cloud.bff.product.StoreProductApi;
 import com.stayrascal.cloud.bff.staff.StaffApi;
 import com.stayrascal.cloud.bff.store.StoreApi;
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
+import com.stayrascal.cloud.common.jersey.filter.CorsFilter;
 
 import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -37,5 +39,10 @@ public class ServiceJerseyConfig extends JerseyConfig {
         return new String[]{
                 "com.stayrascal.cloud.bff"
         };
+    }
+
+    @Bean
+    CorsFilter corsFilter() {
+        return new CorsFilter();
     }
 }

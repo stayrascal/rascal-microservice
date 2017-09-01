@@ -84,8 +84,6 @@ eureka:
     health-check-url-path: ${management.context-path}/health
 
 endpoints:
-  cors:
-    allowed-origins: '*'
   env:
     enabled: true
 
