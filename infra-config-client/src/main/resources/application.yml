@@ -20,6 +20,11 @@ management:
   security:
       enabled: false
 
+elasticsearch:
+  clustername: rascal-cluster
+  host: localhost
+  port: 9300
+
 ---
 spring:
   profiles: default
