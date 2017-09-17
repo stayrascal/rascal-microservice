@@ -215,3 +215,218 @@ java.io.FileNotFoundException: /apps/boot/logs/access_log.2017-09-18.log (No suc
 2017-09-18 00:31:04,533 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
 2017-09-18 00:31:14,534 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
 2017-09-18 00:31:25,533 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:31:36,533 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:31:47,532 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:31:58,530 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:32:08,532 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:32:19,532 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:32:26,597 [http-nio-11007-exec-10] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at: http://192.168.99.100:8888/
+2017-09-18 00:32:26,743 [http-nio-11007-exec-10] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=infra-spring-boot-admin, profiles=[docker], label=master, version=null, state=null
+2017-09-18 00:32:30,530 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:32:40,531 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:32:51,531 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:02,528 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:12,530 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:23,530 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:34,529 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:45,529 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:33:56,528 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:34:06,479 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2017-09-18 00:34:07,527 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:34:17,528 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:34:28,527 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:34:39,528 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:34:50,525 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:00,527 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:11,526 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:22,526 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:33,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:44,525 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:35:55,525 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:36:06,525 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:36:17,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:36:28,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:36:38,524 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:36:49,522 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:00,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:11,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:22,523 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:33,524 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:44,522 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:37:46,585 [http-nio-11007-exec-8] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at: http://192.168.99.100:8888/
+2017-09-18 00:37:46,716 [http-nio-11007-exec-8] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=infra-spring-boot-admin, profiles=[docker], label=master, version=null, state=null
+2017-09-18 00:37:55,521 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:06,521 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:17,521 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:28,518 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:38,520 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:49,517 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:38:59,519 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:39:06,472 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2017-09-18 00:39:10,519 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:39:21,519 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:39:32,518 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:39:43,516 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:39:53,517 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:04,517 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:15,517 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:26,516 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:37,517 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:48,516 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:40:59,516 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:41:10,514 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:41:20,515 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:41:31,514 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:41:42,514 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:41:53,513 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:04,513 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:14,515 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:25,512 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:36,512 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:47,513 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:42:58,511 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:43:06,572 [http-nio-11007-exec-1] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at: http://192.168.99.100:8888/
+2017-09-18 00:43:06,720 [http-nio-11007-exec-1] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=infra-spring-boot-admin, profiles=[docker], label=master, version=null, state=null
+2017-09-18 00:43:09,512 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:43:20,510 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:43:30,511 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:43:41,510 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:43:52,509 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:02,511 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:06,468 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2017-09-18 00:44:13,509 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:24,509 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:35,508 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:46,509 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:44:57,505 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:45:07,507 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:45:17,508 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:45:28,506 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:45:39,507 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:45:50,506 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:01,506 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:12,506 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:23,506 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:34,505 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:45,505 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:46:56,505 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:47:07,503 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:47:17,504 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:47:28,503 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:47:39,501 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:47:49,502 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:00,503 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:11,500 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:22,502 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:26,567 [http-nio-11007-exec-1] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at: http://192.168.99.100:8888/
+2017-09-18 00:48:26,799 [http-nio-11007-exec-1] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=infra-spring-boot-admin, profiles=[docker], label=master, version=null, state=null
+2017-09-18 00:48:33,501 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:44,499 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:48:55,500 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:49:06,461 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2017-09-18 00:49:06,497 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:49:17,500 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:49:28,500 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:49:39,499 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:49:50,497 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:00,498 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:11,499 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:22,498 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:33,498 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:44,497 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:50:55,498 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:06,497 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:17,496 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:27,497 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:38,496 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:49,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:51:51,559 [updateTask1] INFO  d.c.b.a.r.StatusUpdater - Couldn't retrieve status for Application [id=a24e6a3b, name=infra-spring-boot-admin, managementUrl=http://192.168.2.102:11007/actuator/, healthUrl=http://192.168.2.102:11007/actuator/health/, serviceUrl=http://192.168.2.102:11007/]
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://192.168.2.102:11007/actuator/health/": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:549)
+	at de.codecentric.boot.admin.web.client.ApplicationOperations.doGet(ApplicationOperations.java:68)
+	at de.codecentric.boot.admin.web.client.ApplicationOperations.getHealth(ApplicationOperations.java:58)
+	at de.codecentric.boot.admin.registry.StatusUpdater.queryStatus(StatusUpdater.java:111)
+	at de.codecentric.boot.admin.registry.StatusUpdater.updateStatus(StatusUpdater.java:65)
+	at de.codecentric.boot.admin.registry.StatusUpdater.updateStatusForAllApplications(StatusUpdater.java:58)
+	at de.codecentric.boot.admin.registry.StatusUpdateApplicationListener$2.run(StatusUpdateApplicationListener.java:60)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:89)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652)
+	... 16 common frames omitted
+2017-09-18 00:51:51,560 [updateTask1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:00,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:02,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:11,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:13,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:22,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:24,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:33,494 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:35,495 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:44,494 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:46,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:52:55,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:52:57,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:53:06,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:53:08,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:53:16,552 [http-nio-11007-exec-1] INFO  d.c.b.a.r.ApplicationRegistry - New Application Application [id=420522f1, name=infra-spring-boot-admin, managementUrl=http://cnzpwu.local:11007/actuator/, healthUrl=http://cnzpwu.local:11007/actuator/health/, serviceUrl=http://cnzpwu.local:11007/] registered 
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/health/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/env/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/metrics/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/trace/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/dump/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/jolokia/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/info/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/logfile/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/refresh/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/flyway/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/liquibase/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/heapdump/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/loggers/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:16,555 [http-nio-11007-exec-6] INFO  o.s.c.n.z.w.ZuulHandlerMapping - Mapped URL path [/api/applications/420522f1/auditevents/**] onto handler of type [class de.codecentric.boot.admin.zuul.OptionsDispatchingZuulController]
+2017-09-18 00:53:17,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:53:19,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:53:28,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:53:28,555 [http-nio-11007-exec-5] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at: http://192.168.99.100:8888/
+2017-09-18 00:53:28,807 [http-nio-11007-exec-5] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=infra-spring-boot-admin, profiles=[docker], label=master, version=null, state=null
+2017-09-18 00:53:30,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:53:39,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:53:41,492 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:53:50,493 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:53:52,492 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:54:01,492 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:54:03,491 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
+2017-09-18 00:54:06,457 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2017-09-18 00:54:06,551 [updateTask1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is UP
