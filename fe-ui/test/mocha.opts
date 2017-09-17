@@ -1,0 +1,8 @@
+--compilers js:babel-register,jsx:babel-register
+--extensions js,jsx
+--require test/unit/setup.js
+--require ignore-styles
+--require babel-polyfill
+--recursive
+--ui bdd
+src/**/*.specs.*
