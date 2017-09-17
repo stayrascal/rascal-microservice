@@ -15,41 +15,41 @@ services:
     depends_on:
       - infra-eureka-server
 
-  infra-api-gateway:
-    image: stayrascal/infra-api-gateway
-    container_name: infra-api-gateway
-    ports:
-      - '8765:8765'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-    depends_on:
-      - infra-config-server
-
-  bff-staff:
-    image: stayrascal/bff-staff
-    container_name: bff-staff
-    ports:
-      - '8082:8082'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-    depends_on:
-      - infra-config-server
-
-  service-user:
-    image: stayrascal/service-user
-    container_name: service-user
-    ports:
-      - '8087:8087'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-    depends_on:
-      - infra-config-server
-
-  service-order:
-    image: stayrascal/service-order
-    container_name: service-order
-    ports:
-      - '8079:8079'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-    depends_on:
-      - infra-config-server
+#  infra-api-gateway:
+#    image: stayrascal/infra-api-gateway
+#    container_name: infra-api-gateway
+#    ports:
+#      - '8765:8765'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
+#
+#  bff-staff:
+#    image: stayrascal/bff-staff
+#    container_name: bff-staff
+#    ports:
+#      - '8082:8082'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
+#
+#  service-user:
+#    image: stayrascal/service-user
+#    container_name: service-user
+#    ports:
+#      - '8087:8087'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
+#
+#  service-order:
+#    image: stayrascal/service-order
+#    container_name: service-order
+#    ports:
+#      - '8079:8079'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
 
 
 #  infra-zipkin-server:

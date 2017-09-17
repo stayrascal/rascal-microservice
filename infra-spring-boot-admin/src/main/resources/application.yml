@@ -3,7 +3,7 @@ spring:
     name: infra-spring-boot-admin
   boot:
     admin:
-      url: : http://localhost:11007
+      url: "http://localhost:11007"
       username: "${security.user.name}"
       password: "${security.user.password}"
       client:

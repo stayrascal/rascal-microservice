@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = {"eureka.client.enabled:false"})
 @ActiveProfiles("test")
-public class SpringBootAdminApplicationTest {
+public class    SpringBootAdminApplicationTest {
 
     @Test
     public void contextLoads() {

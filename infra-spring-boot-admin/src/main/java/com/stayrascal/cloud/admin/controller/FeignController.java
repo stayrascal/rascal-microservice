@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class Feigncontroller {
+public class FeignController {
 
     @Autowired
     private FeignSchedule feignSchedule;
@@ -28,11 +28,9 @@ public class Feigncontroller {
         Map<String, InterfaceInfo> interfaceInfoMap = new HashMap<>();
 
         for (Map.Entry<String, Map<String, RelateInstance>> entry : dataMap.entrySet()) {
-            String serviceId = entry.getKey();
             Map<String, RelateInstance> relateInstanceMap = entry.getValue();
 
             for (Map.Entry<String, RelateInstance> instanceEntry : relateInstanceMap.entrySet()) {
-                String instanceId = instanceEntry.getKey();
                 RelateInstance relateInstance = instanceEntry.getValue();
                 InstanceInfo instanceInfo = relateInstance.getInstanceInfo();
                 List<FeignInfo> feignInfoList = relateInstance.getFeignInfoList();

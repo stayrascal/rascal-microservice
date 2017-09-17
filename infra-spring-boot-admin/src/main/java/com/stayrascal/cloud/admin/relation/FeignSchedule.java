@@ -39,7 +39,7 @@ public class FeignSchedule {
     @Autowired
     private EurekaDiscoveryClient discoveryClient;
 
-    @Scheduled(fixedRate = 30_000)
+    @Scheduled(fixedRate = 30000L)
     public void run() {
         long currentRunTimestamp = System.currentTimeMillis();
 
