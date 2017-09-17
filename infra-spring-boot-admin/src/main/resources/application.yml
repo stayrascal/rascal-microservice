@@ -1,73 +1,39 @@
 spring:
   application:
-    name: infra-api-gateway
-  sleuth:
-    sampler:
-      percentage: 1.0
-    web:
-      skip-pattern: (^cleanup.*|.+favicon.*)
-  rabbitmq:
-    port: 5672
-    host: "${cloud.docker.host}"
-    username: stayrascal
-    password: stayrascal
-  redis:
-    database: 0
-    timeout: 10
-    host: localhost
-    port: 6379
-    pool:
-      max-active: 8
-      max-idle: 8
-      max-wait: -1
-      min-idle: 0
+    name: infra-spring-boot-admin
+  boot:
+    admin:
+      url: : http://localhost:11007
+      username: "${security.user.name}"
+      password: "${security.user.password}"
+      client:
+        metadata:
+          user.name: "${security.user.name}"
+          user.password: "${security.user.password}"
+      hazelcast:
+        enabled: true
+        application-store: msa-admin-applicaiton-store
+        event-store: msa=admin-admin-event-store
+
 
 server:
-  port: 8765
+  port: 11007
   tomcat:
     accesslog:
       enabled: true
       directory: /apps/boot/logs
-
 
 logging:
   level:
     com.stayrascal.cloud: info
   config: classpath:logback-spring.xml
 
-zuul:
-  ratelimit:
-    enabled: true #default false
-    behind-proxy: true #default false
-    policies:
-      bff-staff:
-        limit: 10
-        refresh-interval: 120 #60 default value (in seconds)
-        type: #optional
-          - user
-          - origin
-          - url
-  host:
-    max-per-route-connections: 500
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000
+security:
+  user:
+    name: admin
+    password: admin
 
-
-ribbon:
-  ReadTimeout: 10000
-  ConnectTimeout: 10000
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  OKToRetryOnAllOperations: false
-  eureka:
-    enabled: true
-
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: true
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
+management:
+  context-path: "/actuator"
+  security:
+    enabled: false
