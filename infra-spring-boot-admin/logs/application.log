@@ -430,3 +430,69 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2017-09-18 00:54:03,491 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is OFFLINE
 2017-09-18 00:54:06,457 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2017-09-18 00:54:06,551 [updateTask1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (a24e6a3b) is UP
+2017-09-18 00:54:12,491 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:54:21,554 [updateTask1] INFO  d.c.b.a.r.StatusUpdater - Couldn't retrieve status for Application [id=420522f1, name=infra-spring-boot-admin, managementUrl=http://cnzpwu.local:11007/actuator/, healthUrl=http://cnzpwu.local:11007/actuator/health/, serviceUrl=http://cnzpwu.local:11007/]
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://cnzpwu.local:11007/actuator/health/": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:549)
+	at de.codecentric.boot.admin.web.client.ApplicationOperations.doGet(ApplicationOperations.java:68)
+	at de.codecentric.boot.admin.web.client.ApplicationOperations.getHealth(ApplicationOperations.java:58)
+	at de.codecentric.boot.admin.registry.StatusUpdater.queryStatus(StatusUpdater.java:111)
+	at de.codecentric.boot.admin.registry.StatusUpdater.updateStatus(StatusUpdater.java:65)
+	at de.codecentric.boot.admin.registry.StatusUpdater.updateStatusForAllApplications(StatusUpdater.java:58)
+	at de.codecentric.boot.admin.registry.StatusUpdateApplicationListener$2.run(StatusUpdateApplicationListener.java:60)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:89)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652)
+	... 16 common frames omitted
+2017-09-18 00:54:21,559 [updateTask1] INFO  d.c.b.a.n.LoggingNotifier - Application infra-spring-boot-admin (420522f1) is OFFLINE
+2017-09-18 00:54:23,491 [pool-14-thread-1] INFO  d.c.b.a.n.LoggingNotifier - Application INFRA-SPRING-BOOT-ADMIN (3f4580ef) is OFFLINE
+2017-09-18 00:54:26,983 [Thread-7] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c2af006: startup date [Sun Sep 17 22:09:01 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@483f6d77
+2017-09-18 00:54:26,985 [Thread-7] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application infra-spring-boot-admin with eureka with status DOWN
+2017-09-18 00:54:26,985 [Thread-7] WARN  c.n.d.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1505667266985, current=DOWN, previous=UP]
+2017-09-18 00:54:26,986 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - DiscoveryClient_INFRA-SPRING-BOOT-ADMIN/192.168.2.102:infra-spring-boot-admin:11007: registering service...
+2017-09-18 00:54:26,986 [Thread-7] INFO  c.n.d.DiscoveryClient - Shutting down DiscoveryClient ...
+2017-09-18 00:54:26,987 [Thread-7] INFO  c.n.d.DiscoveryClient - Unregistering ...
+2017-09-18 00:54:27,003 [Thread-7] INFO  c.n.d.DiscoveryClient - DiscoveryClient_INFRA-SPRING-BOOT-ADMIN/192.168.2.102:infra-spring-boot-admin:11007 - deregister  status: 200
+2017-09-18 00:54:27,004 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - DiscoveryClient_INFRA-SPRING-BOOT-ADMIN/192.168.2.102:infra-spring-boot-admin:11007 - registration status: 204
+2017-09-18 00:54:27,010 [Thread-7] INFO  c.n.d.DiscoveryClient - Completed shut down of DiscoveryClient
+2017-09-18 00:54:27,017 [Thread-7] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 0
+2017-09-18 00:54:27,019 [Thread-7] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'updateTaskScheduler'
+2017-09-18 00:54:27,021 [Thread-7] INFO  o.s.b.a.e.j.EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-18 00:54:27,022 [Thread-7] INFO  o.s.b.a.e.j.EndpointMBeanExporter - Unregistering JMX-exposed beans
+2017-09-18 00:54:27,022 [Thread-7] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-09-18 00:54:27,023 [Thread-7] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2017-09-18 00:54:27,023 [Thread-7] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'registrationTaskScheduler'
+2017-09-18 00:54:27,088 [localhost-startStop-2] INFO  o.s.c.n.z.ZuulFilterInitializer - Stopping filter initializer context listener
