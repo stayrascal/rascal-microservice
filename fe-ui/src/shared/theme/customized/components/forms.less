@@ -1,0 +1,57 @@
+input[type=radio], input[type=checkbox] {
+  cursor: pointer;
+
+  background-size: cover;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 16px;
+  width: 16px;
+  outline: none;
+  margin: 0;
+  vertical-align: middle;
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=radio]:not(:checked) {
+  background-image: url(../assets/radio.png);
+}
+
+input[type=radio]:not(:checked):disabled {
+  background-image: url(../assets/radio_disabled.png);
+}
+
+input[type=radio]:checked {
+  background-image: url(../assets/radio_checked.png);
+}
+
+input[type=radio]:checked:disabled {
+  background-image: url(../assets/radio_checked_disabled.png);
+}
+
+input[type=checkbox]:not(:checked) {
+  background-image: url(../assets/select.png);
+}
+
+input[type=checkbox]:not(:checked):disabled {
+  background-image: url(../assets/select_disabled.png);
+}
+
+input[type=checkbox]:checked {
+  background-image: url(../assets/selected.png);
+}
+
+input[type=checkbox]:checked:disabled {
+  background-image: url(../assets/selected_disabled.png);
+}
+
+.form-group {
+  &.has-success,
+  &.has-warning,
+  &.has-error {
+    label {
+      color: inherit;
+    }
+  }
+}

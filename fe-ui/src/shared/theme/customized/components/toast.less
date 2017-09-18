@@ -1,0 +1,21 @@
+@import '../../variables-n-mixins';
+
+.korp-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  display: block;
+  padding: 1em 3em;
+  border: 1px solid darken(@bg-light-blue, 5%);
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  background: @bg-light-blue;
+  color: darken(@bg-light-blue, 70%);
+}
+
+.toast-alert__error {
+  border-color: lighten(@brand-danger, 20%);
+  background: lighten(@brand-danger, 30%);
+  color: darken(@brand-danger, 30%);
+}

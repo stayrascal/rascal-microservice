@@ -1,0 +1,14 @@
+.table-striped--reversed {
+  > thead > tr {
+    background-color: @table-head-bg;
+    th {
+      border-bottom: none;
+    }
+  }
+  > tbody > tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../variables-n-mixins";
+
+.modal-dialog {
+  .modal-header {
+    padding: 12px;
+  }
+  .modal-title {
+    text-align: center;
+  }
+  .modal-footer {
+    text-align: center;
+    .btn + .btn {
+      margin-left: 2rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.modal-dialog:not(.modal-lg) {
+  height: 100%;
+  margin: 0 auto;
+  .vertical-center-content;
+
+  .modal-content {
+    display: inline-block;
+    width: 100%;
+    margin-top: -15%;
+    vertical-align: middle;
+  }
+}

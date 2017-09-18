@@ -1,0 +1,49 @@
+/**
+ * Skin: Blue
+ */
+
+.skin-blue {
+  .main-header {
+    .navbar {
+      .navbar-variant(@light-blue; #fff);
+      .sidebar-toggle {
+        color: #ffffff;
+        &:hover {
+          background-color: darken(@light-blue, % 5);
+        }
+      }
+      @media (max-width: @screen-header-collapse) {
+        .dropdown-menu {
+          li {
+            &.divider {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+            a {
+              color: #ffffff;
+              &:hover {
+                background-color: darken(@light-blue, % 5);
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      .logo-variant(darken(@light-blue, % 5))
+    }
+
+    li.user-header {
+      background-color: @light-blue;
+    }
+  }
+
+  .content-header {
+    background: transparent;
+  }
+
+  .skin-dark-sidebar(@light-blue);
+}
+
+.skin-blue.layout-top-nav .main-header > .logo {
+  .logo-variant(@light-blue);
+}
