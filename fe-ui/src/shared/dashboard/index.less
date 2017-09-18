@@ -1,0 +1,21 @@
+@import '../theme/variables-n-mixins';
+
+.dashboard {
+  .page-content-wrapper {
+    .loading-mask {
+      position: fixed;
+      top: @navbar-height;
+      left: @sidebar-width;
+    }
+  }
+}
+
+.sidebar-mini {
+  .dashboard {
+    .page-content-wrapper {
+      .loading-mask {
+        left: @sidebar-mini-width;
+      }
+    }
+  }
+}

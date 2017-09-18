@@ -1,0 +1,26 @@
+.page-content {
+  > .content {
+    padding: 10px 20px;
+  }
+  .content-header {
+    padding: 10px 20px 0;
+    h1 {
+      text-transform: capitalize;
+      font-family: "Open Sans", Arial;
+    }
+    > .breadcrumb {
+      right: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 0.5em;
+      z-index: 1;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .content-header > .breadcrumb {
+      background-color: transparent;
+      padding-left: 20px;
+    }
+  }
+}
