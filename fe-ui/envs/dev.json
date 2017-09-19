@@ -1,0 +1,11 @@
+{
+  "server": {
+    "basename": "/management-web",
+    "url": "http://localhost:3001/desktop/staff",
+    "publicResource": "http://localhost:3001/rest"
+  },
+  "license": {
+    "gaodeMap": "f97efc35164149d0c0f299e7a8adb3d2",
+    "gaodeService": "0552ca2fe891f7852ad1db80e9fde628"
+  }
+}

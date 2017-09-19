@@ -19,13 +19,13 @@ const signInAction = createAsyncAction(
 const ensureUser = createAction(actionTypes.ENSURE_USER);
 
 const signOutAction = createAsyncAction(
-  actionTypes.SING_OUT,
-  (payload, dispath) => userStorage.removeUser()
-    .then(() => dispath(push('/sign-in')))
+  actionTypes.SIGN_OUT,
+  (payload, dispatch) => userStorage.removeUser()
+    .then(() => dispatch(push('/sign-in'))),
 );
 
 export default {
   signInAction,
   ensureUser,
-  signInAction
+  signOutAction
 };

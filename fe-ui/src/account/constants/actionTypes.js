@@ -1,8 +1,8 @@
 import { getActionTypes } from '../../shared/utils/actionUtils';
 
 export default getActionTypes({
-  SING_IN: null,
-  SING_OUT: null,
+  SIGN_IN: null,
+  SIGN_OUT: null,
   ENSURE_USER: null,
-  SELECT_STORE: null
+  SELECT_STORE: null,
 });

@@ -7,7 +7,7 @@ const propTypes = {
     search: PropTypes.string
   }),
   match: PropTypes.shape({
-    params: propTypes.object
+    params: PropTypes.object
   }),
   history: PropTypes.shape({
     push: PropTypes.func,

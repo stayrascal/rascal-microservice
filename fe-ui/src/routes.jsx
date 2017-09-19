@@ -10,6 +10,7 @@ function getRoutes() {
       <Route exact path={'/sign-in'} component={Account.Login}/>
       <Route exact path={'/hello'} component={Apps.Hello}/>
     </Switch>
-  )
-
+  );
 }
+
+export default getRoutes;

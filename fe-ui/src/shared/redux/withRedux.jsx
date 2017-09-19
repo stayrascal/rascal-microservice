@@ -27,11 +27,13 @@ const withRedux = config => (Comp) => {
 
       const reducerFn = combineReducers({
         ...pageReducers,
-        ...reducers
+        ...reducers,
       });
 
       this.store = applyMiddleware(...middlewares)(createStore)(reducerFn);
 
+      /* This will allow you to dispatch init action or subscribe to store in some cases.
+       */
       initPage && initPage(this.store, props);
     }
 

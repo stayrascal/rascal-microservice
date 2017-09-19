@@ -7,7 +7,7 @@ const gitInfo = require('git-rev-sync');
 const config = require('./nodeConfig');
 
 const rootPath = path.resolve(__dirname, '../');
-const srcPath = path.resolve(__dirname, 'src');
+const srcPath = path.resolve(rootPath, 'src');
 
 module.exports = {
   context: srcPath,
@@ -17,7 +17,7 @@ module.exports = {
       'history',
       'jquery',
       'lodash',
-      'monment'
+      'moment'
     ],
     polyfill: [
       'babel-polyfill',
@@ -44,9 +44,9 @@ module.exports = {
     publicPath: '/',
     chunkFilename: '[name].[hash].js'
   },
-  modules: {
+  module: {
     rules: [{
-      test: '/\.jsx?$/',
+      test: /\.jsx?$/,
       use: ['react-hot-loader/webpack', 'babel-loader'],
       exclude: /node_modules/,
       include: srcPath

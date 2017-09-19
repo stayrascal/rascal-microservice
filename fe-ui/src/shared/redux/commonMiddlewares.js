@@ -1,13 +1,13 @@
 import { routerMiddleware } from 'react-router-redux';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import { errorMiddleware, loadingMiddleware } from '../loadingAndError';
+import { errorMiddleWare, loadingMiddleWare } from '../loadingAndError';
 
 import history from '../../history';
 
 const middlewares = [
-  loadingMiddleware,
-  errorMiddleware,
+  loadingMiddleWare,
+  errorMiddleWare,
   routerMiddleware(history),
   thunk,
   createLogger()

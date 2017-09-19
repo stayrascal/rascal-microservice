@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router } from 'react-router';
 import _ from 'lodash';
-
 import './shared/theme';
+
 import getRoutes from './routes';
 import history from './history';
 
@@ -19,8 +19,8 @@ function renderApp() {
         {routes}
       </div>
     </Router>,
-    document.getElementById('app'),
-  )
+    document.getElementById('app')
+  );
 }
 
 renderApp();
