@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Component
-@Path("staffs")
+@Path("staff")
 @Api(value = "staff", description = "Access to staff resource")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -51,5 +51,13 @@ public class StaffApi {
     public Response getClerk(@PathParam("clerk_id") String clerkId) {
         final ClerkResponse clerk = staffService.getClerk(clerkId);
         return Response.ok().entity(clerk).build();
+    }
+
+    @GET
+    @Path("/list")
+    public Response listClerks(@NotNull @QueryParam("page_size") Integer pageSize,
+                               @NotNull @QueryParam("page_index") Integer pageIndex) {
+        final PageResult result = staffService.listClerk(pageSize, pageIndex);
+        return Response.ok().entity(result).build();
     }
 }

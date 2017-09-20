@@ -37,7 +37,7 @@ services:
 #    image: stayrascal/service-user
 #    container_name: service-user
 #    ports:
-#      - '8087:8087'
+#      - '8078:8078'
 #    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
 #    depends_on:
 #      - infra-config-server
@@ -51,6 +51,32 @@ services:
 #    depends_on:
 #      - infra-config-server
 
+  service-address:
+    image: stayrascal/service-address
+    container_name: service-address
+    ports:
+      - '8085:8085'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  service-organization:
+    image: stayrascal/service-organization
+    container_name: service-organization
+    ports:
+      - '8086:8086'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
+
+  service-product:
+    image: stayrascal/service-product
+    container_name: service-product
+    ports:
+      - '8087:8087'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
 
 #  infra-zipkin-server:
 #    image: stayrascal/infra-zipkin-server

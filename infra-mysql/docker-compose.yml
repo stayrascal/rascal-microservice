@@ -60,3 +60,48 @@ services:
       - "33306:3306"
     volumes:
       - ~/workspace/data/service/store:/var/lib/mysql
+
+  service-address-db:
+    image: mysql:5.7
+    container_name: service-address-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=service-address
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "43306:3306"
+    volumes:
+      - ~/workspace/data/service/address:/var/lib/mysql
+
+  service-organization-db:
+    image: mysql:5.7
+    container_name: service-organization-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=service-organization
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "53306:3306"
+    volumes:
+      - ~/workspace/data/service/organization:/var/lib/mysql
+
+  service-product-db:
+    image: mysql:5.7
+    container_name: service-product-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=service-product
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "63306:3306"
+    volumes:
+      - ~/workspace/data/service/product:/var/lib/mysql

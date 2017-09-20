@@ -5,7 +5,7 @@ ARG jar
 
 WORKDIR /apps/boot
 
-
+COPY ./config/filebeat.yml config/filebeat.yml
 COPY ./build/libs/$jar $jar
 COPY ./docker/run.sh run.sh
 RUN chmod u+x run.sh

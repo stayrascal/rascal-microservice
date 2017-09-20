@@ -22,6 +22,7 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,6 +43,13 @@ public class StaffService {
 
     public PageResult listClerk(String storeId, Integer pageSize, Integer pageIndex) {
         final PageResult result = staffClient.listStaffs(pageSize, pageIndex, QueryMap.builder().put("store_id", storeId).build());
+        final List<StaffDto> items = result.getItems();
+        result.setItems(items.stream().map(this::mapToClerkResponse).collect(Collectors.toList()));
+        return result;
+    }
+
+    public PageResult listClerk(Integer pageSize, Integer pageIndex) {
+        final PageResult result = staffClient.listStaffs(pageSize, pageIndex, new HashMap<>());
         final List<StaffDto> items = result.getItems();
         result.setItems(items.stream().map(this::mapToClerkResponse).collect(Collectors.toList()));
         return result;

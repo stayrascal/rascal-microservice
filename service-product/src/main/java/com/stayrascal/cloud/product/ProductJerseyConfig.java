@@ -1,12 +1,14 @@
 package com.stayrascal.cloud.product;
 
 import com.stayrascal.cloud.common.jersey.JerseyConfig;
+import com.stayrascal.cloud.common.jersey.filter.CorsFilter;
 import com.stayrascal.cloud.product.resource.CategoryResource;
 import com.stayrascal.cloud.product.resource.ProductResource;
 import com.stayrascal.cloud.product.resource.StoreProductResource;
 
 import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -31,5 +33,10 @@ public class ProductJerseyConfig extends JerseyConfig {
     @Override
     protected Set<Class<?>> getModuleJerseyClasses() {
         return Sets.newHashSet(ProductResource.class, CategoryResource.class, StoreProductResource.class);
+    }
+
+    @Bean
+    CorsFilter corsFilter() {
+        return new CorsFilter();
     }
 }

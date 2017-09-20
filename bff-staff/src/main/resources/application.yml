@@ -2,7 +2,7 @@ spring:
   application:
     name: service-staff-desktop-bff
   jersey:
-    application-path: /desktop/staff
+    application-path: /desktop
   sleuth:
     sampler:
       percentage: 1
@@ -22,7 +22,7 @@ cloud:
       version: '0.0.1'
       host: 'localhost:8080'
       scheme: 'http'
-      base-path: '/desktop/staff'
+      base-path: '/desktop'
 #  redis:
 #    host: localhost
 #  jms:

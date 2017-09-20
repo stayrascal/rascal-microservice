@@ -12,6 +12,14 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   jersey:
     application-path: /rest
+  sleuth:
+    sampler:
+      percentage: 1
+  rabbitmq:
+    port: 5672
+    host: "${cloud.docker.host}"
+    username: stayrascal
+    password: stayrascal
 
 flyway:
   enabled: true
@@ -44,6 +52,10 @@ server:
   port: 8086
   context-path: /
   servlet-path: /
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
 
 management:
   context-path: /system
@@ -55,5 +67,21 @@ eureka:
 
 logging:
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: info
+    com.stayrascal.cloud: info
     org.hibernate: ERROR
+  config: classpath:logback-spring.xml
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100
