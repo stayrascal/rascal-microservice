@@ -5,8 +5,8 @@ import './Header.less';
 const Header = ({ namePlaceholder, onSignOut }) => (
   <header className="main-header">
     <a className="logo">
-      <span className="logo-mini"><b>R</b>W</span>
-      <span className="logo-lg"><b>RETAIL</b> WISE</span>
+      <span className="logo-mini"><b>S</b>R</span>
+      <span className="logo-lg"><b>STAY</b> RASCAL</span>
     </a>
     <nav className="navbar navbar-static-top">
       <a className="sidebar-toggle" data-toggle="offcanvas" role="button">

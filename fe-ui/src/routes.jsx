@@ -9,6 +9,7 @@ function getRoutes() {
     <Switch>
       <Route exact path={'/sign-in'} component={Account.Login}/>
       <Route exact path={'/hello'} component={Apps.Hello}/>
+      <Route exact path={'/list'} component={Apps.List}/>
     </Switch>
   );
 }
