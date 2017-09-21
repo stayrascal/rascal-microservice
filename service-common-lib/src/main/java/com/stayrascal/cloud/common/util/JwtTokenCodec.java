@@ -1,6 +1,5 @@
 package com.stayrascal.cloud.common.util;
 
-import com.stayrascal.cloud.common.constant.DefaultValues;
 import com.stayrascal.cloud.common.constant.ErrorCode;
 import com.stayrascal.cloud.common.contract.auth.Authorization;
 import com.stayrascal.cloud.common.contract.auth.Identity;
@@ -85,9 +84,9 @@ public class JwtTokenCodec {
         return builder;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         JwtTokenCodec jwtTokenCodec = new JwtTokenCodec(DefaultValues.Auth.tokenSecret(), -1000);
         String token = jwtTokenCodec.encodeToken(new Identity(IdentityType.MEMBER, "member", new ArrayList(0)));
         System.out.println(token);
-    }
+    }*/
 }

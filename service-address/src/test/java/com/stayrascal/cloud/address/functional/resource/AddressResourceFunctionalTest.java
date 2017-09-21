@@ -3,6 +3,7 @@ package com.stayrascal.cloud.address.functional.resource;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
+import com.stayrascal.cloud.address.contract.command.CreateAddressCommand;
 import com.stayrascal.cloud.address.contract.command.UpdateAddressCommand;
 
 import com.exmertec.dummie.Dummie;
@@ -36,5 +37,17 @@ public class AddressResourceFunctionalTest extends BaseFunctionalTest {
                 .put("addresses/" + ADDRESS_ID)
                 .then()
                 .statusCode(is(200));
+    }
+
+    @Test
+    public void shouldSuccessAddAddressInfo() throws Exception {
+        CreateAddressCommand command = Dummie.create(CreateAddressCommand.class);
+        given()
+                .header("Content-Type", "application/json")
+                .body(command)
+                .when()
+                .post("addresses/")
+                .then()
+                .statusCode(is(201));
     }
 }
