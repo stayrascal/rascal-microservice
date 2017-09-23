@@ -100,7 +100,7 @@ services:
       - MYSQL_ROOT_PASSWORD=stayrascal
       - MYSQL_DATABASE=service-product
       - MYSQL_USER=stayrascal
-      - MYSQL_PASSWORD=stayrascal
+      - MYSQL_PASSWORD=stayrascalw
     ports:
       - "63306:3306"
     volumes:

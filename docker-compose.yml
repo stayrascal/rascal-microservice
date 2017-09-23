@@ -33,14 +33,14 @@ services:
 #    depends_on:
 #      - infra-config-server
 #
-#  service-user:
-#    image: stayrascal/service-user
-#    container_name: service-user
-#    ports:
-#      - '8078:8078'
-#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-#    depends_on:
-#      - infra-config-server
+  service-user:
+    image: stayrascal/service-user
+    container_name: service-user
+    ports:
+      - '8078:8078'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
 #
 #  service-order:
 #    image: stayrascal/service-order
@@ -69,14 +69,14 @@ services:
     depends_on:
       - infra-config-server
 
-  service-product:
-    image: stayrascal/service-product
-    container_name: service-product
-    ports:
-      - '8087:8087'
-    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-    depends_on:
-      - infra-config-server
+#  service-product:
+#    image: stayrascal/service-product
+#    container_name: service-product
+#    ports:
+#      - '8087:8087'
+#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+#    depends_on:
+#      - infra-config-server
 
 #  infra-zipkin-server:
 #    image: stayrascal/infra-zipkin-server

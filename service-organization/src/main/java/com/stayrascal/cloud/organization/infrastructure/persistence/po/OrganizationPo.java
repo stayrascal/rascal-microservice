@@ -20,8 +20,8 @@ public class OrganizationPo extends BasePo {
     private String superiorId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 32)
-    private OrganizationType status;
+    @Column(name = "type", nullable = false, length = 32)
+    private OrganizationType type;
 
     public String getName() {
         return name;
@@ -31,12 +31,12 @@ public class OrganizationPo extends BasePo {
         this.name = name;
     }
 
-    public OrganizationType getStatus() {
-        return status;
+    public OrganizationType getType() {
+        return type;
     }
 
-    public void setStatus(OrganizationType status) {
-        this.status = status;
+    public void setType(OrganizationType type) {
+        this.type = type;
     }
 
     public String getSuperiorId() {

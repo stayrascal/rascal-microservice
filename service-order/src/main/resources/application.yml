@@ -29,6 +29,11 @@ flyway:
 cloud:
   jersey:
     access_control_allow_origin: '*'
+    swagger:
+      version: '0.0.1'
+      host: 'localhost:8079'
+      scheme: 'http'
+      base-path: /rest
   auth:
     admin_token_expire_minutes: 30
     allow_public_access: true

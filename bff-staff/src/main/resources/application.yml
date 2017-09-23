@@ -20,7 +20,7 @@ cloud:
     access_control_allow_origin: '*'
     swagger:
       version: '0.0.1'
-      host: 'localhost:8080'
+      host: '${cloud.docker.host:localhost}:8082'
       scheme: 'http'
       base-path: '/desktop'
 #  redis:
@@ -71,3 +71,17 @@ logging:
     org.springframework.web: info
     com.stayrascal.cloud: info
   config: classpath:logback-spring.xml
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100

@@ -32,7 +32,7 @@ cloud:
     access_control_allow_origin: '*'
     swagger:
       version: '0.0.1'
-      host: '${cloud.docker.host}:8078'
+      host: '${cloud.docker.host:localhost}:8078'
       scheme: 'http'
       base-path: /rest
   allowReloadTestData: true

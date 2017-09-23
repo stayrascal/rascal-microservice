@@ -4,8 +4,19 @@ const template = {
   mobile: () => faker.phone.phoneNumber(),
   email: () => faker.internet.email(),
   name: (params, query) => `${query.name || ''} ${faker.name.findName()}`,
-  authorizations: (params, query) => (query.role || faker.random.arrayElement(['ADMIN', 'CLIENT'])),
+  authorizations: () => randomRoles()
 };
+
+function randomRoles (count) {
+  var roles = new Set();
+  if (typeof count === "undefined") {
+    count = faker.random.number({min:1, max: 3});
+  }
+  for (var i = 0; i<count; i++) {
+    roles.add(faker.random.arrayElement(['ADMIN', 'CLIENT', 'STAFF']));
+  }
+  return [...roles];
+}
 
 const PAGE_SIZE = 10;
 
