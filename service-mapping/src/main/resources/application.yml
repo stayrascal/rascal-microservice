@@ -1,0 +1,93 @@
+spring:
+  application:
+    name: service-mapping
+  aop:
+    auto: true
+    proxy-target-class: true
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jersey:
+    application-path: /rest
+  sleuth:
+    sampler:
+      percentage: 1
+  rabbitmq:
+    port: 5672
+    host: "${cloud.docker.host}"
+    username: stayrascal
+    password: stayrascal
+
+flyway:
+  enabled: true
+  out-of-order: true
+  encoding: UTF-8
+
+cloud:
+  jersey:
+    access_control_allow_origin: '*'
+    swagger:
+      version: '0.0.1'
+      host: "${cloud.docker.host:localhost}:8089"
+      scheme: 'http'
+      base-path: /rest
+  auth:
+    admin_token_expire_minutes: 30
+    allow_public_access: true
+  allowReloadTestData: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1000
+        sleepWindowInMilliseconds: 5000
+        errorThresholdPercentage: 50
+
+
+server:
+  port: 8089
+  context-path: /
+  servlet-path: /
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /apps/boot/logs
+
+management:
+  context-path: /system
+
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.stayrascal.cloud: INFO
+    org.hibernate: ERROR
+  config: classpath:logback-spring.xml
+
+---
+spring:
+  profiles: default
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+cloud:
+  docker:
+    host: 192.168.99.100

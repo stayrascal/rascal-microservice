@@ -1,0 +1,2 @@
+rootProject.name = 'service-mapping'
+include 'contract'

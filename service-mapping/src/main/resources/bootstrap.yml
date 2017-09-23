@@ -1,0 +1,63 @@
+eureka:
+  instance:
+    hostname: ${cloud.docker.host} # service-mapping
+  client:
+    service-url:
+      defaultZone: http://stayrascal:stayrascal@${cloud.docker.host}:8761/eureka
+
+---
+spring:
+  profiles: default
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1/service-mapping
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 50
+cloud:
+  docker:
+    host: localhost
+
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: master
+      username: stayrascal
+      password: stayrascal
+      fail-fast: true
+  datasource:
+    url: jdbc:mysql://${cloud.docker.host}:33067/service-mapping
+    username: stayrascal
+    password: stayrascal
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 50
+cloud:
+  docker:
+    host: 192.168.99.100
+
+---
+spring:
+  profiles: k8s_dev
+  cloud:
+    config:
+      discovery:
+        service-id: infra-config-server
+        enabled: true

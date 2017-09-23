@@ -1,0 +1,56 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
+    repositories {
+        maven { url "${nexusUrl}/repository/maven-releases/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
+
+    compile('com.stayrascal.cloud:common-contract:1.0.1')
+
+}
+
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.stayrascal.cloud'
+            artifactId rootProject.name + '-contract'
+            /*artifact file("build/libs/contract-${project.version}.jar")*/
+            version '1.0.0'
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+    repositories {
+        maven {
+            url "${nexusUrl}/repository/maven-releases/"
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+        }
+    }
+}
