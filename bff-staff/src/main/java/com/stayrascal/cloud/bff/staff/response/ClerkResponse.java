@@ -6,6 +6,16 @@ public class ClerkResponse extends StaffDto {
 
     private String loginId;
 
+    private String addressName;
+
+    public String getAddressName() {
+        return addressName;
+    }
+
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
+    }
+
     public String getLoginId() {
         return loginId;
     }

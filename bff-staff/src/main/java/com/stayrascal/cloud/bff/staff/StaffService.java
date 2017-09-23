@@ -1,5 +1,7 @@
 package com.stayrascal.cloud.bff.staff;
 
+import com.stayrascal.cloud.address.contract.client.AddressServiceClient;
+import com.stayrascal.cloud.address.contract.dto.AddressDto;
 import com.stayrascal.cloud.bff.staff.request.CreateClerkCommand;
 import com.stayrascal.cloud.bff.staff.response.ClerkResponse;
 import com.stayrascal.cloud.common.contract.QueryMap;
@@ -8,6 +10,7 @@ import com.stayrascal.cloud.common.contract.auth.IdentityType;
 import com.stayrascal.cloud.common.contract.result.CreatedResult;
 import com.stayrascal.cloud.common.contract.result.PageResult;
 import com.stayrascal.cloud.common.mapper.DefaultMapper;
+import com.stayrascal.cloud.mapping.contract.client.MappingServiceClient;
 import com.stayrascal.cloud.user.admin.contract.client.StaffServiceClient;
 import com.stayrascal.cloud.user.admin.contract.command.CreateStaffCommand;
 import com.stayrascal.cloud.user.admin.contract.dto.StaffDto;
@@ -31,12 +34,17 @@ public class StaffService {
     public static final String CLERK_ROLE_ID = "store-click-role-id";
     private final AuthServiceClient authClient;
     private final StaffServiceClient staffClient;
+    private final AddressServiceClient addressClient;
+    private final MappingServiceClient mappingClient;
     private final DefaultMapper mapper;
 
     @Autowired
-    public StaffService(AuthServiceClient authClient, StaffServiceClient staffClient) {
+    public StaffService(AuthServiceClient authClient, StaffServiceClient staffClient,
+                        AddressServiceClient addressClient, MappingServiceClient mappingClient) {
         this.authClient = authClient;
         this.staffClient = staffClient;
+        this.addressClient = addressClient;
+        this.mappingClient = mappingClient;
         this.mapper = DefaultMapper.builder().build();
     }
 
@@ -78,6 +86,13 @@ public class StaffService {
                     .filter(item -> item.getAuthenticationType() == AuthenticationType.PASSWORD)
                     .findFirst()
                     .get().getAuthenticationName());
+        }
+        List<Long> addressList = mappingClient.retrieveAddressIds(staffDto.getId()).getItems();
+        if (addressList.size() > 0) {
+            AddressDto addressDto = addressClient.get(addressList.get(0));
+            if (addressDto != null) {
+                response.setAddressName(addressDto.getName());
+            }
         }
         return response;
     }

@@ -41,7 +41,7 @@ public abstract class BaseFunctionalTest {
 
     private static void initAssured(int port) {
         RestAssured.port = port;
-        RestAssured.basePath = "/desktop/staff/";
+        RestAssured.basePath = "/desktop/";
     }
 
     protected String jsonResource(String resourceName) throws IOException {

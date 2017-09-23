@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
         "com.stayrascal.cloud.order.contract.client",
         "com.stayrascal.cloud.product.contract.client",
         "com.stayrascal.cloud.organization.contract.client",
+        "com.stayrascal.cloud.mapping.contract.client",
 })
 @ConditionalOnProperty(name = "cloud.eureka.enabled", matchIfMissing = true)
 public class EurekaConfig {

@@ -100,8 +100,23 @@ services:
       - MYSQL_ROOT_PASSWORD=stayrascal
       - MYSQL_DATABASE=service-product
       - MYSQL_USER=stayrascal
-      - MYSQL_PASSWORD=stayrascalw
+      - MYSQL_PASSWORD=stayrascal
     ports:
       - "63306:3306"
     volumes:
       - ~/workspace/data/service/product:/var/lib/mysql
+
+  service-mapping-db:
+    image: mysql:5.7
+    container_name: service-mapping-db
+    restart: always
+    user: "1000:50"
+    environment:
+      - MYSQL_ROOT_PASSWORD=stayrascal
+      - MYSQL_DATABASE=service-mapping
+      - MYSQL_USER=stayrascal
+      - MYSQL_PASSWORD=stayrascal
+    ports:
+      - "33067:3306"
+    volumes:
+      - ~/workspace/data/service/mapping:/var/lib/mysql

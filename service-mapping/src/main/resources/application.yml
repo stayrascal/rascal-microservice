@@ -31,7 +31,7 @@ cloud:
     access_control_allow_origin: '*'
     swagger:
       version: '0.0.1'
-      host: "${cloud.docker.host:localhost}:8089"
+      host: "${cloud.docker.host:localhost}:${server.port}"
       scheme: 'http'
       base-path: /rest
   auth:
