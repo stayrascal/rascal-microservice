@@ -15,14 +15,14 @@ services:
     depends_on:
       - infra-eureka-server
 
-#  infra-api-gateway:
-#    image: stayrascal/infra-api-gateway
-#    container_name: infra-api-gateway
-#    ports:
-#      - '8765:8765'
-#    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
-#    depends_on:
-#      - infra-config-server
+  infra-api-gateway:
+    image: stayrascal/infra-api-gateway
+    container_name: infra-api-gateway
+    ports:
+      - '8765:8765'
+    command: ["/apps/docker/wait-for-it.sh", "-s", "-t", "60", "infra-config-server:8888", "--", "./run.sh"]
+    depends_on:
+      - infra-config-server
 
   bff-staff:
     image: stayrascal/bff-staff

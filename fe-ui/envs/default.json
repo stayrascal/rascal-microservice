@@ -1,7 +1,8 @@
 {
   "server": {
     "basename": "/management-web",
-    "url": "http://localhost:3001/desktop/staff",
+    "url": "http://192.168.99.100:8765/staff/desktop/staff",
+//    "url": "http://localhost:3001/desktop/staff",
     "publicResource": "http://localhost:3001/rest"
   },
   "license": {

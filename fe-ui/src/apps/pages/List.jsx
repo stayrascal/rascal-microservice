@@ -12,15 +12,17 @@ import history from '../../history';
 
 const DEFAULT_CONFIG = {
   mapLocationToRequest(location) {
-    const { pageIndex = 1, ...searchParams } = parse(location.search);
+    const { page_index = 0, page_size = 10,  accessToken = "test", ...searchParams } = parse(location.search);
 
     return {
-      pageIndex,
+      page_index,
+      accessToken,
+      page_size,
       ...searchParams,
     };
   },
   mapLocationToSearch(location) {
-    const { pageIndex, ...searchParams } = parse(location.search);
+    const { page_index, ...searchParams } = parse(location.search);
 
     return searchParams;
   },
@@ -42,8 +44,8 @@ const connectListPage = config => (Page) => {
       this.state = {
         list: {
           totalCount: 0,
-          pageIndex: 1,
-          pageSize: 10,
+          page_index: 0,
+          page_size: 10,
           items: [],
         },
       };
@@ -78,13 +80,14 @@ const connectListPage = config => (Page) => {
       this.changeUrlQuery({
         pageIndex: nextPageIndex,
       });
-    }
+    };
+
     handleSearch = (search) => {
       this.changeUrlQuery({
         ...search,
-        pageIndex: 1,
+        page_index: 0
       }, true);
-    }
+    };
 
     render() {
       const { list } = this.state;
@@ -107,10 +110,10 @@ const columns = [
     key: 'name',
   },
   {
-    key: 'role',
+    key: 'email',
   },
   {
-    key: 'address',
+    key: 'addressName',
   },
 ];
 
