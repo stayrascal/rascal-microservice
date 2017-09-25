@@ -167,7 +167,7 @@ dependencies {
 
     compile("com.github.binarywang:weixin-java-mp:2.5.0")
     compile("org.sharegov:mjson:1.4.1")
-    compile("io.reactivex.rxjava2:rxjava:2.1.4'")
+    compile("io.reactivex.rxjava2:rxjava:2.1.4")
     compile('com.stayrascal.cloud:common-lib:1.0.4')
 
     compile('com.stayrascal.cloud:service-user-contract:1.0.2')
